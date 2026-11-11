@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><b>⬇ Download CanEmAllEditor.exe</b></a>
+  <a href="../../releases/latest"><b>⬇ Download CanEmAllEditor.exe</b></a> · <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838055041">Steam guide</a>
 </p>
 
 <p align="center">
