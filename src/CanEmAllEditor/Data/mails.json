@@ -1,0 +1,324 @@
+[
+{
+"id": 0,
+"key": "WelcomeToTheFamily",
+"sender": "Corporation",
+"title": "Welcome to the Family!",
+"body": "Dear Employee,\n\nWelcome to Happy Meat Food Corp.!\n\nWe understand you're dealing with considerable debt. Luckily, you've come to the right place!\n\nWe offer excellent pay, free accommodation, and one meal a day. All you need to do is turn Cutelings into canned food!\n\nWork hard, earn money, and you'll be debt-free before you know it!\n\nRemember, every can makes a difference!"
+},
+{
+"id": 1,
+"key": "ALittleIntroduction",
+"sender": "Unknown",
+"title": "A Little Introduction",
+"body": "Hey, new guy.\n\nI've been working here longer than I'd like to admit.\n\nAlready paid off my debt, actually. They offered me a way out, but I decided to stay.\n\nDon't ask why. I'm still figuring that out myself.\n\nAnyway, I help new employees whenever I can. Figured I'd share a few things I've learned along the way.\n\nFirst tip: don't get too attached to the little guys.\n\nTrust me."
+},
+{
+"id": 2,
+"key": "CutelingMeatOfficiallySurpassesChicken",
+"sender": "News",
+"title": "Cuteling Meat Officially Surpasses Chicken",
+"body": "Cuteling meat has officially overtaken chicken as the nation's most consumed animal protein.\n\nScientists attribute its success to the species' extraordinary reproduction rate, with some cutelings capable of producing dozens of offspring in just a few weeks.\n\nTheir rapid growth and low farming costs have made cuteling meat one of the cheapest and most accessible sources of protein on the market."
+},
+{
+"id": 3,
+"key": "ThatBasketIsntDecoration",
+"sender": "Unknown",
+"title": "That Basket Isn't Decoration",
+"body": "Hey,\n\nSee that basket sitting in the corner of the factory?\n\nYou can use it to carry multiple cans at once. Saves a lot of time.\n\nYou'd be surprised how many new employees spend days carrying cans one by one before noticing it.\n\nI was one of them.\n\nTook me a week.\n\nDon't tell anyone."
+},
+{
+"id": 4,
+"key": "HowdYouSleep",
+"sender": "Unknown",
+"title": "How'd You Sleep?",
+"body": "Hey,\n\nHow's the bed?\n\nTerrible, right?\n\nI complained about mine when I first got here.\n\nMaintenance told me the mattresses were designed to encourage proper sleeping posture.\n\nI told them mine felt like sleeping on a wooden board.\n\nThey said that meant it was working.\n\nYou'll get used to it eventually.\n\nOr you'll get too tired to care.\n\nEither way, problem solved."
+},
+{
+"id": 5,
+"key": "BringYourPetToWorkDay",
+"sender": "Corporation",
+"title": "Bring Your Pet to Work Day!",
+"body": "Dear Employee,\n\nWe're excited to announce our annual Bring Your Pet to Work Day!\n\nEmployees are welcome to bring their furry friends to the factory!\n\nFor everyone's safety, please keep all pets away from conveyor belts, grinders, and processing equipment.\n\nAll pets must wear identification tags to avoid confusion with raw materials.\n\nHappy Meat Food Corp. is not responsible for any accidental processing."
+},
+{
+"id": 6,
+"key": "HappyMeatReportsRecordProfits",
+"sender": "News",
+"title": "Happy Meat Reports Record Profits",
+"body": "Happy Meat Food Corp. has reported record-breaking profits this quarter, with revenue up 38% compared to last year.\n\nThe company attributes its success to increased demand, factory automation, and improved production efficiency.\n\nDespite the strong financial results, Happy Meat confirmed that employee wages will remain unchanged to keep food prices competitive.\n\nLabor representatives have called for higher wages, while the company maintains that its current compensation packages are already among the industry's most competitive."
+},
+{
+"id": 7,
+"key": "YourJobDoesntHaveToInvolveKilling",
+"sender": "Activist",
+"title": "Your Job Doesn't Have to Involve Killing",
+"body": "Dear Happy Meat Employees,\n\nWe're the Cuteness Action Network (CAN), and we believe Cutelings deserve better than ending up in cans.\n\nWe encourage you to consider a different career.\n\nWe understand that quitting isn't easy. You have bills to pay, families to feed, and debts to settle.\n\nWe're not blaming you. We just believe there should be a better way to make a living.\n\nFor everyone, including the Cutelings."
+},
+{
+"id": 8,
+"key": "WhyWeClearTheFloor",
+"sender": "Unknown",
+"title": "Why We Clear the Floor",
+"body": "Hey,\n\nEver wonder why everything gets cleared out at the end of each day?\n\nFood safety, apparently.\n\nDead Cutelings can't be left overnight. The meat wouldn't be fresh enough to process the next morning.\n\nLiving ones get sent back to the holding facilities for inspection.\n\nI once tried hiding a dead one behind a machine to save some work for tomorrow.\n\nQuality control found it.\n\nI got a written warning.\n\nThe Cuteling got a funeral.\n\nBy funeral, I mean a very large trash bag."
+},
+{
+"id": 9,
+"key": "ScientistsDiscoverCutelingsCanRecognizeHumanFaces",
+"sender": "News",
+"title": "Scientists Discover Cutelings Can Recognize Human Faces",
+"body": "A new study has found that Cutelings can recognize human faces, remember past experiences, and form strong social bonds.\n\nResearchers observed Cutelings recognizing familiar caretakers even after several months of separation.\n\nThe findings have sparked debate over whether Cutelings should continue to be classified as livestock.\n\nIndustry representatives argue that intelligence alone does not determine an animal's suitability for food production."
+},
+{
+"id": 10,
+"key": "FeedingTheFuture",
+"sender": "Corporation",
+"title": "Feeding the Future",
+"body": "Dear Employee,\n\nWe're proud to announce our new school meal program!\n\nThanks to your hard work, thousands of children from low-income families will now receive free, nutritious meals every day.\n\nAt Happy Meat, we believe no child should ever go hungry.\n\nEvery can you produce helps make that possible.\n\nKeep up the great work!"
+},
+{
+"id": 11,
+"key": "TodaysSpecial",
+"sender": "Unknown",
+"title": "Today's Special",
+"body": "Hey,\n\nLittle advice about the cafeteria.\n\nDon't bother asking what's in the food.\n\nI did that once.\n\nThe cook pointed at the Happy Meat logo on his apron and stared at me until I left.\n\nTo be fair, the meals are free, they're filling, and I've never gotten sick from them.\n\nJust don't expect much variety.\n\nMonday is canned meat with potatoes.\n\nTuesday is potatoes with canned meat.\n\nWednesday is a surprise.\n\nIt's canned meat."
+},
+{
+"id": 12,
+"key": "TheyreNotOverpopulated",
+"sender": "Activist",
+"title": "They're Not Overpopulated",
+"body": "Dear Happy Meat Employees,\n\nThe meat industry keeps telling us Cutelings must be processed because they reproduce too quickly.\n\nWhat they don't mention is that they're breeding millions of them on purpose.\n\nYou can't create an overpopulation problem and then claim you're solving it.\n\nWe believe controlled breeding is a better solution than building more slaughterhouses."
+},
+{
+"id": 13,
+"key": "CheapMeatTransformsSchoolNutrition",
+"sender": "News",
+"title": "Cheap Meat Transforms School Nutrition",
+"body": "Affordable Cuteling meat has significantly improved school nutrition programs in low-income communities.\n\nSchools that previously struggled to provide daily meals can now offer students a reliable source of protein at a fraction of the cost.\n\nHowever, experts warn that growing dependence on Happy Meat Food Corp. could leave schools vulnerable to future price increases or supply disruptions.\n\nFor now, education officials report improved attendance and fewer cases of childhood malnutrition."
+},
+{
+"id": 14,
+"key": "HomeSweetHome",
+"sender": "Unknown",
+"title": "Home Sweet Home",
+"body": "Hey,\n\nYou know, the living quarters aren't actually that bad.\n\nFree electricity, free water, free meals, and no rent.\n\nWhen I first arrived, I thought I'd hate living where I worked.\n\nTurns out you get used to it.\n\nThe only problem is that you never really feel like you've left work.\n\nSometimes I wake up in the middle of the night thinking I hear a conveyor belt.\n\nUsually it's just the ventilation.\n\nUsually."
+},
+{
+"id": 15,
+"key": "WhenMoneyWasTheProblem",
+"sender": "Unknown",
+"title": "When Money Was the Problem",
+"body": "Hey,\n\nYou know, I came to Happy Meat because of debt too.\n\nA lot of it, actually.\n\nBack then, all I could think about was making enough money to pay it off.\n\nEvery shift, every upgrade, every extra can. It was all about the numbers.\n\nCan't say I enjoyed the work, but the pay was better than anything else I could find.\n\nSo yeah, I get why people take this job.\n\nSometimes you don't have much of a choice."
+},
+{
+"id": 16,
+"key": "ExcellentWork",
+"sender": "Corporation",
+"title": "Excellent Work!",
+"body": "Dear Employee,\n\nCongratulations on your outstanding productivity!\n\nYour hard work is helping us feed thousands of families across the country.\n\nRemember, every can you produce means another meal on someone's table!\n\nKeep up the excellent work!\n\nWe would send a congratulatory photograph, but we suspect you remember it well enough."
+},
+{
+"id": 17,
+"key": "OurFirstProtest",
+"sender": "Activist",
+"title": "Our First Protest!",
+"body": "Dear Happy Meat Employees,\n\nWe organized our first major protest outside a Happy Meat facility!\n\n43 activists showed up demanding better treatment for Cutelings.\n\nIn response, Happy Meat started handing out free sandwiches.\n\n38 protesters accepted one.\n\nWe later discovered they were made with Cuteling meat.\n\nWe're currently reviewing our protest guidelines."
+},
+{
+"id": 18,
+"key": "SevereStormLeavesThousandsWithoutFood",
+"sender": "News",
+"title": "Severe Storm Leaves Thousands Without Food",
+"body": "A powerful storm has devastated several communities, leaving thousands of families without access to food, clean water, or electricity.\n\nFlooding has destroyed homes, damaged roads, and disrupted supply routes across the affected regions.\n\nEmergency crews are working around the clock to rescue stranded residents and deliver essential supplies.\n\nAuthorities warn that food shortages could worsen in the coming days as damaged infrastructure continues to delay relief efforts."
+},
+{
+"id": 19,
+"key": "TogetherInDifficultTimes",
+"sender": "Corporation",
+"title": "Together in Difficult Times",
+"body": "Dear Employee,\n\nIn response to the recent devastating storm, Happy Meat Food Corp. is donating 500,000 cans of food to affected communities.\n\nThanks to your hard work, thousands of families will receive nutritious meals during these difficult times.\n\nWe're proud to have the resources to respond when people need us most.\n\nRemember, every can you produce can make a real difference."
+},
+{
+"id": 20,
+"key": "HelpingPeopleShouldntRequireHurtingAnimals",
+"sender": "Activist",
+"title": "Helping People Shouldn't Require Hurting Animals",
+"body": "Dear Happy Meat Employees,\n\nWe recognize that Happy Meat's recent food donations have helped thousands of families affected by the storm.\n\nAnd we're genuinely glad those families are getting the help they need.\n\nBut we believe feeding people shouldn't have to come at the cost of millions of Cutelings.\n\nAffordable, cruelty-free alternatives exist, and we're working to make them more accessible.\n\nHelping people and protecting animals shouldn't be mutually exclusive."
+},
+{
+"id": 21,
+"key": "BeforeIWorkedHere",
+"sender": "Unknown",
+"title": "Before I Worked Here",
+"body": "Hey,\n\nYou know, I had a pretty different life before Happy Meat.\n\nMy wife and I used to go on little road trips every weekend. She loved planning everything.\n\nI loved getting us lost.\n\nShe'd get mad, I'd blame the GPS, and we'd end up laughing about it.\n\nNever imagined I'd end up spending my days turning adorable little guys into canned food.\n\nAnyway, why am I telling you all this?\n\nI should really find a hobby."
+},
+{
+"id": 22,
+"key": "WeTriedAnAdoptionCampaign",
+"sender": "Activist",
+"title": "We Tried an Adoption Campaign",
+"body": "Dear Happy Meat Employees,\n\nWe're happy to announce that our first Cuteling adoption campaign was a success!\n\nWe rescued 12 Cutelings and found loving homes for all of them.\n\nUnfortunately, those 12 Cutelings have since become 147.\n\nWe tried sterilization, but apparently their reproductive organs grow back. Nobody warned us about that.\n\nOur shelters are now completely full, and we're running dangerously low on funding.\n\nWe're currently accepting donations, volunteers, and anyone with a very large backyard."
+},
+{
+"id": 23,
+"key": "MoneyCantFixEverything",
+"sender": "Unknown",
+"title": "Money Can't Fix Everything",
+"body": "Hey,\n\nYou know, I used to think every problem could be solved with enough money.\n\nSo I worked longer shifts, bought more upgrades, and kept telling myself I just needed to earn a little more.\n\nDon't get me wrong, money solves a lot of problems.\n\nEspecially when you don't have any.\n\nBut some things don't get better no matter how much you earn.\n\nAnyway, look at me giving life advice when I should probably be doing something productive.\n\nOld habits, I guess."
+},
+{
+"id": 24,
+"key": "CutelingsCouldHoldTheKeyToMedicalBreakthroughs",
+"sender": "News",
+"title": "Cutelings Could Hold the Key to Medical Breakthroughs",
+"body": "Scientists are studying the remarkable cellular regeneration abilities of certain Cuteling species, hoping to develop new treatments for diseases such as cancer.\n\nWhile early results are promising, researchers warn that practical applications could still be years away.\n\nMeanwhile, rising medical costs continue to push thousands of families into debt, with many struggling to afford long-term treatments.\n\nExperts hope these discoveries could eventually make life-saving treatments more accessible."
+},
+{
+"id": 25,
+"key": "WhyITookThisJob",
+"sender": "Unknown",
+"title": "Why I Took This Job",
+"body": "Hey,\n\nRemember when I told you I came here because of debt?\n\nWell, my wife was diagnosed with cancer.\n\nThe treatments were expensive. Really expensive.\n\nI borrowed everything I could, but it still wasn't enough.\n\nThen I found Happy Meat. The pay was better than anything else I could find.\n\nWasn't exactly my dream job, turning little animals into canned food.\n\nBut I would've done anything to save her.\n\nAnyway, sorry for getting personal.\n\nGuess I just needed to tell someone."
+},
+{
+"id": 26,
+"key": "AFutureWithoutLimits",
+"sender": "Corporation",
+"title": "A Future Without Limits",
+"body": "Dear Employee,\n\nAt Happy Meat, we believe your future should be full of opportunities!\n\nOnce you've paid off your debt and fulfilled your contractual obligations, you're free to leave our facilities and pursue your dreams!\n\nOf course, many of our employees choose to stay voluntarily, enjoying excellent pay and unlimited opportunities for growth.\n\nAfter all, why stop earning when you could be earning more?"
+},
+{
+"id": 27,
+"key": "IVisitedASchoolToday",
+"sender": "Activist",
+"title": "I Visited a School Today",
+"body": "Dear Happy Meat Employees,\n\nLast week, our volunteers visited a school where most children rely on Happy Meat's free meal program.\n\nWe went there to talk about animal welfare.\n\nInstead, we learned that for some of those kids, it's the only proper meal they get all day.\n\nShutting down the industry overnight wouldn't help those families.\n\nSo we're working on something better: affordable, cruelty-free alternatives that schools can actually afford."
+},
+{
+"id": 28,
+"key": "GovernmentDebatesNewAnimalWelfareLaws",
+"sender": "News",
+"title": "Government Debates New Animal Welfare Laws",
+"body": "Lawmakers are debating new regulations aimed at improving the breeding and processing conditions of Cutelings.\n\nThe debate follows the release of disturbing footage showing factory workers using military-grade weapons, including rocket launchers, on live Cutelings.\n\nAnimal rights groups are demanding stricter protections, citing recent studies on Cuteling intelligence and social behavior.\n\nMeanwhile, food producers argue that additional regulations could increase production costs and raise food prices."
+},
+{
+"id": 29,
+"key": "SomeThingsMoneyCantBuy",
+"sender": "Unknown",
+"title": "Some Things Money Can't Buy",
+"body": "Hey,\n\nRemember when I told you about my wife?\n\nShe didn't make it.\n\nI paid for every treatment the doctors recommended. Worked every extra shift I could.\n\nBut in the end, none of it was enough.\n\nI don't regret trying. I'd do it all again if I had the chance.\n\nAfter she was gone, I just kept working.\n\nDidn't really know what else to do.\n\nAnyway, sorry. Didn't mean to bring the mood down.\n\nI should probably stop treating your inbox like a diary."
+},
+{
+"id": 30,
+"key": "WeActuallyDidSomething",
+"sender": "Activist",
+"title": "We Actually Did Something",
+"body": "Dear Happy Meat Employees,\n\nWe know you're probably tired of our emails telling you to stop killing Cutelings.\n\nSo, for a change, we actually did something!\n\nAfter months of fundraising, negotiations, and arguing with school boards, several schools have agreed to serve Cuteling-free meals every Friday!\n\nThe meals are affordable, nutritious, and surprisingly popular with the children.\n\nWell, except for the broccoli. We're still working on that.\n\nIt's a small victory, but we wanted to prove we're capable of more than sending angry emails.\n\nSpeaking of which, please don't unsubscribe."
+},
+{
+"id": 31,
+"key": "SurveyRevealsWhatMakesWorkersHappy",
+"sender": "News",
+"title": "Survey Reveals What Makes Workers Happy",
+"body": "A nationwide survey has examined what makes employees happy with their lives.\n\nResearchers found that higher incomes significantly improve happiness, particularly among workers struggling with debt and basic expenses.\n\nHowever, once financial needs are met, free time, personal relationships, and a sense of purpose become increasingly important.\n\nInterestingly, 12% of respondents said they would continue working even if they no longer needed the money.\n\nAnother 8% said they wouldn't know what else to do."
+},
+{
+"id": 32,
+"key": "TheDayIPaidItOff",
+"sender": "Unknown",
+"title": "The Day I Paid It Off",
+"body": "Hey,\n\nYou know, I actually paid off my debt a while ago.\n\nEvery last penny.\n\nAfter years of working here, they handed me my exit key and congratulated me.\n\nI'd imagined that moment a thousand times. Thought I'd be jumping around, celebrating, maybe even crying.\n\nInstead, I just stood there holding the key.\n\nFor years, my entire life had been about paying off that debt.\n\nAnd suddenly, I had nothing left to work toward.\n\nFunny. I spent so long trying to get out that I never thought about what I'd do afterward."
+},
+{
+"id": 33,
+"key": "IDontHateYou",
+"sender": "Activist",
+"title": "I Don't Hate You",
+"body": "Dear Happy Meat Employees,\n\nWe realize most of our emails probably make it sound like we think you're terrible people.\n\nWe don't.\n\nWe know many of you took these jobs because you had bills to pay, families to feed, or debts you couldn't escape.\n\nIt's easy to tell someone to quit their job when you're not the one paying their rent.\n\nChanging this industry shouldn't be your responsibility alone. That's why we're working on affordable alternatives and better regulations.\n\nWe still wish you'd stop killing Cutelings, though."
+},
+{
+"id": 34,
+"key": "LifeAfterAnIndustrialCareer",
+"sender": "News",
+"title": "Life After an Industrial Career",
+"body": "A recent report explores the challenges faced by industrial workers after retirement.\n\nMany former employees reported struggling to adjust to life without strict schedules, daily responsibilities, or familiar routines.\n\nSome discovered new hobbies, spent more time with family, or traveled for the first time in years.\n\nOthers eventually returned to work voluntarily, citing boredom and a lack of purpose.\n\nOne retired factory worker explained, \"\"I spent 30 years complaining about Mondays. Now I don't even know what day it is.\"\"\n\nResearchers suggest that preparing for retirement involves more than financial planning."
+},
+{
+"id": 35,
+"key": "WhyImStillHere",
+"sender": "Unknown",
+"title": "Why I'm Still Here",
+"body": "Hey,\n\nEver wonder why I keep sending you these emails?\n\nWhen you've worked somewhere long enough, you learn a few things. Like which machines break down, which upgrades are worth buying, and which cafeteria meals to avoid.\n\nOne day, a new employee asked me for help. Then another. Before I knew it, I was the guy everyone came to with questions.\n\nI guess helping people gives me a reason to get up in the morning.\n\nBesides, someone's gotta warn the new guys about the grinder.\n\nBut don't take my staying here as advice.\n\nYou've got your own life to figure out.\n\nAnd hopefully a better cafeteria somewhere in it."
+},
+{
+"id": 36,
+"key": "FeelingLucky",
+"sender": "Corporation",
+"title": "Feeling Lucky?",
+"body": "Dear Employee,\n\nWe're excited to introduce our new Employee Entertainment Program!\n\nYou can now request a personal slot machine for your living quarters!\n\nTake a break, try your luck, and maybe turn your hard-earned money into even more money!\n\nPlease note that all losses are final, and all proceeds go directly toward supporting our company."
+},
+{
+"id": 37,
+"key": "The999xDream",
+"sender": "Unknown",
+"title": "The 999x Dream",
+"body": "Hey,\n\nSo you got yourself a slot machine.\n\nNot a bad way to make some extra cash. I've had a few pretty good wins myself.\n\nSee that 999x jackpot?\n\nI've been working here for years, and I've never met anyone who's actually won it.\n\nAnyway, management says part of the money goes toward feeding hungry children.\n\nJudging by how much I've spent, those kids should be eating steak by now.\n\nGood luck!"
+},
+{
+"id": 38,
+"key": "AnOfferYouCantRefuse",
+"sender": "Corporation",
+"title": "An Offer You Can't Refuse!",
+"body": "Dear Employee,\n\nCongratulations! Your factory has become a valuable asset to our company!\n\nWe'd like to offer you the opportunity to sell it back to us!\n\nIn exchange, you'll receive permanent upgrade points based on your factory's value, giving you a head start in your next facility!\n\nYou'll start from scratch, but your new advantages will stay with you forever!\n\nAccepting this offer will unlock the option to sell your factory whenever you're ready. There's no rush!\n\nRemember, progress is temporary. Profits are forever!"
+},
+{
+"id": 39,
+"key": "CongratulationsYoureBrokeAgain",
+"sender": "Unknown",
+"title": "Congratulations, You're Broke Again!",
+"body": "Hey,\n\nSo you sold your entire factory.\n\nAll those machines, all that money, all that hard work.\n\nAnd now you're back to punching Cutelings with your bare hands.\n\nBeautiful, isn't it?\n\nI did the same thing once. Swore I'd never start over again.\n\nThen I saw how much faster I could make money with those permanent upgrades.\n\nLong story short, I've sold more factories than I've had birthdays.\n\nAnyway, welcome back to poverty.\n\nAt least this time you're professionally experienced at being broke."
+},
+{
+"id": 40,
+"key": "UnauthorizedTubeUsage",
+"sender": "Corporation",
+"title": "Unauthorized Tube Usage",
+"body": "Dear Employee,\n\nOur records indicate that you recently entered the canned food delivery tube.\n\nWe would like to remind you that this system is designed exclusively for transporting canned goods, not employees.\n\nWhile we appreciate your enthusiasm for our distribution network, please refrain from shipping yourself to our customers.\n\nRemember, you're much more valuable to us inside the factory!"
+},
+{
+"id": 41,
+"key": "YoureNotFood",
+"sender": "Corporation",
+"title": "You're Not Food",
+"body": "Dear Employee,\n\nOur safety department has been notified that you recently entered an active meat grinder.\n\nWe would like to remind you that employees are not approved for processing.\n\nWhile we admire your dedication to increasing production, human meat is not currently part of our product lineup.\n\nRemember, productivity comes first. Safety comes second!"
+},
+{
+"id": 42,
+"key": "OneFinalStep",
+"sender": "Corporation",
+"title": "One Final Step",
+"body": "Dear Employee,\n\nCongratulations!\n\nYou've officially purchased every available factory upgrade. Your dedication to maximizing productivity has been nothing short of extraordinary!\n\nAs a result, you are now eligible to make your final debt repayment.\n\nThe FREEDOM option is now available in your upgrade terminal. Once purchased, your remaining debt will be cleared and your exit key will be issued.\n\nAlternatively, you can sell your factory and start fresh with even greater opportunities for growth!\n\nWhatever you decide, we sincerely thank you for your hard work and commitment.\n\nOf course, we'd love to keep you in the family."
+},
+{
+"id": 43,
+"key": "OneLastThing",
+"sender": "Unknown",
+"title": "One Last Thing",
+"body": "Hey,\n\nYou actually did it.\n\nDebt paid. Freedom purchased. You're officially allowed to walk out that door.\n\nI'm impressed. Not everyone makes it this far.\n\nI know I've sent you a lot of questionable advice since you started working here, but here's one last tip.\n\nGo enjoy your life. Travel somewhere. Meet people. Find something that makes you happy.\n\nAnd whatever you do, don't get another job involving conveyor belts.\n\nSeriously. You've earned this.\n\nOh, and if you ever see a Cuteling in the wild, do me a favor.\n\nTry not to punch it.\n\nSeriously?"
+},
+{
+"id": 44,
+"key": "Seriously",
+"sender": "Unknown",
+"title": "Seriously?",
+"body": "Hey,\n\nWait.\n\nDidn't you just leave?\n\nI gave you that whole speech about enjoying life, spending time with people, and how money isn't everything.\n\nAnd you're already back?\n\n...\n\nAnyway, I think you're the expert now. There's not much left I can teach you.\n\nIt's been nice having someone to talk to.\n\nWelcome back, buddy."
+},
+{
+"id": 45,
+"key": "WelcomeBack",
+"sender": "Corporation",
+"title": "Welcome Back!",
+"body": "Dear Employee,\n\nWhat a pleasant surprise!\n\nWe were delighted to see you exercise your freedom and leave our facilities.\n\nAnd even more delighted to see you return!\n\nAs a debt-free employee, you're now free to work entirely on your own terms.\n\nOf course, our standard 30% corporate commission still applies to all earnings.\n\nAfter all, freedom isn't free!"
+}
+]

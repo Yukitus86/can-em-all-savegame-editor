@@ -1,0 +1,4307 @@
+[
+{
+"id": 1,
+"key": "MasterKey",
+"cls": "Skill",
+"cost": 666666666,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [],
+"x": 38.3,
+"y": -3.5,
+"icon": "MasterKey",
+"name": "Freedom at Last",
+"desc": "Unlock the exit. Yes, you can finally leave."
+},
+{
+"id": 2,
+"key": "PunchDamage1",
+"cls": "PunchDamageSkill",
+"cost": 1,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [],
+"x": 38.3,
+"y": 86.5,
+"icon": "punch",
+"name": "Steel Fist",
+"desc": "+1 damage with every punch."
+},
+{
+"id": 3,
+"key": "PunchDamage2",
+"cls": "PunchDamageSkill",
+"cost": 6,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+109
+],
+"x": 128.3,
+"y": -93.5,
+"icon": "punchDamage",
+"name": "Iron Fist",
+"desc": "+1 damage with every punch."
+},
+{
+"id": 4,
+"key": "AttackSpeed1",
+"cls": "AttackSpeedSkill",
+"cost": 50,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+223
+],
+"x": 128.3,
+"y": -183.5,
+"icon": "Speed",
+"name": "Fast Bonk",
+"desc": "Attack faster with melee weapons."
+},
+{
+"id": 5,
+"key": "AttackSpeed2",
+"cls": "AttackSpeedSkill",
+"cost": 1000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+224,
+4
+],
+"x": 218.3,
+"y": -273.5,
+"icon": "Speed",
+"name": "Faster Bonk",
+"desc": "Attack even faster with melee weapons."
+},
+{
+"id": 6,
+"key": "DamageIncrease1",
+"cls": "DamageSkill",
+"cost": 60,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+223
+],
+"x": 308.3,
+"y": -93.5,
+"icon": "DamageIncrease",
+"name": "More Ouch",
+"desc": "Increase all damage."
+},
+{
+"id": 7,
+"key": "DamageIncrease2",
+"cls": "DamageSkill",
+"cost": 10000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+221
+],
+"x": 488.3,
+"y": -273.5,
+"icon": "DamageIncrease",
+"name": "Extra Ouch",
+"desc": "Increase all damage."
+},
+{
+"id": 8,
+"key": "DamageIncrease3",
+"cls": "DamageSkill",
+"cost": 50000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+222
+],
+"x": 578.3,
+"y": -363.5,
+"icon": "DamageIncrease",
+"name": "Serious Ouch",
+"desc": "Increase all damage."
+},
+{
+"id": 9,
+"key": "DamageIncrease4",
+"cls": "DamageSkill",
+"cost": 1500000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+253
+],
+"x": 758.3,
+"y": -543.5,
+"icon": "DamageIncrease",
+"name": "Major Ouch",
+"desc": "Increase all damage."
+},
+{
+"id": 10,
+"key": "DamageIncrease5",
+"cls": "DamageSkill",
+"cost": 50000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+230
+],
+"x": 848.3,
+"y": -633.5,
+"icon": "DamageIncrease",
+"name": "Extreme Ouch",
+"desc": "Increase all damage."
+},
+{
+"id": 11,
+"key": "DamageIncrease6",
+"cls": "DamageSkill",
+"cost": 100000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+228
+],
+"x": 1028.3,
+"y": -813.5,
+"icon": "DamageIncrease",
+"name": "Maximum Ouch",
+"desc": "Increase all damage."
+},
+{
+"id": 12,
+"key": "CriticProbability1",
+"cls": "CriticalDamageSkill",
+"cost": 12,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+109
+],
+"x": 218.3,
+"y": 86.5,
+"icon": "Critic",
+"name": "Lucky Shot",
+"desc": "Increase critical hit chance."
+},
+{
+"id": 13,
+"key": "CriticProbability2",
+"cls": "CriticalDamageSkill",
+"cost": 300,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+105
+],
+"x": 488.3,
+"y": -93.5,
+"icon": "Critic",
+"name": "Luckier Shot",
+"desc": "Increase critical hit chance."
+},
+{
+"id": 14,
+"key": "CriticProbability3",
+"cls": "CriticalDamageSkill",
+"cost": 15000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+7
+],
+"x": 578.3,
+"y": -273.5,
+"icon": "Critic",
+"name": "Feeling Lucky",
+"desc": "Increase critical hit chance."
+},
+{
+"id": 15,
+"key": "CriticProbability4",
+"cls": "CriticalDamageSkill",
+"cost": 150000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+107
+],
+"x": 758.3,
+"y": -273.5,
+"icon": "Critic",
+"name": "Very Lucky",
+"desc": "Increase critical hit chance."
+},
+{
+"id": 16,
+"key": "CriticProbability5",
+"cls": "CriticalDamageSkill",
+"cost": 200000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+15
+],
+"x": 848.3,
+"y": -363.5,
+"icon": "Critic",
+"name": "Ridiculously Lucky",
+"desc": "Increase critical hit chance."
+},
+{
+"id": 17,
+"key": "CriticProbability6",
+"cls": "CriticalDamageSkill",
+"cost": 300000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+16
+],
+"x": 938.3,
+"y": -363.5,
+"icon": "Critic",
+"name": "Definitely Rigged",
+"desc": "Increase critical hit chance."
+},
+{
+"id": 18,
+"key": "ExplosiveBulletProbability1",
+"cls": "ExplosiveBulletSkill",
+"cost": 5000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+221
+],
+"x": 308.3,
+"y": -363.5,
+"icon": "ExplosiveBulletsChance",
+"name": "Pop Goes the Bullet",
+"desc": "Bullets have a chance to explode."
+},
+{
+"id": 19,
+"key": "ExplosiveBulletProbability2",
+"cls": "ExplosiveBulletSkill",
+"cost": 60000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+222
+],
+"x": 488.3,
+"y": -453.5,
+"icon": "ExplosiveBulletsChance",
+"name": "Bigger Chance to Boom",
+"desc": "Increase the chance for bullets to explode."
+},
+{
+"id": 20,
+"key": "ExplosiveBulletProbability3",
+"cls": "ExplosiveBulletSkill",
+"cost": 70000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+19
+],
+"x": 398.3,
+"y": -543.5,
+"icon": "ExplosiveBulletsChance",
+"name": "Boom Enthusiast",
+"desc": "Increase the chance for bullets to explode."
+},
+{
+"id": 21,
+"key": "ExplosiveBulletProbability4",
+"cls": "ExplosiveBulletSkill",
+"cost": 250000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+227
+],
+"x": 488.3,
+"y": -543.5,
+"icon": "ExplosiveBulletsChance",
+"name": "Explosive Personality",
+"desc": "Increase the chance for bullets to explode."
+},
+{
+"id": 22,
+"key": "ExplosiveBulletProbability5",
+"cls": "ExplosiveBulletSkill",
+"cost": 500000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+27
+],
+"x": 488.3,
+"y": -633.5,
+"icon": "ExplosiveBulletsChance",
+"name": "Boom Business",
+"desc": "Increase the chance for bullets to explode."
+},
+{
+"id": 23,
+"key": "ExplosiveBulletProbability6",
+"cls": "ExplosiveBulletSkill",
+"cost": 1000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+22
+],
+"x": 398.3,
+"y": -723.5,
+"icon": "ExplosiveBulletsChance",
+"name": "Everything Explodes",
+"desc": "Increase the chance for bullets to explode."
+},
+{
+"id": 24,
+"key": "ExplosiveBulletDamage1",
+"cls": "ExplosiveBulletDamageSkill",
+"cost": 8000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+18
+],
+"x": 218.3,
+"y": -453.5,
+"icon": "ExplosiveBulletsdamage",
+"name": "More Boom",
+"desc": "Increase explosive bullet damage."
+},
+{
+"id": 25,
+"key": "ExplosiveBulletDamage2",
+"cls": "ExplosiveBulletDamageSkill",
+"cost": 80000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+20
+],
+"x": 308.3,
+"y": -633.5,
+"icon": "ExplosiveBulletsdamage",
+"name": "Bigger Boom",
+"desc": "Increase explosive bullet damage."
+},
+{
+"id": 26,
+"key": "ExplosiveBulletDamage3",
+"cls": "ExplosiveBulletDamageSkill",
+"cost": 100000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+25
+],
+"x": 218.3,
+"y": -633.5,
+"icon": "ExplosiveBulletsdamage",
+"name": "Serious Boom",
+"desc": "Increase explosive bullet damage."
+},
+{
+"id": 27,
+"key": "ExplosiveBulletDamage4",
+"cls": "ExplosiveBulletDamageSkill",
+"cost": 300000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+21
+],
+"x": 398.3,
+"y": -633.5,
+"icon": "ExplosiveBulletsdamage",
+"name": "Excessive Force",
+"desc": "Increase explosive bullet damage."
+},
+{
+"id": 28,
+"key": "ExplosiveBulletDamage5",
+"cls": "ExplosiveBulletDamageSkill",
+"cost": 500000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+27
+],
+"x": 308.3,
+"y": -723.5,
+"icon": "ExplosiveBulletsdamage",
+"name": "Totally Necessary",
+"desc": "Increase explosive bullet damage."
+},
+{
+"id": 29,
+"key": "ExplosiveBulletDamage6",
+"cls": "ExplosiveBulletDamageSkill",
+"cost": 1000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+28
+],
+"x": 218.3,
+"y": -723.5,
+"icon": "ExplosiveBulletsdamage",
+"name": "Maximum Boom",
+"desc": "Greatly increase explosive bullet damage."
+},
+{
+"id": 30,
+"key": "ShootSpeed1",
+"cls": "ShootSpeedSkill",
+"cost": 2500,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+221
+],
+"x": 398.3,
+"y": -363.5,
+"icon": "ShootSpeed",
+"name": "Quick Trigger",
+"desc": "Reduce the delay between shots."
+},
+{
+"id": 31,
+"key": "ShootSpeed2",
+"cls": "ShootSpeedSkill",
+"cost": 5000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+30
+],
+"x": 308.3,
+"y": -453.5,
+"icon": "ShootSpeed",
+"name": "Trigger Happy",
+"desc": "Reduce the delay between shots."
+},
+{
+"id": 32,
+"key": "ShootSpeed3",
+"cls": "ShootSpeedSkill",
+"cost": 300000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+49
+],
+"x": 488.3,
+"y": -723.5,
+"icon": "ShootSpeed",
+"name": "Rapid Fire",
+"desc": "Reduce the delay between shots."
+},
+{
+"id": 33,
+"key": "ShootSpeed4",
+"cls": "ShootSpeedSkill",
+"cost": 6000000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+226
+],
+"x": 668.3,
+"y": -723.5,
+"icon": "ShootSpeed",
+"name": "Faster Fingers",
+"desc": "Reduce the delay between shots."
+},
+{
+"id": 34,
+"key": "ShootSpeed5",
+"cls": "ShootSpeedSkill",
+"cost": 50000000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+50
+],
+"x": 668.3,
+"y": -903.5,
+"icon": "ShootSpeed",
+"name": "Bullet Hose",
+"desc": "Reduce the delay between shots."
+},
+{
+"id": 35,
+"key": "FreeBulletProbability1",
+"cls": "FreeBulletProbability",
+"cost": 8000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+46
+],
+"x": 218.3,
+"y": -363.5,
+"icon": "FreeBulletsChance",
+"name": "Free Bullet",
+"desc": "Chance to gain 1 bullet for the weapon that killed the creature."
+},
+{
+"id": 36,
+"key": "FreeBulletProbability2",
+"cls": "FreeBulletProbability",
+"cost": 75000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+48
+],
+"x": 218.3,
+"y": -543.5,
+"icon": "FreeBulletsChance",
+"name": "Spare Ammo",
+"desc": "Increase the chance to gain 1 bullet for the weapon that killed the creature."
+},
+{
+"id": 37,
+"key": "FreeBulletProbability3",
+"cls": "FreeBulletProbability",
+"cost": 250000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+227
+],
+"x": 578.3,
+"y": -543.5,
+"icon": "FreeBulletsChance",
+"name": "Ammo Bonus",
+"desc": "Increase the chance to gain 1 bullet for the weapon that killed the creature."
+},
+{
+"id": 38,
+"key": "FreeBulletProbability4",
+"cls": "FreeBulletProbability",
+"cost": 5000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+225
+],
+"x": 668.3,
+"y": -633.5,
+"icon": "FreeBulletsChance",
+"name": "Death Pays",
+"desc": "Increase the chance to gain 1 bullet for the weapon that killed the creature."
+},
+{
+"id": 39,
+"key": "FreeBulletProbability5",
+"cls": "FreeBulletProbability",
+"cost": 40000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+50
+],
+"x": 668.3,
+"y": -813.5,
+"icon": "FreeBulletsChance",
+"name": "Loaded Luck",
+"desc": "Increase the chance to gain 1 bullet for the weapon that killed the creature."
+},
+{
+"id": 40,
+"key": "FreeBulletProbability6",
+"cls": "FreeBulletProbability",
+"cost": 100000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+228
+],
+"x": 848.3,
+"y": -813.5,
+"icon": "FreeBulletsChance",
+"name": "Ammo Farm",
+"desc": "Increase the chance to gain 1 bullet for the weapon that killed the creature."
+},
+{
+"id": 41,
+"key": "EnemyBleed1",
+"cls": "BleedingDurationSkill",
+"cost": 60,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+6
+],
+"x": 398.3,
+"y": -183.5,
+"icon": "CutesitosBleedHealth",
+"name": "Paper Cut",
+"desc": "Hits can make creatures bleed for 1 second."
+},
+{
+"id": 42,
+"key": "EnemyBleed2",
+"cls": "BleedingDurationSkill",
+"cost": 500,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+41
+],
+"x": 488.3,
+"y": -183.5,
+"icon": "CutesitosBleedHealth",
+"name": "Open Wound",
+"desc": "Bleeding lasts 2 seconds."
+},
+{
+"id": 43,
+"key": "EnemyBleed3",
+"cls": "BleedingDurationSkill",
+"cost": 2500,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+42
+],
+"x": 578.3,
+"y": -183.5,
+"icon": "CutesitosBleedHealth",
+"name": "That's a Lot of Blood",
+"desc": "Bleeding lasts 3 seconds."
+},
+{
+"id": 44,
+"key": "EnemyBleed4",
+"cls": "BleedingDurationSkill",
+"cost": 5000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+43
+],
+"x": 668.3,
+"y": -93.5,
+"icon": "CutesitosBleedHealth",
+"name": "Bleeding Problem",
+"desc": "Bleeding lasts 4 seconds."
+},
+{
+"id": 45,
+"key": "EnemyBleed5",
+"cls": "BleedingDurationSkill",
+"cost": 10000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+44
+],
+"x": 758.3,
+"y": -183.5,
+"icon": "CutesitosBleedHealth",
+"name": "Eventually Fatal",
+"desc": "Bleeding lasts 5 seconds."
+},
+{
+"id": 46,
+"key": "MoreBullet1",
+"cls": "MoreBulletSkill",
+"cost": 6000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+221
+],
+"x": 308.3,
+"y": -273.5,
+"icon": "MoreBullets",
+"name": "Extra Ammo",
+"desc": "Start each day with more ammo for all weapons."
+},
+{
+"id": 47,
+"key": "MoreBullet2",
+"cls": "MoreBulletSkill",
+"cost": 55000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+222
+],
+"x": 398.3,
+"y": -453.5,
+"icon": "MoreBullets",
+"name": "Ammo Stash",
+"desc": "Start each day with more ammo for all weapons."
+},
+{
+"id": 48,
+"key": "MoreBullet3",
+"cls": "MoreBulletSkill",
+"cost": 60000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+47
+],
+"x": 308.3,
+"y": -543.5,
+"icon": "MoreBullets",
+"name": "Stocked Up",
+"desc": "Start each day with more ammo for all weapons."
+},
+{
+"id": 49,
+"key": "MoreBullet4",
+"cls": "MoreBulletSkill",
+"cost": 250000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+37
+],
+"x": 578.3,
+"y": -633.5,
+"icon": "MoreBullets",
+"name": "Ready for Trouble",
+"desc": "Start each day with more ammo for all weapons."
+},
+{
+"id": 50,
+"key": "MoreBullet5",
+"cls": "MoreBulletSkill",
+"cost": 35000000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+230
+],
+"x": 758.3,
+"y": -813.5,
+"icon": "MoreBullets",
+"name": "Heavy Stockpile",
+"desc": "Start each day with more ammo for all weapons."
+},
+{
+"id": 51,
+"key": "MoreBullet6",
+"cls": "MoreBulletSkill",
+"cost": 100000000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+40
+],
+"x": 848.3,
+"y": -903.5,
+"icon": "MoreBullets",
+"name": "Fully Loaded",
+"desc": "Start each day with more ammo for all weapons."
+},
+{
+"id": 52,
+"key": "Throw",
+"cls": "ThrowSkill",
+"cost": 3,
+"tag": 8,
+"demo": false,
+"special": false,
+"req": [
+2
+],
+"x": 128.3,
+"y": 176.5,
+"icon": "Throw",
+"name": "Professional Yeeter",
+"desc": "Increase throwing force."
+},
+{
+"id": 53,
+"key": "Stamina1",
+"cls": "StaminaSkill",
+"cost": 8,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+52
+],
+"x": 218.3,
+"y": 176.5,
+"icon": "Stamina",
+"name": "Cardio",
+"desc": "Increase maximum stamina."
+},
+{
+"id": 54,
+"key": "Stamina2",
+"cls": "StaminaSkill",
+"cost": 150,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+183
+],
+"x": 308.3,
+"y": 176.5,
+"icon": "Stamina",
+"name": "More Cardio",
+"desc": "Increase maximum stamina."
+},
+{
+"id": 55,
+"key": "Stamina3",
+"cls": "StaminaSkill",
+"cost": 1000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+54
+],
+"x": 398.3,
+"y": 86.5,
+"icon": "Stamina",
+"name": "Good Lungs",
+"desc": "Increase maximum stamina."
+},
+{
+"id": 56,
+"key": "Stamina4",
+"cls": "StaminaSkill",
+"cost": 10000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+55
+],
+"x": 488.3,
+"y": 176.5,
+"icon": "Stamina",
+"name": "Better Lungs",
+"desc": "Increase maximum stamina."
+},
+{
+"id": 57,
+"key": "Stamina5",
+"cls": "StaminaSkill",
+"cost": 50000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+56
+],
+"x": 578.3,
+"y": 176.5,
+"icon": "Stamina",
+"name": "Marathon Material",
+"desc": "Increase maximum stamina."
+},
+{
+"id": 58,
+"key": "Stamina6",
+"cls": "StaminaSkill",
+"cost": 500000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+57
+],
+"x": 668.3,
+"y": 266.5,
+"icon": "Stamina",
+"name": "Never Skip Leg Day",
+"desc": "Increase maximum stamina."
+},
+{
+"id": 59,
+"key": "InfiniteStamina",
+"cls": "InfiniteStamina",
+"cost": 1500000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+58,
+65
+],
+"x": 758.3,
+"y": 356.5,
+"icon": "InfiniteStamina",
+"name": "Infinite Cardio",
+"desc": "Run without consuming stamina."
+},
+{
+"id": 60,
+"key": "RunSpeed1",
+"cls": "MoveSpeedSkill",
+"cost": 6,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+52
+],
+"x": 128.3,
+"y": 266.5,
+"icon": "RunSpeed",
+"name": "Move It",
+"desc": "Increase running speed."
+},
+{
+"id": 61,
+"key": "RunSpeed2",
+"cls": "MoveSpeedSkill",
+"cost": 50,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+183
+],
+"x": 308.3,
+"y": 266.5,
+"icon": "RunSpeed",
+"name": "Move It Faster",
+"desc": "Increase running speed."
+},
+{
+"id": 62,
+"key": "RunSpeed3",
+"cls": "MoveSpeedSkill",
+"cost": 120,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+61
+],
+"x": 398.3,
+"y": 176.5,
+"icon": "RunSpeed",
+"name": "Gotta Go Fast",
+"desc": "Increase running speed."
+},
+{
+"id": 63,
+"key": "RunSpeed4",
+"cls": "MoveSpeedSkill",
+"cost": 800,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+62
+],
+"x": 488.3,
+"y": 266.5,
+"icon": "RunSpeed",
+"name": "Faster Feet",
+"desc": "Increase running speed."
+},
+{
+"id": 64,
+"key": "RunSpeed5",
+"cls": "MoveSpeedSkill",
+"cost": 20000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+63
+],
+"x": 578.3,
+"y": 266.5,
+"icon": "RunSpeed",
+"name": "Human Vehicle",
+"desc": "Increase running speed."
+},
+{
+"id": 65,
+"key": "RunSpeed6",
+"cls": "MoveSpeedSkill",
+"cost": 500000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+64
+],
+"x": 668.3,
+"y": 356.5,
+"icon": "RunSpeed",
+"name": "Speed Limit Removed",
+"desc": "Increase running speed."
+},
+{
+"id": 66,
+"key": "MoreEnemies1",
+"cls": "MoreCreaturesSkill",
+"cost": 3,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+2
+],
+"x": -51.7,
+"y": 176.5,
+"icon": "MoreEnemy",
+"name": "More Creatures",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 67,
+"key": "MoreEnemies2",
+"cls": "MoreCreaturesSkill",
+"cost": 12,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+66
+],
+"x": -141.7,
+"y": 176.5,
+"icon": "MoreEnemy",
+"name": "Even More Creatures",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 68,
+"key": "MoreEnemies3",
+"cls": "MoreCreaturesSkill",
+"cost": 24,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+67
+],
+"x": -231.7,
+"y": 266.5,
+"icon": "MoreEnemy",
+"name": "Crowded Truck",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 69,
+"key": "MoreEnemies4",
+"cls": "MoreCreaturesSkill",
+"cost": 50,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+184,
+89
+],
+"x": -231.7,
+"y": 446.5,
+"icon": "MoreEnemy",
+"name": "Creature Delivery",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 70,
+"key": "MoreEnemies5",
+"cls": "MoreCreaturesSkill",
+"cost": 1000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+90
+],
+"x": -411.7,
+"y": 446.5,
+"icon": "MoreEnemy",
+"name": "Bulk Order",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 71,
+"key": "MoreEnemies6",
+"cls": "MoreCreaturesSkill",
+"cost": 10000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+185
+],
+"x": -591.7,
+"y": 446.5,
+"icon": "MoreEnemy",
+"name": "Overpopulation",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 72,
+"key": "MoreEnemies7",
+"cls": "MoreCreaturesSkill",
+"cost": 150000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+186
+],
+"x": -681.7,
+"y": 626.5,
+"icon": "MoreEnemy",
+"name": "Packed Like Sardines",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 73,
+"key": "MoreEnemies8",
+"cls": "MoreCreaturesSkill",
+"cost": 2500000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+188
+],
+"x": -861.7,
+"y": 896.5,
+"icon": "MoreEnemy",
+"name": "Creature Avalanche",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 74,
+"key": "MoreEnemies9",
+"cls": "MoreCreaturesSkill",
+"cost": 10000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+81,
+190
+],
+"x": -1041.7,
+"y": 536.5,
+"icon": "MoreEnemy",
+"name": "Way Too Many",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 75,
+"key": "MoreEnemies10",
+"cls": "MoreCreaturesSkill",
+"cost": 100000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+191
+],
+"x": -1221.7,
+"y": 446.5,
+"icon": "MoreEnemy",
+"name": "Maximum Occupancy",
+"desc": "More creatures arrive at the factory."
+},
+{
+"id": 76,
+"key": "MoreTime1",
+"cls": "DayDurationSkill",
+"cost": 60,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+68
+],
+"x": -321.7,
+"y": 356.5,
+"icon": "MoreTime",
+"name": "Five More Minutes",
+"desc": "Extend the day."
+},
+{
+"id": 77,
+"key": "MoreTime2",
+"cls": "DayDurationSkill",
+"cost": 400,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+76
+],
+"x": -411.7,
+"y": 356.5,
+"icon": "MoreTime",
+"name": "Overtime",
+"desc": "Extend the day."
+},
+{
+"id": 78,
+"key": "MoreTime3",
+"cls": "DayDurationSkill",
+"cost": 10000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+185
+],
+"x": -591.7,
+"y": 356.5,
+"icon": "MoreTime",
+"name": "Long Day",
+"desc": "Extend the day."
+},
+{
+"id": 79,
+"key": "MoreTime4",
+"cls": "DayDurationSkill",
+"cost": 100000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+84,
+186
+],
+"x": -681.7,
+"y": 536.5,
+"icon": "MoreTime",
+"name": "Longer Day",
+"desc": "Extend the day."
+},
+{
+"id": 80,
+"key": "MoreTime5",
+"cls": "DayDurationSkill",
+"cost": 500000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+85
+],
+"x": -861.7,
+"y": 446.5,
+"icon": "MoreTime",
+"name": "Sunset Can Wait",
+"desc": "Extend the day."
+},
+{
+"id": 81,
+"key": "MoreTime6",
+"cls": "DayDurationSkill",
+"cost": 1000000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+80
+],
+"x": -951.7,
+"y": 446.5,
+"icon": "MoreTime",
+"name": "Endless Workday",
+"desc": "Extend the day."
+},
+{
+"id": 82,
+"key": "NightShift1",
+"cls": "NightShiftDurationSkill",
+"cost": 50,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+68
+],
+"x": -321.7,
+"y": 266.5,
+"icon": "NightShift",
+"name": "Night Shift",
+"desc": "Keep the factory running for a while after nightfall."
+},
+{
+"id": 83,
+"key": "NightShift2",
+"cls": "NightShiftDurationSkill",
+"cost": 600,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+82
+],
+"x": -411.7,
+"y": 266.5,
+"icon": "NightShift",
+"name": "Late Shift",
+"desc": "Keep the factory running longer at night."
+},
+{
+"id": 84,
+"key": "NightShift3",
+"cls": "NightShiftDurationSkill",
+"cost": 15000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+78
+],
+"x": -681.7,
+"y": 446.5,
+"icon": "NightShift",
+"name": "Overtime Shift",
+"desc": "Keep the factory running longer at night."
+},
+{
+"id": 85,
+"key": "NightShift4",
+"cls": "NightShiftDurationSkill",
+"cost": 200000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+79
+],
+"x": -771.7,
+"y": 536.5,
+"icon": "NightShift",
+"name": "Who Needs Sleep?",
+"desc": "Keep the factory running longer at night."
+},
+{
+"id": 86,
+"key": "NightShift5",
+"cls": "NightShiftDurationSkill",
+"cost": 1000000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+85
+],
+"x": -861.7,
+"y": 626.5,
+"icon": "NightShift",
+"name": "24/7-ish",
+"desc": "Keep the factory running longer at night."
+},
+{
+"id": 87,
+"key": "NightShift6",
+"cls": "NightShiftDurationSkill",
+"cost": 5000000,
+"tag": 5,
+"demo": false,
+"special": false,
+"req": [
+86,
+189
+],
+"x": -951.7,
+"y": 716.5,
+"icon": "NightShift",
+"name": "The Factory Never Sleeps",
+"desc": "Keep the factory running even longer at night."
+},
+{
+"id": 88,
+"key": "ShinyEnemy1",
+"cls": "ShinyChanceSkill",
+"cost": 12,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+66
+],
+"x": -51.7,
+"y": 266.5,
+"icon": "shiny",
+"name": "Something Shiny",
+"desc": "Increase the chance for shiny creatures to appear."
+},
+{
+"id": 89,
+"key": "ShinyEnemy2",
+"cls": "ShinyChanceSkill",
+"cost": 45,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+88
+],
+"x": -141.7,
+"y": 356.5,
+"icon": "shiny",
+"name": "Shiny Business",
+"desc": "Increase the chance for shiny creatures to appear."
+},
+{
+"id": 90,
+"key": "ShinyEnemy3",
+"cls": "ShinyChanceSkill",
+"cost": 300,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+69
+],
+"x": -321.7,
+"y": 446.5,
+"icon": "shiny",
+"name": "Glitter Problem",
+"desc": "Increase the chance for shiny creatures to appear."
+},
+{
+"id": 91,
+"key": "ShinyEnemy4",
+"cls": "ShinyChanceSkill",
+"cost": 1200,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+70
+],
+"x": -501.7,
+"y": 446.5,
+"icon": "shiny",
+"name": "Very Shiny",
+"desc": "Increase the chance for shiny creatures to appear."
+},
+{
+"id": 92,
+"key": "ShinyEnemy5",
+"cls": "ShinyChanceSkill",
+"cost": 100000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+186
+],
+"x": -591.7,
+"y": 626.5,
+"icon": "shiny",
+"name": "Suspiciously Shiny",
+"desc": "Increase the chance for shiny creatures to appear."
+},
+{
+"id": 93,
+"key": "ShinyEnemy6",
+"cls": "ShinyChanceSkill",
+"cost": 300000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+92,
+187
+],
+"x": -681.7,
+"y": 716.5,
+"icon": "shiny",
+"name": "Shiny Paradise",
+"desc": "Increase the chance for shiny creatures to appear."
+},
+{
+"id": 94,
+"key": "ShockwaveEnemy1Chance",
+"cls": "ShockwaveSkill",
+"cost": 80,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+104
+],
+"x": 308.3,
+"y": -3.5,
+"icon": "DeathShockwave",
+"name": "Last Wave",
+"desc": "Creatures have a chance to release a shockwave when they die."
+},
+{
+"id": 95,
+"key": "ShockwaveEnemy2Chance",
+"cls": "ShockwaveSkill",
+"cost": 3000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+99,
+13
+],
+"x": 488.3,
+"y": -3.5,
+"icon": "DeathShockwave",
+"name": "Bigger Goodbye",
+"desc": "Increase the chance to release a shockwave on death."
+},
+{
+"id": 96,
+"key": "ShockwaveEnemy3Chance",
+"cls": "ShockwaveSkill",
+"cost": 5000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+95
+],
+"x": 578.3,
+"y": -93.5,
+"icon": "DeathShockwave",
+"name": "Death Wave",
+"desc": "Increase the chance to release a shockwave on death."
+},
+{
+"id": 97,
+"key": "ShockwaveEnemy4Chance",
+"cls": "ShockwaveSkill",
+"cost": 10000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+96
+],
+"x": 668.3,
+"y": -3.5,
+"icon": "DeathShockwave",
+"name": "Final Impact",
+"desc": "Increase the chance to release a shockwave on death."
+},
+{
+"id": 98,
+"key": "ShockwaveEnemy5Chance",
+"cls": "ShockwaveSkill",
+"cost": 1000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+97
+],
+"x": 758.3,
+"y": -93.5,
+"icon": "DeathShockwave",
+"name": "One Last Push",
+"desc": "Increase the chance to release a shockwave on death."
+},
+{
+"id": 99,
+"key": "ShockwaveDamage1",
+"cls": "ShockwaveDamageSkill",
+"cost": 850,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+94
+],
+"x": 398.3,
+"y": -3.5,
+"icon": "DeathShockwaveDamage",
+"name": "Personal Space",
+"desc": "Increase the damage dealt by death shockwaves."
+},
+{
+"id": 100,
+"key": "ShockwaveDamage2",
+"cls": "ShockwaveDamageSkill",
+"cost": 5000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+95
+],
+"x": 578.3,
+"y": -3.5,
+"icon": "DeathShockwaveDamage",
+"name": "Back Off",
+"desc": "Increase the damage dealt by death shockwaves."
+},
+{
+"id": 101,
+"key": "ShockwaveDamage3",
+"cls": "ShockwaveDamageSkill",
+"cost": 10000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+100
+],
+"x": 668.3,
+"y": 86.5,
+"icon": "DeathShockwaveDamage",
+"name": "Parting Gift",
+"desc": "Increase the damage dealt by death shockwaves."
+},
+{
+"id": 102,
+"key": "ShockwaveDamage4",
+"cls": "ShockwaveDamageSkill",
+"cost": 1000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+101
+],
+"x": 758.3,
+"y": -3.5,
+"icon": "DeathShockwaveDamage",
+"name": "Dying With Impact",
+"desc": "Increase the damage dealt by death shockwaves."
+},
+{
+"id": 103,
+"key": "ShockwaveDamage5",
+"cls": "ShockwaveDamageSkill",
+"cost": 1000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+102
+],
+"x": 848.3,
+"y": -93.5,
+"icon": "DeathShockwaveDamage",
+"name": "Overdramatic Exit",
+"desc": "Greatly increase the damage dealt by death shockwaves."
+},
+{
+"id": 104,
+"key": "InstantKillChanceEnemy1",
+"cls": "InstantKillSkill",
+"cost": 25,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+12
+],
+"x": 218.3,
+"y": -3.5,
+"icon": "InstantKillChance",
+"name": "Lucky Punch",
+"desc": "Any hit has a chance to instantly kill a creature."
+},
+{
+"id": 105,
+"key": "InstantKillChanceEnemy2",
+"cls": "InstantKillSkill",
+"cost": 200,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+6
+],
+"x": 398.3,
+"y": -93.5,
+"icon": "InstantKillChance",
+"name": "Unluckier Creatures",
+"desc": "Increase the chance for any hit to instantly kill a creature."
+},
+{
+"id": 106,
+"key": "InstantKillChanceEnemy3",
+"cls": "InstantKillSkill",
+"cost": 30000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+14
+],
+"x": 668.3,
+"y": -183.5,
+"icon": "InstantKillChance",
+"name": "One and Done",
+"desc": "Increase the chance for any hit to instantly kill a creature."
+},
+{
+"id": 107,
+"key": "InstantKillChanceEnemy4",
+"cls": "InstantKillSkill",
+"cost": 100000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+8,
+106
+],
+"x": 668.3,
+"y": -273.5,
+"icon": "InstantKillChance",
+"name": "Delete Button",
+"desc": "Increase the chance for any hit to instantly kill a creature."
+},
+{
+"id": 108,
+"key": "InstantKillChanceEnemy5",
+"cls": "InstantKillSkill",
+"cost": 1000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+17
+],
+"x": 1028.3,
+"y": -453.5,
+"icon": "InstantKillChance",
+"name": "Unfair Advantage",
+"desc": "Increase the chance for any hit to instantly kill a creature."
+},
+{
+"id": 109,
+"key": "PunchSpeed",
+"cls": "PunchSpeedSkill",
+"cost": 3,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+2
+],
+"x": 128.3,
+"y": -3.5,
+"icon": "PunchSpeed",
+"name": "Fast Hands",
+"desc": "Punch faster."
+},
+{
+"id": 110,
+"key": "Cans2",
+"cls": "MoreCansSkill",
+"cost": 3,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+2
+],
+"x": -51.7,
+"y": -3.5,
+"icon": "MoreCans2",
+"name": "Two for One",
+"desc": "Produce 2 cans from each creature."
+},
+{
+"id": 111,
+"key": "Cans3",
+"cls": "MoreCansSkill",
+"cost": 100,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+134,
+139,
+124
+],
+"x": -51.7,
+"y": -183.5,
+"icon": "MoreCans3",
+"name": "Triple Trouble",
+"desc": "Produce 3 cans from each creature."
+},
+{
+"id": 112,
+"key": "Cans4",
+"cls": "MoreCansSkill",
+"cost": 20000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+154,
+111
+],
+"x": -141.7,
+"y": -273.5,
+"icon": "MoreCans4",
+"name": "Can Quartet",
+"desc": "Produce 4 cans from each creature."
+},
+{
+"id": 113,
+"key": "Cans5",
+"cls": "MoreCansSkill",
+"cost": 100000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+155
+],
+"x": -141.7,
+"y": -453.5,
+"icon": "MoreCans5",
+"name": "High Yield",
+"desc": "Produce 5 cans from each creature."
+},
+{
+"id": 114,
+"key": "Cans6",
+"cls": "MoreCansSkill",
+"cost": 500000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+113
+],
+"x": -141.7,
+"y": -543.5,
+"icon": "MoreCans6",
+"name": "More Can per Can",
+"desc": "Produce 6 cans from each creature."
+},
+{
+"id": 115,
+"key": "Cans7",
+"cls": "MoreCansSkill",
+"cost": 1000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+114
+],
+"x": -231.7,
+"y": -543.5,
+"icon": "MoreCans7",
+"name": "Can Factory",
+"desc": "Produce 7 cans from each creature."
+},
+{
+"id": 116,
+"key": "Cans8",
+"cls": "MoreCansSkill",
+"cost": 10000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+156
+],
+"x": -411.7,
+"y": -633.5,
+"icon": "MoreCans8",
+"name": "Industrial Yield",
+"desc": "Produce 8 cans from each creature."
+},
+{
+"id": 117,
+"key": "Cans9",
+"cls": "MoreCansSkill",
+"cost": 50000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+157
+],
+"x": -321.7,
+"y": -813.5,
+"icon": "MoreCans9",
+"name": "Can Overload",
+"desc": "Produce 9 cans from each creature."
+},
+{
+"id": 118,
+"key": "Cans10",
+"cls": "MoreCansSkill",
+"cost": 100000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+117
+],
+"x": -231.7,
+"y": -813.5,
+"icon": "MoreCans10",
+"name": "Maximum Canning",
+"desc": "Produce 10 cans from each creature."
+},
+{
+"id": 119,
+"key": "DuplicateCanChance1",
+"cls": "ExtraCanChanceSkill",
+"cost": 12,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+129
+],
+"x": -231.7,
+"y": -3.5,
+"icon": "CanLucky",
+"name": "Copy Can",
+"desc": "Each can produced has a chance to duplicate itself."
+},
+{
+"id": 120,
+"key": "DuplicateCanChance2",
+"cls": "ExtraCanChanceSkill",
+"cost": 3500,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+140
+],
+"x": -501.7,
+"y": -273.5,
+"icon": "CanLucky",
+"name": "Copy Machine",
+"desc": "Increase the chance for each can to duplicate itself."
+},
+{
+"id": 121,
+"key": "DuplicateCanChance3",
+"cls": "ExtraCanChanceSkill",
+"cost": 4000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+120
+],
+"x": -591.7,
+"y": -273.5,
+"icon": "CanLucky",
+"name": "Can Duplication",
+"desc": "Increase the chance for each can to duplicate itself."
+},
+{
+"id": 122,
+"key": "DuplicateCanChance4",
+"cls": "ExtraCanChanceSkill",
+"cost": 25000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+127
+],
+"x": -141.7,
+"y": -723.5,
+"icon": "CanLucky",
+"name": "Free Can",
+"desc": "Increase the chance for each can to duplicate itself."
+},
+{
+"id": 123,
+"key": "DuplicateCanChance5",
+"cls": "ExtraCanChanceSkill",
+"cost": 25000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+157
+],
+"x": -411.7,
+"y": -813.5,
+"icon": "CanLucky",
+"name": "Can Printer",
+"desc": "Increase the chance for each can to duplicate itself."
+},
+{
+"id": 124,
+"key": "CansValue1",
+"cls": "CanValueMultiplierSkill",
+"cost": 12,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+110
+],
+"x": 38.3,
+"y": -93.5,
+"icon": "CanValue",
+"name": "Premium Cans",
+"desc": "Increase the value of every can."
+},
+{
+"id": 125,
+"key": "CansValue2",
+"cls": "CanValueMultiplierSkill",
+"cost": 2000,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+154
+],
+"x": -321.7,
+"y": -273.5,
+"icon": "CanValue",
+"name": "Better Cans",
+"desc": "Increase the value of every can."
+},
+{
+"id": 126,
+"key": "CansValue3",
+"cls": "CanValueMultiplierSkill",
+"cost": 200000,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+155
+],
+"x": -231.7,
+"y": -453.5,
+"icon": "CanValue",
+"name": "Expensive Cans",
+"desc": "Increase the value of every can."
+},
+{
+"id": 127,
+"key": "CansValue4",
+"cls": "CanValueMultiplierSkill",
+"cost": 2500000,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+115
+],
+"x": -231.7,
+"y": -633.5,
+"icon": "CanValue",
+"name": "Luxury Cans",
+"desc": "Increase the value of every can."
+},
+{
+"id": 128,
+"key": "CansValue5",
+"cls": "CanValueMultiplierSkill",
+"cost": 50000000,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+157
+],
+"x": -501.7,
+"y": -813.5,
+"icon": "CanValue",
+"name": "Overpriced Cans",
+"desc": "Increase the value of every can."
+},
+{
+"id": 129,
+"key": "ShinyCan1",
+"cls": "ShinyCanChanceSkill",
+"cost": 12,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+110
+],
+"x": -141.7,
+"y": -3.5,
+"icon": "ShinyCan",
+"name": "Shiny Cans",
+"desc": "Increase the chance to produce a shiny can."
+},
+{
+"id": 130,
+"key": "ShinyCan2",
+"cls": "ShinyCanChanceSkill",
+"cost": 3000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+125
+],
+"x": -411.7,
+"y": -363.5,
+"icon": "ShinyCan",
+"name": "Shinier Cans",
+"desc": "Increase the chance to produce a shiny can."
+},
+{
+"id": 131,
+"key": "ShinyCan3",
+"cls": "ShinyCanChanceSkill",
+"cost": 4000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+141
+],
+"x": -591.7,
+"y": -363.5,
+"icon": "ShinyCan",
+"name": "Can Bling",
+"desc": "Increase the chance to produce a shiny can."
+},
+{
+"id": 132,
+"key": "ShinyCan4",
+"cls": "ShinyCanChanceSkill",
+"cost": 15000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+156
+],
+"x": -231.7,
+"y": -723.5,
+"icon": "ShinyCan",
+"name": "Premium Shine",
+"desc": "Increase the chance to produce a shiny can."
+},
+{
+"id": 133,
+"key": "ShinyCan5",
+"cls": "ShinyCanChanceSkill",
+"cost": 25000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+123
+],
+"x": -501.7,
+"y": -903.5,
+"icon": "ShinyCan",
+"name": "Certified Shiny",
+"desc": "Increase the chance to produce a shiny can."
+},
+{
+"id": 134,
+"key": "ShinyCanMultiplier1",
+"cls": "ShinyValueSkill",
+"cost": 12,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+129
+],
+"x": -141.7,
+"y": -93.5,
+"icon": "ShinyCanMultiplier",
+"name": "Shiny Premium",
+"desc": "Shiny cans are worth even more."
+},
+{
+"id": 135,
+"key": "ShinyCanMultiplier2",
+"cls": "ShinyValueSkill",
+"cost": 2500,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+125
+],
+"x": -321.7,
+"y": -363.5,
+"icon": "ShinyCanMultiplier",
+"name": "Shinier Profits",
+"desc": "Shiny cans are worth even more."
+},
+{
+"id": 136,
+"key": "ShinyCanMultiplier3",
+"cls": "ShinyValueSkill",
+"cost": 5000,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+131
+],
+"x": -681.7,
+"y": -273.5,
+"icon": "ShinyCanMultiplier",
+"name": "Golden Business",
+"desc": "Shiny cans are worth even more."
+},
+{
+"id": 137,
+"key": "ShinyCanMultiplier4",
+"cls": "ShinyValueSkill",
+"cost": 50000000,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+142
+],
+"x": -51.7,
+"y": -813.5,
+"icon": "ShinyCanMultiplier",
+"name": "Shiny Economics",
+"desc": "Shiny cans are worth even more."
+},
+{
+"id": 138,
+"key": "ShinyCanMultiplier5",
+"cls": "ShinyValueSkill",
+"cost": 50000000,
+"tag": 9,
+"demo": false,
+"special": false,
+"req": [
+133
+],
+"x": -591.7,
+"y": -903.5,
+"icon": "ShinyCanMultiplier",
+"name": "Worth Its Weight",
+"desc": "Shiny cans are worth even more."
+},
+{
+"id": 139,
+"key": "DuplicateCoins1",
+"cls": "DuplicateMoneyChanceSkill",
+"cost": 12,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+129
+],
+"x": -51.7,
+"y": -93.5,
+"icon": "DuplicateCoins",
+"name": "Double Dip",
+"desc": "Chance to duplicate the money earned from a can."
+},
+{
+"id": 140,
+"key": "DuplicateCoins2",
+"cls": "DuplicateMoneyChanceSkill",
+"cost": 2500,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+125
+],
+"x": -411.7,
+"y": -273.5,
+"icon": "DuplicateCoins",
+"name": "Money Copier",
+"desc": "Increase the chance to duplicate money earned from cans."
+},
+{
+"id": 141,
+"key": "DuplicateCoins3",
+"cls": "DuplicateMoneyChanceSkill",
+"cost": 3000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+140
+],
+"x": -501.7,
+"y": -363.5,
+"icon": "DuplicateCoins",
+"name": "Free Money",
+"desc": "Increase the chance to duplicate money earned from cans."
+},
+{
+"id": 142,
+"key": "DuplicateCoins4",
+"cls": "DuplicateMoneyChanceSkill",
+"cost": 25000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+132
+],
+"x": -141.7,
+"y": -813.5,
+"icon": "DuplicateCoins",
+"name": "Definitely Legal",
+"desc": "Increase the chance to duplicate money earned from cans."
+},
+{
+"id": 143,
+"key": "DuplicateCoins5",
+"cls": "DuplicateMoneyChanceSkill",
+"cost": 50000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+123
+],
+"x": -321.7,
+"y": -903.5,
+"icon": "DuplicateCoins",
+"name": "Money Printer",
+"desc": "Increase the chance to duplicate money earned from cans."
+},
+{
+"id": 144,
+"key": "ProductionTime1",
+"cls": "CanProcessingSpeedSkill",
+"cost": 250,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+162
+],
+"x": -321.7,
+"y": -93.5,
+"icon": "shorter_cycle",
+"name": "Faster Processing",
+"desc": "Reduce machine processing time."
+},
+{
+"id": 145,
+"key": "ProductionTime2",
+"cls": "CanProcessingSpeedSkill",
+"cost": 25000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+112
+],
+"x": -51.7,
+"y": -363.5,
+"icon": "shorter_cycle",
+"name": "Faster Factory",
+"desc": "Reduce machine processing time."
+},
+{
+"id": 146,
+"key": "ProductionTime3",
+"cls": "CanProcessingSpeedSkill",
+"cost": 100000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+145
+],
+"x": -51.7,
+"y": -453.5,
+"icon": "shorter_cycle",
+"name": "Industrial Speed",
+"desc": "Reduce machine processing time."
+},
+{
+"id": 147,
+"key": "ProductionTime4",
+"cls": "CanProcessingSpeedSkill",
+"cost": 300000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+172
+],
+"x": -771.7,
+"y": -453.5,
+"icon": "shorter_cycle",
+"name": "No Time to Waste",
+"desc": "Reduce machine processing time."
+},
+{
+"id": 148,
+"key": "ProductionTime5",
+"cls": "CanProcessingSpeedSkill",
+"cost": 15000000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+116
+],
+"x": -501.7,
+"y": -633.5,
+"icon": "shorter_cycle",
+"name": "Instant-ish Processing",
+"desc": "Reduce machine processing time."
+},
+{
+"id": 149,
+"key": "FasterConveyor1",
+"cls": "ConveyorSpeedSkill",
+"cost": 25000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+112
+],
+"x": -141.7,
+"y": -363.5,
+"icon": "faster_conveyor",
+"name": "Faster Belts",
+"desc": "Increase conveyor belt speed."
+},
+{
+"id": 150,
+"key": "FasterConveyor2",
+"cls": "ConveyorSpeedSkill",
+"cost": 5000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+167
+],
+"x": -771.7,
+"y": -123.5,
+"icon": "faster_conveyor",
+"name": "Speedy Belts",
+"desc": "Increase conveyor belt speed."
+},
+{
+"id": 151,
+"key": "FasterConveyor3",
+"cls": "ConveyorSpeedSkill",
+"cost": 250000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+172
+],
+"x": -771.7,
+"y": -363.5,
+"icon": "faster_conveyor",
+"name": "Express Delivery",
+"desc": "Increase conveyor belt speed."
+},
+{
+"id": 152,
+"key": "FasterConveyor4",
+"cls": "ConveyorSpeedSkill",
+"cost": 10000000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+177
+],
+"x": -771.7,
+"y": -633.5,
+"icon": "faster_conveyor",
+"name": "Can Highway",
+"desc": "Increase conveyor belt speed."
+},
+{
+"id": 153,
+"key": "FasterConveyor5",
+"cls": "ConveyorSpeedSkill",
+"cost": 50000000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+182
+],
+"x": -951.7,
+"y": -633.5,
+"icon": "faster_conveyor",
+"name": "Maximum Belt",
+"desc": "Increase conveyor belt speed."
+},
+{
+"id": 154,
+"key": "Machine2",
+"cls": "UnlockMachineSkill",
+"cost": 1000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+162
+],
+"x": -231.7,
+"y": -183.5,
+"icon": "Machine",
+"name": "Factory Expansion",
+"desc": "Unlock Machine 2."
+},
+{
+"id": 155,
+"key": "Machine3",
+"cls": "UnlockMachineSkill",
+"cost": 50000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+112
+],
+"x": -231.7,
+"y": -363.5,
+"icon": "Machine",
+"name": "More Machinery",
+"desc": "Unlock Machine 3."
+},
+{
+"id": 156,
+"key": "Machine4",
+"cls": "UnlockMachineSkill",
+"cost": 5000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+115
+],
+"x": -321.7,
+"y": -633.5,
+"icon": "Machine",
+"name": "Industrial Expansion",
+"desc": "Unlock Machine 4."
+},
+{
+"id": 157,
+"key": "Machine5",
+"cls": "UnlockMachineSkill",
+"cost": 25000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+116
+],
+"x": -411.7,
+"y": -723.5,
+"icon": "Machine",
+"name": "Full Production",
+"desc": "Unlock Machine 5."
+},
+{
+"id": 158,
+"key": "UnlockConveyor1_1",
+"cls": "UnlockConveyorSkill",
+"cost": 12,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+110
+],
+"x": -141.7,
+"y": 86.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 1.1",
+"desc": "Unlock another conveyor section for Machine 1."
+},
+{
+"id": 159,
+"key": "UnlockConveyor1_2",
+"cls": "UnlockConveyorSkill",
+"cost": 25,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+158
+],
+"x": -231.7,
+"y": 86.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 1.2",
+"desc": "Unlock another conveyor section for Machine 1."
+},
+{
+"id": 160,
+"key": "UnlockConveyor1_3",
+"cls": "UnlockConveyorSkill",
+"cost": 60,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+159
+],
+"x": -321.7,
+"y": 86.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 1.3",
+"desc": "Unlock another conveyor section for Machine 1."
+},
+{
+"id": 161,
+"key": "UnlockConveyor1_4",
+"cls": "UnlockConveyorSkill",
+"cost": 70,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+160
+],
+"x": -321.7,
+"y": -3.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 1.4",
+"desc": "Unlock another conveyor section for Machine 1."
+},
+{
+"id": 162,
+"key": "UnlockConveyor1_5",
+"cls": "UnlockConveyorSkill",
+"cost": 80,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+161
+],
+"x": -231.7,
+"y": -93.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 1.5",
+"desc": "Unlock another conveyor section for Machine 1."
+},
+{
+"id": 163,
+"key": "UnlockConveyor2_1",
+"cls": "UnlockConveyorSkill",
+"cost": 1000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+154
+],
+"x": -321.7,
+"y": -183.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 2.1",
+"desc": "Unlock another conveyor section for Machine 2."
+},
+{
+"id": 164,
+"key": "UnlockConveyor2_2",
+"cls": "UnlockConveyorSkill",
+"cost": 1500,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+163
+],
+"x": -411.7,
+"y": -183.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 2.2",
+"desc": "Unlock another conveyor section for Machine 2."
+},
+{
+"id": 165,
+"key": "UnlockConveyor2_3",
+"cls": "UnlockConveyorSkill",
+"cost": 2000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+164
+],
+"x": -501.7,
+"y": -183.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 2.3",
+"desc": "Unlock another conveyor section for Machine 2."
+},
+{
+"id": 166,
+"key": "UnlockConveyor2_4",
+"cls": "UnlockConveyorSkill",
+"cost": 3000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+165
+],
+"x": -591.7,
+"y": -183.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 2.4",
+"desc": "Unlock another conveyor section for Machine 2."
+},
+{
+"id": 167,
+"key": "UnlockConveyor2_5",
+"cls": "UnlockConveyorSkill",
+"cost": 3500,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+166
+],
+"x": -681.7,
+"y": -183.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 2.5",
+"desc": "Unlock another conveyor section for Machine 2."
+},
+{
+"id": 168,
+"key": "UnlockConveyor3_1",
+"cls": "UnlockConveyorSkill",
+"cost": 50000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+155
+],
+"x": -321.7,
+"y": -453.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 3.1",
+"desc": "Unlock another conveyor section for Machine 3."
+},
+{
+"id": 169,
+"key": "UnlockConveyor3_2",
+"cls": "UnlockConveyorSkill",
+"cost": 75000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+168
+],
+"x": -411.7,
+"y": -453.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 3.2",
+"desc": "Unlock another conveyor section for Machine 3."
+},
+{
+"id": 170,
+"key": "UnlockConveyor3_3",
+"cls": "UnlockConveyorSkill",
+"cost": 100000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+169
+],
+"x": -501.7,
+"y": -453.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 3.3",
+"desc": "Unlock another conveyor section for Machine 3."
+},
+{
+"id": 171,
+"key": "UnlockConveyor3_4",
+"cls": "UnlockConveyorSkill",
+"cost": 150000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+170
+],
+"x": -591.7,
+"y": -453.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 3.4",
+"desc": "Unlock another conveyor section for Machine 3."
+},
+{
+"id": 172,
+"key": "UnlockConveyor3_5",
+"cls": "UnlockConveyorSkill",
+"cost": 200000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+171
+],
+"x": -681.7,
+"y": -453.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 3.5",
+"desc": "Unlock another conveyor section for Machine 3."
+},
+{
+"id": 173,
+"key": "UnlockConveyor4_1",
+"cls": "UnlockConveyorSkill",
+"cost": 5000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+156
+],
+"x": -321.7,
+"y": -543.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 4.1",
+"desc": "Unlock another conveyor section for Machine 4."
+},
+{
+"id": 174,
+"key": "UnlockConveyor4_2",
+"cls": "UnlockConveyorSkill",
+"cost": 5500000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+173
+],
+"x": -411.7,
+"y": -543.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 4.2",
+"desc": "Unlock another conveyor section for Machine 4."
+},
+{
+"id": 175,
+"key": "UnlockConveyor4_3",
+"cls": "UnlockConveyorSkill",
+"cost": 6000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+174
+],
+"x": -501.7,
+"y": -543.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 4.3",
+"desc": "Unlock another conveyor section for Machine 4."
+},
+{
+"id": 176,
+"key": "UnlockConveyor4_4",
+"cls": "UnlockConveyorSkill",
+"cost": 6500000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+175
+],
+"x": -591.7,
+"y": -543.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 4.4",
+"desc": "Unlock another conveyor section for Machine 4."
+},
+{
+"id": 177,
+"key": "UnlockConveyor4_5",
+"cls": "UnlockConveyorSkill",
+"cost": 7000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+176
+],
+"x": -681.7,
+"y": -543.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 4.5",
+"desc": "Unlock another conveyor section for Machine 4."
+},
+{
+"id": 178,
+"key": "UnlockConveyor5_1",
+"cls": "UnlockConveyorSkill",
+"cost": 25000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+157
+],
+"x": -501.7,
+"y": -723.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 5.1",
+"desc": "Unlock another conveyor section for Machine 5."
+},
+{
+"id": 179,
+"key": "UnlockConveyor5_2",
+"cls": "UnlockConveyorSkill",
+"cost": 30000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+178
+],
+"x": -591.7,
+"y": -723.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 5.2",
+"desc": "Unlock another conveyor section for Machine 5."
+},
+{
+"id": 180,
+"key": "UnlockConveyor5_3",
+"cls": "UnlockConveyorSkill",
+"cost": 35000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+179
+],
+"x": -681.7,
+"y": -723.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 5.3",
+"desc": "Unlock another conveyor section for Machine 5."
+},
+{
+"id": 181,
+"key": "UnlockConveyor5_4",
+"cls": "UnlockConveyorSkill",
+"cost": 40000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+180
+],
+"x": -771.7,
+"y": -723.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 5.4",
+"desc": "Unlock another conveyor section for Machine 5."
+},
+{
+"id": 182,
+"key": "UnlockConveyor5_5",
+"cls": "UnlockConveyorSkill",
+"cost": 50000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+181
+],
+"x": -861.7,
+"y": -723.5,
+"icon": "unlock_conveyor",
+"name": "Conveyor 5.5",
+"desc": "Unlock another conveyor section for Machine 5."
+},
+{
+"id": 183,
+"key": "Vacuum",
+"cls": "UnlockWeapon",
+"cost": 40,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+60,
+53
+],
+"x": 218.3,
+"y": 266.5,
+"icon": "miniVacoon",
+"name": "Industrial Vacuum",
+"desc": "Unlock the Vacuum. Suck up creatures, cans, and anything else that fits."
+},
+{
+"id": 184,
+"key": "UnlockEnemy1",
+"cls": "UnlockEnemySkill",
+"cost": 40,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+68
+],
+"x": -231.7,
+"y": 356.5,
+"icon": "UnlockEnemy",
+"name": "New Creature",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 185,
+"key": "UnlockEnemy2",
+"cls": "UnlockEnemySkill",
+"cost": 3000,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+70,
+77,
+83
+],
+"x": -501.7,
+"y": 356.5,
+"icon": "UnlockEnemy",
+"name": "Another Creature",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 186,
+"key": "UnlockEnemy3",
+"cls": "UnlockEnemySkill",
+"cost": 30000,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+71,
+91
+],
+"x": -591.7,
+"y": 536.5,
+"icon": "UnlockEnemy",
+"name": "Creature Variety",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 187,
+"key": "UnlockEnemy4",
+"cls": "UnlockEnemySkill",
+"cost": 300000,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+72,
+85
+],
+"x": -771.7,
+"y": 626.5,
+"icon": "UnlockEnemy",
+"name": "More Flavors",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 188,
+"key": "UnlockEnemy5",
+"cls": "UnlockEnemySkill",
+"cost": 1000000,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+93
+],
+"x": -771.7,
+"y": 806.5,
+"icon": "UnlockEnemy",
+"name": "Fresh Meat",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 189,
+"key": "UnlockEnemy6",
+"cls": "UnlockEnemySkill",
+"cost": 5000000,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+73
+],
+"x": -951.7,
+"y": 806.5,
+"icon": "UnlockEnemy",
+"name": "New Arrival",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 190,
+"key": "UnlockEnemy7",
+"cls": "UnlockEnemySkill",
+"cost": 10000000,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+87
+],
+"x": -1041.7,
+"y": 626.5,
+"icon": "UnlockEnemy",
+"name": "Creature Collection",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 191,
+"key": "UnlockEnemy8",
+"cls": "UnlockEnemySkill",
+"cost": 50000000,
+"tag": 11,
+"demo": false,
+"special": true,
+"req": [
+74
+],
+"x": -1131.7,
+"y": 536.5,
+"icon": "UnlockEnemy",
+"name": "Full Menu",
+"desc": "Unlock a new creature that produces more valuable cans."
+},
+{
+"id": 192,
+"key": "VacuumSpeed1",
+"cls": "VacuumShootSpeedSkill",
+"cost": 150,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+204
+],
+"x": 128.3,
+"y": 446.5,
+"icon": "VacuumSpeed",
+"name": "Rapid Fire",
+"desc": "Increase Vacuum firing speed."
+},
+{
+"id": 193,
+"key": "VacuumSpeed2",
+"cls": "VacuumShootSpeedSkill",
+"cost": 500,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+192
+],
+"x": 128.3,
+"y": 536.5,
+"icon": "VacuumSpeed",
+"name": "Faster Firing",
+"desc": "Increase Vacuum firing speed."
+},
+{
+"id": 194,
+"key": "VacuumSpeed3",
+"cls": "VacuumShootSpeedSkill",
+"cost": 1000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+193
+],
+"x": 218.3,
+"y": 536.5,
+"icon": "VacuumSpeed",
+"name": "Vacuum Gun",
+"desc": "Increase Vacuum firing speed."
+},
+{
+"id": 195,
+"key": "VacuumSpeed4",
+"cls": "VacuumShootSpeedSkill",
+"cost": 100000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+210
+],
+"x": 218.3,
+"y": 716.5,
+"icon": "VacuumSpeed",
+"name": "Rapid Vacuum",
+"desc": "Increase Vacuum firing speed."
+},
+{
+"id": 196,
+"key": "VacuumSpeed5",
+"cls": "VacuumShootSpeedSkill",
+"cost": 500000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+195
+],
+"x": 128.3,
+"y": 806.5,
+"icon": "VacuumSpeed",
+"name": "Creature Cannon",
+"desc": "Increase Vacuum firing speed."
+},
+{
+"id": 197,
+"key": "VacuumSpeed6",
+"cls": "VacuumShootSpeedSkill",
+"cost": 1000000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+196
+],
+"x": 218.3,
+"y": 896.5,
+"icon": "VacuumSpeed",
+"name": "Full Auto Vacuum",
+"desc": "Increase Vacuum firing speed."
+},
+{
+"id": 198,
+"key": "VacuumRange1",
+"cls": "VacuumRangeSkill",
+"cost": 50,
+"tag": 6,
+"demo": false,
+"special": false,
+"req": [
+183
+],
+"x": 218.3,
+"y": 356.5,
+"icon": "VacuumRange",
+"name": "Long Shot",
+"desc": "Increase Vacuum suction range."
+},
+{
+"id": 199,
+"key": "VacuumRange2",
+"cls": "VacuumRangeSkill",
+"cost": 150,
+"tag": 6,
+"demo": false,
+"special": false,
+"req": [
+198
+],
+"x": 308.3,
+"y": 446.5,
+"icon": "VacuumRange",
+"name": "Longer Shot",
+"desc": "Increase Vacuum suction range."
+},
+{
+"id": 200,
+"key": "VacuumRange3",
+"cls": "VacuumRangeSkill",
+"cost": 1000,
+"tag": 6,
+"demo": false,
+"special": false,
+"req": [
+199
+],
+"x": 398.3,
+"y": 446.5,
+"icon": "VacuumRange",
+"name": "Reach Out",
+"desc": "Increase Vacuum suction range."
+},
+{
+"id": 201,
+"key": "VacuumRange4",
+"cls": "VacuumRangeSkill",
+"cost": 5000,
+"tag": 6,
+"demo": false,
+"special": false,
+"req": [
+200
+],
+"x": 398.3,
+"y": 536.5,
+"icon": "VacuumRange",
+"name": "Long Distance Relationship",
+"desc": "Increase Vacuum suction range."
+},
+{
+"id": 202,
+"key": "VacuumRange5",
+"cls": "VacuumRangeSkill",
+"cost": 100000,
+"tag": 6,
+"demo": false,
+"special": false,
+"req": [
+218
+],
+"x": 578.3,
+"y": 716.5,
+"icon": "VacuumRange",
+"name": "Remote Vacuuming",
+"desc": "Increase Vacuum suction range."
+},
+{
+"id": 203,
+"key": "VacuumRange6",
+"cls": "VacuumRangeSkill",
+"cost": 500000,
+"tag": 6,
+"demo": false,
+"special": false,
+"req": [
+202
+],
+"x": 668.3,
+"y": 626.5,
+"icon": "VacuumRange",
+"name": "Reach Everything",
+"desc": "Increase Vacuum suction range."
+},
+{
+"id": 204,
+"key": "VacuumForce1",
+"cls": "VacuumShootDistanceSkill",
+"cost": 50,
+"tag": 8,
+"demo": false,
+"special": false,
+"req": [
+183
+],
+"x": 128.3,
+"y": 356.5,
+"icon": "VacuumForce",
+"name": "Harder Throw",
+"desc": "Shoot objects farther with the Vacuum."
+},
+{
+"id": 205,
+"key": "VacuumForce2",
+"cls": "VacuumShootDistanceSkill",
+"cost": 150,
+"tag": 8,
+"demo": false,
+"special": false,
+"req": [
+204
+],
+"x": 218.3,
+"y": 446.5,
+"icon": "VacuumForce",
+"name": "Harder and Farther",
+"desc": "Shoot objects farther with the Vacuum."
+},
+{
+"id": 206,
+"key": "VacuumForce3",
+"cls": "VacuumShootDistanceSkill",
+"cost": 5000,
+"tag": 8,
+"demo": false,
+"special": false,
+"req": [
+205,
+194
+],
+"x": 308.3,
+"y": 536.5,
+"icon": "VacuumForce",
+"name": "Can Cannon",
+"desc": "Shoot objects farther with the Vacuum."
+},
+{
+"id": 207,
+"key": "VacuumForce4",
+"cls": "VacuumShootDistanceSkill",
+"cost": 100000,
+"tag": 8,
+"demo": false,
+"special": false,
+"req": [
+210
+],
+"x": 308.3,
+"y": 806.5,
+"icon": "VacuumForce",
+"name": "Creature Artillery",
+"desc": "Shoot objects farther with the Vacuum."
+},
+{
+"id": 208,
+"key": "VacuumForce5",
+"cls": "VacuumShootDistanceSkill",
+"cost": 500000,
+"tag": 8,
+"demo": false,
+"special": false,
+"req": [
+207
+],
+"x": 218.3,
+"y": 806.5,
+"icon": "VacuumForce",
+"name": "Across the Factory",
+"desc": "Shoot objects farther with the Vacuum."
+},
+{
+"id": 209,
+"key": "VacuumForce6",
+"cls": "VacuumShootDistanceSkill",
+"cost": 1000000,
+"tag": 8,
+"demo": false,
+"special": false,
+"req": [
+208
+],
+"x": 308.3,
+"y": 896.5,
+"icon": "VacuumForce",
+"name": "See You Later",
+"desc": "Shoot objects much farther with the Vacuum."
+},
+{
+"id": 210,
+"key": "HoleInOne1",
+"cls": "HoleInOneSkill",
+"cost": 20000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+254
+],
+"x": 308.3,
+"y": 716.5,
+"icon": "HoleInOne",
+"name": "Hole in One",
+"desc": "Shooting cans directly into the seller has a chance to earn bonus money."
+},
+{
+"id": 211,
+"key": "HoleInOne2",
+"cls": "HoleInOneSkill",
+"cost": 100000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+210
+],
+"x": 218.3,
+"y": 626.5,
+"icon": "HoleInOne",
+"name": "Nice Shot",
+"desc": "Increase the chance to earn bonus money from direct shots."
+},
+{
+"id": 212,
+"key": "HoleInOne3",
+"cls": "HoleInOneSkill",
+"cost": 1000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+211
+],
+"x": 128.3,
+"y": 626.5,
+"icon": "HoleInOne",
+"name": "Professional Canning",
+"desc": "Increase the chance to earn bonus money from direct shots."
+},
+{
+"id": 213,
+"key": "HoleInOne4",
+"cls": "HoleInOneSkill",
+"cost": 2000000,
+"tag": 3,
+"demo": false,
+"special": false,
+"req": [
+197,
+209
+],
+"x": 308.3,
+"y": 986.5,
+"icon": "HoleInOne",
+"name": "Conveyors Are Optional",
+"desc": "Increase the chance to earn bonus money from direct shots."
+},
+{
+"id": 214,
+"key": "VacuumStorage1",
+"cls": "VacuumStorageSkill",
+"cost": 50,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+183
+],
+"x": 308.3,
+"y": 356.5,
+"icon": "VacuumStorage",
+"name": "Bigger Bag",
+"desc": "Increase Vacuum storage capacity."
+},
+{
+"id": 215,
+"key": "VacuumStorage2",
+"cls": "VacuumStorageSkill",
+"cost": 150,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+214
+],
+"x": 398.3,
+"y": 356.5,
+"icon": "VacuumStorage",
+"name": "Bigger Bigger Bag",
+"desc": "Increase Vacuum storage capacity."
+},
+{
+"id": 216,
+"key": "VacuumStorage3",
+"cls": "VacuumStorageSkill",
+"cost": 500,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+215
+],
+"x": 488.3,
+"y": 446.5,
+"icon": "VacuumStorage",
+"name": "Deep Pockets",
+"desc": "Increase Vacuum storage capacity."
+},
+{
+"id": 217,
+"key": "VacuumStorage4",
+"cls": "VacuumStorageSkill",
+"cost": 5000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+216
+],
+"x": 488.3,
+"y": 536.5,
+"icon": "VacuumStorage",
+"name": "Portable Warehouse",
+"desc": "Increase Vacuum storage capacity."
+},
+{
+"id": 218,
+"key": "VacuumStorage5",
+"cls": "VacuumStorageSkill",
+"cost": 20000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+254
+],
+"x": 488.3,
+"y": 716.5,
+"icon": "VacuumStorage",
+"name": "Where Does It All Fit?",
+"desc": "Increase Vacuum storage capacity."
+},
+{
+"id": 219,
+"key": "VacuumStorage6",
+"cls": "VacuumStorageSkill",
+"cost": 1000000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+218
+],
+"x": 578.3,
+"y": 626.5,
+"icon": "VacuumStorage",
+"name": "Pocket Dimension",
+"desc": "Increase Vacuum storage capacity."
+},
+{
+"id": 220,
+"key": "VacuumDuplicateSpace",
+"cls": "VacuumDuplicateStorageSkill",
+"cost": 100000,
+"tag": 7,
+"demo": false,
+"special": false,
+"req": [
+217
+],
+"x": 578.3,
+"y": 536.5,
+"icon": "DuplicateSpace",
+"name": "Double Storage",
+"desc": "Double your Vacuum storage capacity."
+},
+{
+"id": 221,
+"key": "Pistol",
+"cls": "UnlockWeapon",
+"cost": 3000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+224
+],
+"x": 398.3,
+"y": -273.5,
+"icon": "gun",
+"name": "Pistol",
+"desc": "Unlock the Pistol."
+},
+{
+"id": 222,
+"key": "Uzi",
+"cls": "UnlockWeapon",
+"cost": 50000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+221
+],
+"x": 488.3,
+"y": -363.5,
+"icon": "Uzi",
+"name": "SMG",
+"desc": "Unlock the SMG."
+},
+{
+"id": 223,
+"key": "Bat",
+"cls": "UnlockWeapon",
+"cost": 40,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+109
+],
+"x": 218.3,
+"y": -93.5,
+"icon": "bat",
+"name": "Baseball Bat",
+"desc": "Unlock the Baseball Bat."
+},
+{
+"id": 224,
+"key": "Knife",
+"cls": "UnlockWeapon",
+"cost": 500,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+223
+],
+"x": 308.3,
+"y": -183.5,
+"icon": "knife",
+"name": "Knife",
+"desc": "Unlock the Knife."
+},
+{
+"id": 225,
+"key": "Shotgun",
+"cls": "UnlockWeapon",
+"cost": 5000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+253
+],
+"x": 758.3,
+"y": -633.5,
+"icon": "shotgun",
+"name": "Shotgun",
+"desc": "Unlock the Shotgun."
+},
+{
+"id": 226,
+"key": "ShotgunSpread",
+"cls": "ShotgunSpreadSkill",
+"cost": 5000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+225
+],
+"x": 758.3,
+"y": -723.5,
+"icon": "ShotgunSpread",
+"name": "More Shotgun",
+"desc": "Fire twice as many pellets with twice the spread."
+},
+{
+"id": 227,
+"key": "Ak47",
+"cls": "UnlockWeapon",
+"cost": 250000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+222
+],
+"x": 578.3,
+"y": -453.5,
+"icon": "ak47",
+"name": "AK-47",
+"desc": "Unlock the AK-47."
+},
+{
+"id": 228,
+"key": "FlameThrower",
+"cls": "UnlockWeapon",
+"cost": 100000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+230
+],
+"x": 938.3,
+"y": -813.5,
+"icon": "Flamethrower",
+"name": "Flamethrower",
+"desc": "Unlock the Flamethrower."
+},
+{
+"id": 229,
+"key": "SmokedEnemy",
+"cls": "SmokedSkill",
+"cost": 100000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+228
+],
+"x": 1028.3,
+"y": -903.5,
+"icon": "Smoked",
+"name": "Smoked Meat",
+"desc": "Smoked creatures produce smoked cans worth twice as much. Apparently smoking improves the flavor."
+},
+{
+"id": 230,
+"key": "Rocket",
+"cls": "UnlockWeapon",
+"cost": 30000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+225
+],
+"x": 848.3,
+"y": -723.5,
+"icon": "Rocketlauncher",
+"name": "Rocket Launcher",
+"desc": "Unlock the Rocket Launcher."
+},
+{
+"id": 231,
+"key": "RocketRange",
+"cls": "RocketLauncherExplosionRadiusSkill",
+"cost": 35000000,
+"tag": 10,
+"demo": false,
+"special": false,
+"req": [
+230
+],
+"x": 938.3,
+"y": -723.5,
+"icon": "RocketExplosionRange",
+"name": "Bigger Boom",
+"desc": "Increase the Rocket Launcher's explosion radius."
+},
+{
+"id": 253,
+"key": "Chainsaw",
+"cls": "UnlockWeapon",
+"cost": 1000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+227
+],
+"x": 668.3,
+"y": -543.5,
+"icon": "ChainSaw",
+"name": "Chainsaw",
+"desc": "Unlock the Chainsaw."
+},
+{
+"id": 254,
+"key": "RobotCleaner1",
+"cls": "UnlockRobotSkill",
+"cost": 25000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+201,
+217,
+206
+],
+"x": 398.3,
+"y": 626.5,
+"icon": "Robot",
+"name": "Little Helper",
+"desc": "Unlock a slightly dumb robot that pushes dead creatures toward the grinder. He's trying his best."
+},
+{
+"id": 255,
+"key": "RobotCleaner1Size1",
+"cls": "RobotPusherSkill",
+"cost": 100000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+260
+],
+"x": 488.3,
+"y": 806.5,
+"icon": "RobotLonger",
+"name": "Bigger Shovel",
+"desc": "Increase Robot Cleaner 1's shovel size."
+},
+{
+"id": 256,
+"key": "RobotCleaner1Size2",
+"cls": "RobotPusherSkill",
+"cost": 250000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+255
+],
+"x": 578.3,
+"y": 806.5,
+"icon": "RobotLonger",
+"name": "Maximum Shovel",
+"desc": "Increase Robot Cleaner 1's shovel size."
+},
+{
+"id": 257,
+"key": "RobotCleaner2",
+"cls": "UnlockRobotSkill",
+"cost": 500000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+255,
+261
+],
+"x": 488.3,
+"y": 896.5,
+"icon": "Robot",
+"name": "Another Little Helper",
+"desc": "Unlock another little helper. He's not any smarter, but at least they can work together."
+},
+{
+"id": 258,
+"key": "RobotCleaner2Size1",
+"cls": "RobotPusherSkill",
+"cost": 750000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+257
+],
+"x": 578.3,
+"y": 896.5,
+"icon": "RobotLonger",
+"name": "Bigger Shovel II",
+"desc": "Increase Robot Cleaner 2's shovel size."
+},
+{
+"id": 259,
+"key": "RobotCleaner2Size2",
+"cls": "RobotPusherSkill",
+"cost": 1000000,
+"tag": 0,
+"demo": false,
+"special": false,
+"req": [
+258
+],
+"x": 668.3,
+"y": 806.5,
+"icon": "RobotLonger",
+"name": "Maximum Shovel II",
+"desc": "Increase Robot Cleaner 2's shovel size."
+},
+{
+"id": 260,
+"key": "RobotSpeed1",
+"cls": "RobotSpeedSkill",
+"cost": 50000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+254
+],
+"x": 398.3,
+"y": 716.5,
+"icon": "RobotSpeed",
+"name": "Little Wheels",
+"desc": "Increase the movement speed of all Robot Cleaners."
+},
+{
+"id": 261,
+"key": "RobotSpeed2",
+"cls": "RobotSpeedSkill",
+"cost": 100000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+260
+],
+"x": 398.3,
+"y": 806.5,
+"icon": "RobotSpeed",
+"name": "Faster Wheels",
+"desc": "Increase the movement speed of all Robot Cleaners."
+},
+{
+"id": 262,
+"key": "RobotSpeed3",
+"cls": "RobotSpeedSkill",
+"cost": 500000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+261
+],
+"x": 398.3,
+"y": 896.5,
+"icon": "RobotSpeed",
+"name": "Turbo Mode",
+"desc": "Increase the movement speed of all Robot Cleaners."
+},
+{
+"id": 263,
+"key": "RobotSpeed4",
+"cls": "RobotSpeedSkill",
+"cost": 1000000,
+"tag": 2,
+"demo": false,
+"special": false,
+"req": [
+262,
+257
+],
+"x": 488.3,
+"y": 986.5,
+"icon": "RobotSpeed",
+"name": "Speed Demon",
+"desc": "Increase the movement speed of all Robot Cleaners."
+},
+{
+"id": 264,
+"key": "Turret1",
+"cls": "UnlockTurretSkill",
+"cost": 1000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+227
+],
+"x": 668.3,
+"y": -363.5,
+"icon": "Turret",
+"name": "Automated Defense",
+"desc": "Unlock the first Turret. Automatically shoots nearby creatures."
+},
+{
+"id": 265,
+"key": "Turret2",
+"cls": "UnlockTurretSkill",
+"cost": 10000000,
+"tag": 0,
+"demo": false,
+"special": true,
+"req": [
+271,
+267
+],
+"x": 848.3,
+"y": -543.5,
+"icon": "Turret",
+"name": "Double Firepower",
+"desc": "Unlock a second Turret to shoot even more creatures."
+},
+{
+"id": 266,
+"key": "TurretDamage1",
+"cls": "TurretDamageSkill",
+"cost": 1500000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+264
+],
+"x": 668.3,
+"y": -453.5,
+"icon": "TurretDamageUp",
+"name": "More Firepower",
+"desc": "Increase the damage dealt by all Turrets."
+},
+{
+"id": 267,
+"key": "TurretDamage2",
+"cls": "TurretDamageSkill",
+"cost": 2000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+266
+],
+"x": 758.3,
+"y": -453.5,
+"icon": "TurretDamageUp",
+"name": "Heavy Hitter",
+"desc": "Increase the damage dealt by all Turrets."
+},
+{
+"id": 268,
+"key": "TurretDamage3",
+"cls": "TurretDamageSkill",
+"cost": 10000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+265
+],
+"x": 938.3,
+"y": -633.5,
+"icon": "TurretDamageUp",
+"name": "Serious Firepower",
+"desc": "Increase the damage dealt by all Turrets."
+},
+{
+"id": 269,
+"key": "TurretDamage4",
+"cls": "TurretDamageSkill",
+"cost": 15000000,
+"tag": 1,
+"demo": false,
+"special": false,
+"req": [
+268
+],
+"x": 1028.3,
+"y": -633.5,
+"icon": "TurretDamageUp",
+"name": "Maximum Firepower",
+"desc": "Increase the damage dealt by all Turrets."
+},
+{
+"id": 270,
+"key": "TurretBullet1",
+"cls": "TurretBulletSkill",
+"cost": 1500000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+264
+],
+"x": 758.3,
+"y": -363.5,
+"icon": "TurretMoreBullet",
+"name": "Extra Bullets",
+"desc": "Increase the ammo capacity of all Turrets."
+},
+{
+"id": 271,
+"key": "TurretBullet2",
+"cls": "TurretBulletSkill",
+"cost": 2000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+270
+],
+"x": 848.3,
+"y": -453.5,
+"icon": "TurretMoreBullet",
+"name": "Bigger Magazine",
+"desc": "Increase the ammo capacity of all Turrets."
+},
+{
+"id": 272,
+"key": "TurretBullet3",
+"cls": "TurretBulletSkill",
+"cost": 5000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+271
+],
+"x": 938.3,
+"y": -453.5,
+"icon": "TurretMoreBullet",
+"name": "Ammo Stockpile",
+"desc": "Increase the ammo capacity of all Turrets."
+},
+{
+"id": 273,
+"key": "TurretBullet4",
+"cls": "TurretBulletSkill",
+"cost": 10000000,
+"tag": 4,
+"demo": false,
+"special": false,
+"req": [
+272,
+265
+],
+"x": 938.3,
+"y": -543.5,
+"icon": "TurretMoreBullet",
+"name": "Bottomless Magazine",
+"desc": "Increase the ammo capacity of all Turrets."
+}
+]

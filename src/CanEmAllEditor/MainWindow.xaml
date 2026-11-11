@@ -1,0 +1,861 @@
+<Window x:Class="CanEmAllEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:l="clr-namespace:CanEmAllEditor"
+        Title="Can 'Em All – Savegame Editor" Width="1400" Height="900" MinWidth="1100" MinHeight="700"
+        WindowStartupLocation="CenterScreen" Background="{StaticResource Bg}" Foreground="{StaticResource Text}"
+        FontFamily="Segoe UI" FontSize="13" Icon="pack://application:,,,/Assets/app.ico"
+        UseLayoutRounding="True" TextOptions.TextFormattingMode="Display">
+
+    <Window.Resources>
+        <!-- Skill card in the list tab -->
+        <DataTemplate x:Key="SkillCard" DataType="{x:Type l:SkillVM}">
+            <Border x:Name="card" Width="318" Margin="0,0,10,10" CornerRadius="12" Padding="12,10" Cursor="Hand"
+                    Background="{StaticResource Panel}" BorderBrush="{StaticResource Line}" BorderThickness="1.5"
+                    Tag="{Binding}" MouseLeftButtonUp="SkillCard_Click" ToolTip="{Binding Description}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Width="46" Height="46" VerticalAlignment="Top" Margin="0,2,12,0">
+                        <Ellipse x:Name="disc" Fill="{StaticResource Panel2}" Stroke="{Binding CategoryBrush}" StrokeThickness="2" />
+                        <Image Source="{Binding IconUri}" Width="26" Height="26" RenderOptions.BitmapScalingMode="HighQuality" />
+                    </Grid>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold" FontSize="14" TextTrimming="CharacterEllipsis" />
+                        <TextBlock Text="{Binding Meta}" Foreground="{Binding CategoryBrush}" FontSize="11" Margin="0,1,0,3" />
+                        <TextBlock Text="{Binding Description}" Style="{StaticResource Hint}" MaxHeight="32" TextTrimming="CharacterEllipsis" />
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <TextBlock Text="{Binding CostText, StringFormat='$ {0}'}" Foreground="{StaticResource Gold}" FontWeight="SemiBold" FontSize="12" />
+                            <Border x:Name="demo" Background="{StaticResource WarnSoft}" CornerRadius="5" Padding="6,1" Margin="8,0,0,0" Visibility="Collapsed">
+                                <TextBlock Text="{l:T DemoLocked}" Foreground="{StaticResource Warn}" FontSize="10" FontWeight="SemiBold" />
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                    <CheckBox Grid.Column="2" Style="{StaticResource Switch}" IsChecked="{Binding Owned, Mode=OneWay}"
+                              IsHitTestVisible="False" VerticalAlignment="Center" Margin="8,0,0,0" />
+                </Grid>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Owned}" Value="True">
+                    <Setter TargetName="card" Property="BorderBrush" Value="{Binding CategoryBrush}" />
+                    <Setter TargetName="card" Property="Background" Value="#1C1F2D" />
+                    <Setter TargetName="disc" Property="Fill" Value="{Binding CategorySoft}" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding DemoLocked}" Value="True">
+                    <Setter TargetName="demo" Property="Visibility" Value="Visible" />
+                </DataTrigger>
+                <Trigger SourceName="card" Property="IsMouseOver" Value="True">
+                    <Setter TargetName="card" Property="Background" Value="{StaticResource Hover}" />
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <!-- Small linked skill row in the tree detail panel -->
+        <DataTemplate x:Key="LinkRow" DataType="{x:Type l:SkillVM}">
+            <Border x:Name="b" CornerRadius="8" Padding="6,4" Margin="0,0,0,4" Cursor="Hand" Background="{StaticResource Panel2}"
+                    Tag="{Binding}" MouseLeftButtonUp="LinkRow_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Grid Width="24" Height="24" Margin="0,0,8,0">
+                        <Ellipse x:Name="d" Fill="{StaticResource Bg}" Stroke="{Binding CategoryBrush}" StrokeThickness="1.5" />
+                        <Image Source="{Binding IconUri}" Width="14" Height="14" />
+                    </Grid>
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" />
+                    <TextBlock x:Name="ok" Text="  ✓" Foreground="{StaticResource Good}" FontWeight="Bold" VerticalAlignment="Center" Visibility="Collapsed" />
+                </StackPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Owned}" Value="True">
+                    <Setter TargetName="ok" Property="Visibility" Value="Visible" />
+                    <Setter TargetName="d" Property="Fill" Value="{Binding CategorySoft}" />
+                </DataTrigger>
+                <Trigger SourceName="b" Property="IsMouseOver" Value="True">
+                    <Setter TargetName="b" Property="Background" Value="{StaticResource Hover}" />
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+        <!-- Permanent upgrade card (prestige tab) -->
+        <DataTemplate x:Key="PermCard" DataType="{x:Type l:PermanentVM}">
+            <Border x:Name="card" Margin="0,0,10,10" CornerRadius="12" Padding="12,10" Cursor="Hand" MinHeight="118"
+                    Background="{StaticResource Panel2}" BorderBrush="{StaticResource Line}" BorderThickness="1.5"
+                    Tag="{Binding}" MouseLeftButtonUp="PermCard_Click" ToolTip="{Binding Description}">
+                <DockPanel>
+                    <Grid DockPanel.Dock="Top">
+                        <Grid Width="38" Height="38" HorizontalAlignment="Left">
+                            <Rectangle x:Name="disc" RadiusX="9" RadiusY="9" Fill="{StaticResource Bg}" Stroke="#FFD36B" StrokeThickness="1.5"
+                                       RenderTransformOrigin="0.5,0.5"><Rectangle.RenderTransform><RotateTransform Angle="45" /></Rectangle.RenderTransform></Rectangle>
+                            <TextBlock Text="◆" Foreground="#FFD36B" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                        <CheckBox Style="{StaticResource Switch}" IsChecked="{Binding Owned, Mode=OneWay}" IsHitTestVisible="False"
+                                  HorizontalAlignment="Right" VerticalAlignment="Top" />
+                    </Grid>
+                    <TextBlock DockPanel.Dock="Top" Text="{Binding Name}" FontWeight="SemiBold" FontSize="13" Margin="0,8,0,2" TextTrimming="CharacterEllipsis" />
+                    <TextBlock DockPanel.Dock="Bottom" Text="{Binding CostText}" Foreground="{StaticResource Gold}" FontWeight="Bold" Margin="0,6,0,0" />
+                    <TextBlock Text="{Binding Description}" Style="{StaticResource Hint}" TextWrapping="Wrap" FontSize="11" />
+                </DockPanel>
+            </Border>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Owned}" Value="True">
+                    <Setter TargetName="card" Property="BorderBrush" Value="#FFD36B" />
+                    <Setter TargetName="card" Property="Background" Value="#2A2414" />
+                    <Setter TargetName="disc" Property="Fill" Value="#5A4A1E" />
+                </DataTrigger>
+                <Trigger SourceName="card" Property="IsMouseOver" Value="True">
+                    <Setter TargetName="card" Property="Background" Value="{StaticResource Hover}" />
+                </Trigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <!-- Mail row (mails tab) -->
+        <DataTemplate x:Key="MailRow" DataType="{x:Type l:MailVM}">
+            <Grid Opacity="{Binding RowOpacity}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Border Width="4" CornerRadius="2" Background="{Binding SenderBrush}" Margin="0,2,10,2" />
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Text="{Binding SenderName}" Foreground="{Binding SenderBrush}" FontSize="11" TextTrimming="CharacterEllipsis" />
+                    <TextBlock Text="{Binding StateText}" Foreground="{StaticResource Muted}" FontSize="11" />
+                </StackPanel>
+                <TextBlock Grid.Column="2" Text="{Binding StateIcon}" FontSize="16" Foreground="{StaticResource Gold}" VerticalAlignment="Center" Margin="8,0,2,0" />
+            </Grid>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- ================= Sidebar ================= -->
+        <Border Background="{StaticResource Panel}" BorderBrush="{StaticResource Line}" BorderThickness="0,0,1,0">
+            <DockPanel Margin="16,18,16,16">
+                <StackPanel DockPanel.Dock="Top">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="pack://application:,,,/Assets/icon.png" Width="60" Height="60" RenderOptions.BitmapScalingMode="HighQuality" />
+                        <StackPanel Margin="12,2,0,0" VerticalAlignment="Center">
+                            <TextBlock Text="Can 'Em All" FontSize="19" FontWeight="Bold" />
+                            <TextBlock Text="{l:T Subtitle}" Foreground="{StaticResource Muted}" />
+                            <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                <Button x:Name="FlagEn" Style="{StaticResource FlagButton}" Click="FlagEn_Click" ToolTip="English">
+                                    <Image Source="{StaticResource FlagUS}" Width="28" Height="15" />
+                                </Button>
+                                <Button x:Name="FlagDe" Style="{StaticResource FlagButton}" Click="FlagDe_Click" ToolTip="Deutsch">
+                                    <Image Source="{StaticResource FlagDE}" Width="28" Height="15" />
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <TextBlock Text="{l:T GameFolders}" Style="{StaticResource Label}" Margin="2,24,0,8" />
+                    <ListBox x:Name="FolderList" SelectionChanged="FolderList_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding MoneyText}" Foreground="{StaticResource Gold}" FontSize="17" FontWeight="SemiBold" Margin="0,3,0,0" />
+                                    <TextBlock Text="{Binding SubText}" Foreground="{StaticResource Muted}" FontSize="11" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <Border x:Name="RunningBanner" Background="{StaticResource WarnSoft}" BorderBrush="{StaticResource Warn}" BorderThickness="1"
+                            CornerRadius="10" Padding="12,10" Margin="0,8,0,0" Visibility="Collapsed">
+                        <TextBlock Text="{l:T GameRunning}" TextWrapping="Wrap" Foreground="{StaticResource Warn}" FontSize="12" />
+                    </Border>
+                </StackPanel>
+
+                <StackPanel DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+                    <Button Content="{l:T LaunchGame}" Click="LaunchGame_Click" Margin="0,0,0,8" />
+                    <Button Content="{l:T Reload}" Click="Reload_Click" Margin="0,0,0,8" />
+                    <Button Content="{l:T OpenSaveFolder}" Click="OpenFolder_Click" />
+                    <TextBlock x:Name="VersionText" Foreground="{StaticResource Muted}" FontSize="10" HorizontalAlignment="Center" Margin="0,12,0,0" />
+                </StackPanel>
+                <Border />
+            </DockPanel>
+        </Border>
+
+        <!-- ================= Main ================= -->
+        <Grid Grid.Column="1" Margin="22,18,22,18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Border Style="{StaticResource Card}" Padding="20,14">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#231A3D" Offset="0" />
+                        <GradientStop Color="#161922" Offset="0.55" />
+                        <GradientStop Color="#2A1418" Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="HeaderTitle" Style="{StaticResource H1}" />
+                            <Border x:Name="HeaderEdition" CornerRadius="6" Padding="8,2" Margin="12,0,0,0" VerticalAlignment="Center" Background="#2A2414" BorderBrush="#FFD36B" BorderThickness="1">
+                                <TextBlock x:Name="HeaderEditionText" Foreground="#FFD36B" FontSize="11" FontWeight="Bold" />
+                            </Border>
+                        </StackPanel>
+                        <TextBlock x:Name="HeaderPath" Foreground="{StaticResource Muted}" FontSize="11" TextTrimming="CharacterEllipsis" Margin="0,3,0,0" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                        <StackPanel Margin="26,0,0,0">
+                            <TextBlock Text="{l:T HeaderDay}" Style="{StaticResource Label}" />
+                            <TextBlock x:Name="HeaderDay" FontSize="18" FontWeight="SemiBold" />
+                        </StackPanel>
+                        <StackPanel Margin="26,0,0,0">
+                            <TextBlock Text="{l:T HeaderMoney}" Style="{StaticResource Label}" />
+                            <TextBlock x:Name="HeaderMoney" FontSize="18" FontWeight="SemiBold" Foreground="{StaticResource Gold}" />
+                        </StackPanel>
+                        <StackPanel x:Name="HeaderPointsPanel" Margin="26,0,0,0">
+                            <TextBlock Text="{l:T HeaderPoints}" Style="{StaticResource Label}" />
+                            <TextBlock x:Name="HeaderPoints" FontSize="18" FontWeight="SemiBold" Foreground="#FFD36B" />
+                        </StackPanel>
+                        <StackPanel Margin="26,0,0,0">
+                            <TextBlock Text="{l:T HeaderSkills}" Style="{StaticResource Label}" />
+                            <TextBlock x:Name="HeaderSkills" FontSize="18" FontWeight="SemiBold" />
+                        </StackPanel>
+                        <StackPanel Margin="26,0,0,0">
+                            <TextBlock Text="{l:T HeaderLastSaved}" Style="{StaticResource Label}" />
+                            <TextBlock x:Name="HeaderLastSaved" FontSize="18" FontWeight="SemiBold" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <TabControl x:Name="Tabs" Grid.Row="1" SelectionChanged="Tabs_SelectionChanged">
+
+                <!-- ============ Factory ============ -->
+                <TabItem Header="{l:T TabFactory}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <Border x:Name="NoSaveBanner" Background="{StaticResource WarnSoft}" BorderBrush="{StaticResource Warn}" BorderThickness="1"
+                                    CornerRadius="10" Padding="14,10" Margin="0,0,0,14" Visibility="Collapsed">
+                                <TextBlock Text="{l:T NoSaveFile}" Foreground="{StaticResource Warn}" TextWrapping="Wrap" />
+                            </Border>
+
+                            <UniformGrid x:Name="StatCards" Columns="4" Margin="-6,0,-6,0">
+                                <!-- Money -->
+                                <Border Style="{StaticResource Card}" Margin="6,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <Image Source="pack://application:,,,/Assets/icons/CanValue.png" Height="26" Margin="0,0,10,0" />
+                                            <TextBlock Text="{l:T Money}" Style="{StaticResource H2}" Margin="0" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                        <TextBox x:Name="MoneyBox" Style="{StaticResource BigNumber}" Foreground="{StaticResource Gold}" TextChanged="StatBox_TextChanged" Tag="money" />
+                                        <WrapPanel Margin="0,10,0,6">
+                                            <Button Style="{StaticResource SmallButton}" Content="+1K" Tag="money:1000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+100K" Tag="money:100000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+10M" Tag="money:10000000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="MAX" Tag="money:max" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="0" Tag="money:zero" Click="Quick_Click" Margin="0,0,5,5" />
+                                        </WrapPanel>
+                                        <TextBlock Text="{l:T MoneyHint}" Style="{StaticResource Hint}" />
+                                    </StackPanel>
+                                </Border>
+                                <!-- Day -->
+                                <Border Style="{StaticResource Card}" Margin="6,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <Image Source="pack://application:,,,/Assets/icons/sun.png" Height="26" Margin="0,0,10,0" />
+                                            <TextBlock Text="{l:T Day}" Style="{StaticResource H2}" Margin="0" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                        <TextBox x:Name="DayBox" Style="{StaticResource BigNumber}" TextChanged="StatBox_TextChanged" Tag="day" />
+                                        <WrapPanel Margin="0,10,0,6">
+                                            <Button Style="{StaticResource SmallButton}" Content="−1" Tag="day:-1" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+1" Tag="day:1" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+10" Tag="day:10" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="= 1" Tag="day:one" Click="Quick_Click" Margin="0,0,5,5" />
+                                        </WrapPanel>
+                                        <TextBlock Text="{l:T DayHint}" Style="{StaticResource Hint}" />
+                                    </StackPanel>
+                                </Border>
+                                <!-- Killed -->
+                                <Border Style="{StaticResource Card}" Margin="6,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <Image Source="pack://application:,,,/Assets/icons/creature_icon.png" Height="26" Margin="0,0,10,0" />
+                                            <TextBlock Text="{l:T Killed}" Style="{StaticResource H2}" Margin="0" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                        <TextBox x:Name="KilledBox" Style="{StaticResource BigNumber}" TextChanged="StatBox_TextChanged" Tag="totalKilled" />
+                                        <WrapPanel Margin="0,10,0,6">
+                                            <Button Style="{StaticResource SmallButton}" Content="+100" Tag="totalKilled:100" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+1K" Tag="totalKilled:1000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+100K" Tag="totalKilled:100000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="0" Tag="totalKilled:zero" Click="Quick_Click" Margin="0,0,5,5" />
+                                        </WrapPanel>
+                                        <TextBlock Text="{l:T KilledHint}" Style="{StaticResource Hint}" />
+                                    </StackPanel>
+                                </Border>
+                                <!-- Cans -->
+                                <Border Style="{StaticResource Card}" Margin="6,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <Image Source="pack://application:,,,/Assets/icons/can.png" Height="26" Margin="0,0,10,0" />
+                                            <TextBlock Text="{l:T Cans}" Style="{StaticResource H2}" Margin="0" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                        <TextBox x:Name="CansBox" Style="{StaticResource BigNumber}" TextChanged="StatBox_TextChanged" Tag="totalCans" />
+                                        <WrapPanel Margin="0,10,0,6">
+                                            <Button Style="{StaticResource SmallButton}" Content="+100" Tag="totalCans:100" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+1K" Tag="totalCans:1000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+100K" Tag="totalCans:100000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="0" Tag="totalCans:zero" Click="Quick_Click" Margin="0,0,5,5" />
+                                        </WrapPanel>
+                                        <TextBlock Text="{l:T CansHint}" Style="{StaticResource Hint}" />
+                                    </StackPanel>
+                                </Border>
+                            </UniformGrid>
+
+                            <Grid Margin="0,14,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="14" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Progress -->
+                                <Border Style="{StaticResource Card}">
+                                    <StackPanel>
+                                        <TextBlock Text="{l:T SkillProgress}" Style="{StaticResource H2}" />
+                                        <Grid Margin="0,0,0,6">
+                                            <TextBlock x:Name="ProgressText" FontSize="15" FontWeight="SemiBold" />
+                                            <TextBlock x:Name="ProgressPercent" HorizontalAlignment="Right" FontSize="15" FontWeight="Bold" Foreground="{StaticResource Accent}" />
+                                        </Grid>
+                                        <ProgressBar x:Name="ProgressBarAll" Height="12" Maximum="100" />
+                                        <UniformGrid Columns="3" Margin="0,14,0,4">
+                                            <StackPanel>
+                                                <TextBlock Text="{l:T SpentValue}" Style="{StaticResource Label}" />
+                                                <TextBlock x:Name="SpentText" FontSize="16" FontWeight="SemiBold" Foreground="{StaticResource Good}" />
+                                            </StackPanel>
+                                            <StackPanel>
+                                                <TextBlock Text="{l:T RemainingValue}" Style="{StaticResource Label}" />
+                                                <TextBlock x:Name="RemainingText" FontSize="16" FontWeight="SemiBold" Foreground="{StaticResource Gold}" />
+                                            </StackPanel>
+                                            <StackPanel x:Name="DemoCountPanel">
+                                                <TextBlock Text="{l:T DemoLockedCount}" Style="{StaticResource Label}" />
+                                                <TextBlock x:Name="DemoText" FontSize="16" FontWeight="SemiBold" Foreground="{StaticResource Warn}" />
+                                            </StackPanel>
+                                        </UniformGrid>
+
+                                        <TextBlock Text="{l:T ByCategory}" Style="{StaticResource Label}" Margin="0,16,0,8" />
+                                        <ItemsControl x:Name="CategoryList">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate DataType="{x:Type l:CategoryVM}">
+                                                    <Grid Margin="0,0,0,8">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="170" />
+                                                            <ColumnDefinition Width="*" />
+                                                            <ColumnDefinition Width="70" />
+                                                            <ColumnDefinition Width="Auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                                            <Ellipse Width="10" Height="10" Fill="{Binding Brush}" Margin="0,0,8,0" />
+                                                            <TextBlock Text="{Binding Label}" FontWeight="SemiBold" />
+                                                        </StackPanel>
+                                                        <ProgressBar Grid.Column="1" Value="{Binding Percent, Mode=OneWay}" Foreground="{Binding Brush}" VerticalAlignment="Center" />
+                                                        <TextBlock Grid.Column="2" Text="{Binding CountText}" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="{StaticResource Muted}" />
+                                                        <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="12,0,0,0">
+                                                            <Button Style="{StaticResource SmallButton}" Content="{l:T CatOn}" Tag="{Binding Category}" Click="CategoryOn_Click" Margin="0,0,4,0" />
+                                                            <Button Style="{StaticResource SmallButton}" Content="{l:T CatOff}" Tag="{Binding Category}" Click="CategoryOff_Click" />
+                                                        </StackPanel>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Quick actions -->
+                                <Border Grid.Column="2" Style="{StaticResource Card}">
+                                    <StackPanel>
+                                        <TextBlock Text="{l:T QuickActions}" Style="{StaticResource H2}" />
+                                        <Button Content="{l:T UnlockAll}" Click="UnlockAll_Click" Style="{StaticResource AccentButton}" Margin="0,0,0,8" HorizontalContentAlignment="Left" />
+                                        <Button x:Name="EverythingButton" Content="{l:T EverythingFull}" Click="Everything_Click" Margin="0,0,0,8" />
+                                        <Button Content="{l:T StarterPack}" Click="StarterPack_Click" Margin="0,0,0,8" />
+                                        <Button Content="{l:T MoneyForRest}" Click="MoneyForRest_Click" Margin="0,0,0,8" />
+                                        <Button Content="{l:T MaxMoney}" Tag="money:max" Click="Quick_Click" Margin="0,0,0,8" />
+                                        <Button Content="{l:T LockAll}" Click="LockAll_Click" Margin="0,0,0,16" />
+
+                                        <Border Height="1" Background="{StaticResource Line}" Margin="0,0,0,14" />
+                                        <CheckBox x:Name="AutoReqSwitch" Style="{StaticResource Switch}" Content="{l:T AutoReq}" Click="Options_Click" FontWeight="SemiBold" />
+                                        <TextBlock Text="{l:T AutoReqHint}" Style="{StaticResource Hint}" Margin="0,4,0,14" />
+                                        <StackPanel x:Name="DemoOptions">
+                                            <CheckBox x:Name="AllowDemoSwitch" Style="{StaticResource Switch}" Content="{l:T AllowDemo}" Click="Options_Click" FontWeight="SemiBold" />
+                                            <TextBlock Text="{l:T AllowDemoHint}" Style="{StaticResource Hint}" Margin="0,4,0,0" />
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+
+                <!-- ============ Tree ============ -->
+                <TabItem Header="{l:T TabTree}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="14" />
+                            <ColumnDefinition Width="300" />
+                        </Grid.ColumnDefinitions>
+                        <DockPanel>
+                            <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource SmallButton}" Content="−" Width="34" Click="ZoomOut_Click" Margin="0,0,4,0" />
+                                    <Button Style="{StaticResource SmallButton}" Content="+" Width="34" Click="ZoomIn_Click" Margin="0,0,4,0" />
+                                    <Button Style="{StaticResource SmallButton}" Content="{l:T ZoomFit}" Click="ZoomFit_Click" Margin="0,0,14,0" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <Ellipse Width="12" Height="12" Fill="{StaticResource Good}" Stroke="#F5E6CC" StrokeThickness="1.5" Margin="0,0,5,0" />
+                                    <TextBlock Text="{l:T Owned}" Foreground="{StaticResource Muted}" FontSize="12" Margin="0,0,12,0" />
+                                    <Ellipse Width="12" Height="12" Fill="#222636" Stroke="{StaticResource Good}" StrokeThickness="1.5" Margin="0,0,5,0" />
+                                    <TextBlock Text="{l:T Available}" Foreground="{StaticResource Muted}" FontSize="12" Margin="0,0,12,0" />
+                                    <Ellipse Width="12" Height="12" Fill="#151720" Stroke="#33384A" StrokeThickness="1.5" Margin="0,0,5,0" />
+                                    <TextBlock Text="{l:T Locked}" Foreground="{StaticResource Muted}" FontSize="12" Margin="0,0,12,0" />
+                                    <StackPanel x:Name="DemoLegend" Orientation="Horizontal">
+                                        <TextBlock Text="🔒" Foreground="{StaticResource Warn}" FontSize="11" Margin="0,0,4,0" />
+                                        <TextBlock Text="{l:T DemoLocked}" Foreground="{StaticResource Muted}" FontSize="12" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock DockPanel.Dock="Bottom" Text="{l:T TreeHint}" Style="{StaticResource Hint}" Margin="4,8,0,0" />
+                            <Border x:Name="TreeHost" />
+                        </DockPanel>
+
+                        <!-- Detail panel -->
+                        <Border Grid.Column="2" Style="{StaticResource Card}">
+                            <Grid>
+                                <TextBlock x:Name="DetailEmpty" Text="{l:T SelectSkill}" Style="{StaticResource Hint}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <ScrollViewer x:Name="DetailPanel" VerticalScrollBarVisibility="Auto" Visibility="Collapsed">
+                                    <StackPanel>
+                                        <Grid Width="96" Height="96" HorizontalAlignment="Center" Margin="0,4,0,12">
+                                            <Ellipse x:Name="DetailDisc" StrokeThickness="3" />
+                                            <Image x:Name="DetailIcon" Width="54" Height="54" RenderOptions.BitmapScalingMode="HighQuality" />
+                                        </Grid>
+                                        <TextBlock x:Name="DetailName" FontSize="20" FontWeight="Bold" TextAlignment="Center" TextWrapping="Wrap" />
+                                        <TextBlock x:Name="DetailMeta" FontSize="12" TextAlignment="Center" Margin="0,2,0,10" />
+                                        <TextBlock x:Name="DetailDesc" TextWrapping="Wrap" TextAlignment="Center" Foreground="{StaticResource Muted}" Margin="0,0,0,12" />
+                                        <Border Background="{StaticResource Bg2}" CornerRadius="10" Padding="12,8" Margin="0,0,0,10">
+                                            <Grid>
+                                                <TextBlock Text="{l:T Price}" Foreground="{StaticResource Muted}" VerticalAlignment="Center" />
+                                                <TextBlock x:Name="DetailPrice" HorizontalAlignment="Right" FontSize="16" FontWeight="Bold" Foreground="{StaticResource Gold}" />
+                                            </Grid>
+                                        </Border>
+                                        <Border x:Name="DetailDemo" Background="{StaticResource WarnSoft}" CornerRadius="8" Padding="10,6" Margin="0,0,0,10">
+                                            <TextBlock Text="{l:T AllowDemoHint}" Foreground="{StaticResource Warn}" TextWrapping="Wrap" FontSize="11" />
+                                        </Border>
+                                        <Button x:Name="DetailToggle" Click="DetailToggle_Click" Style="{StaticResource AccentButton}" Margin="0,0,0,6" />
+                                        <Button Content="{l:T UnlockBranch}" Click="DetailBranch_Click" Margin="0,0,0,14" />
+
+                                        <TextBlock Text="{l:T Requires}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                        <ItemsControl x:Name="DetailRequires" ItemTemplate="{StaticResource LinkRow}" />
+                                        <TextBlock x:Name="DetailRequiresNone" Text="{l:T Root}" Style="{StaticResource Hint}" Margin="0,0,0,6" />
+                                        <TextBlock Text="{l:T UnlocksNext}" Style="{StaticResource Label}" Margin="0,10,0,6" />
+                                        <ItemsControl x:Name="DetailUnlocks" ItemTemplate="{StaticResource LinkRow}" />
+                                        <TextBlock x:Name="DetailUnlocksNone" Text="{l:T Nothing}" Style="{StaticResource Hint}" />
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </TabItem>
+
+                <!-- ============ List ============ -->
+                <TabItem Header="{l:T TabList}">
+                    <DockPanel>
+                        <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="280" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid>
+                                <TextBox x:Name="SearchBox" TextChanged="Filter_Changed" Padding="30,6,8,6" />
+                                <TextBlock Text="🔍" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource Muted}" IsHitTestVisible="False" />
+                                <TextBlock x:Name="SearchPlaceholder" Text="{l:T Search}" Margin="31,0,0,0" VerticalAlignment="Center" Foreground="{StaticResource Muted}" IsHitTestVisible="False" />
+                            </Grid>
+                            <ComboBox x:Name="StatusFilter" Grid.Column="1" Width="170" Margin="10,0,0,0" SelectionChanged="Filter_Changed" />
+                            <TextBlock x:Name="ShownText" Grid.Column="2" Style="{StaticResource Hint}" VerticalAlignment="Center" Margin="14,0,0,0" />
+                            <StackPanel Grid.Column="3" Orientation="Horizontal">
+                                <Button Content="{l:T UnlockFiltered}" Click="UnlockFiltered_Click" Margin="0,0,6,0" />
+                                <Button Content="{l:T LockFiltered}" Click="LockFiltered_Click" />
+                            </StackPanel>
+                        </Grid>
+                        <WrapPanel x:Name="CategoryChips" DockPanel.Dock="Top" Margin="0,0,0,6" />
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ItemsControl x:Name="SkillList" ItemTemplate="{StaticResource SkillCard}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </DockPanel>
+                </TabItem>
+
+                <!-- ============ Prestige (full game) ============ -->
+                <TabItem x:Name="PrestigeTab" Header="{l:T TabPrestige}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <UniformGrid Columns="3" Margin="-6,0,-6,0">
+                                <Border Style="{StaticResource Card}" Margin="6,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <TextBlock Text="◆" Foreground="#FFD36B" FontSize="22" Margin="2,0,12,0" VerticalAlignment="Center" />
+                                            <TextBlock Text="{l:T UpgradePoints}" Style="{StaticResource H2}" Margin="0" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                        <TextBox x:Name="PointsBox" Style="{StaticResource BigNumber}" Foreground="#FFD36B" TextChanged="StatBox_TextChanged" Tag="upgradePoints" />
+                                        <WrapPanel Margin="0,10,0,6">
+                                            <Button Style="{StaticResource SmallButton}" Content="+10" Tag="upgradePoints:10" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+100" Tag="upgradePoints:100" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+1000" Tag="upgradePoints:1000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="0" Tag="upgradePoints:zero" Click="Quick_Click" Margin="0,0,5,5" />
+                                        </WrapPanel>
+                                        <TextBlock Text="{l:T UpgradePointsHint}" Style="{StaticResource Hint}" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Style="{StaticResource Card}" Margin="6,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                            <Image Source="pack://application:,,,/Assets/icons/CanValue.png" Height="26" Margin="0,0,10,0" />
+                                            <TextBlock Text="{l:T RunMoney}" Style="{StaticResource H2}" Margin="0" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                        <TextBox x:Name="RunMoneyBox" Style="{StaticResource BigNumber}" Foreground="{StaticResource Gold}" TextChanged="StatBox_TextChanged" Tag="totalMoney" />
+                                        <WrapPanel Margin="0,10,0,6">
+                                            <Button Style="{StaticResource SmallButton}" Content="+1M" Tag="totalMoney:1000000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="+100M" Tag="totalMoney:100000000" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="MAX" Tag="totalMoney:max" Click="Quick_Click" Margin="0,0,5,5" />
+                                            <Button Style="{StaticResource SmallButton}" Content="0" Tag="totalMoney:zero" Click="Quick_Click" Margin="0,0,5,5" />
+                                        </WrapPanel>
+                                        <TextBlock Text="{l:T RunMoneyHint}" Style="{StaticResource Hint}" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Border>
+                                <Border Style="{StaticResource Card}" Margin="6,0">
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                            <Image Source="pack://application:,,,/Assets/icons/MasterKey.png" Height="26" Margin="0,0,10,0" />
+                                            <TextBlock Text="{l:T Ending}" Style="{StaticResource H2}" Margin="0" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                        <CheckBox x:Name="EndingSwitch" Style="{StaticResource Switch}" Content="{l:T SeenEnding}" Click="EndingSwitch_Click" FontWeight="SemiBold" />
+                                        <TextBlock Text="{l:T SeenEndingHint}" Style="{StaticResource Hint}" Margin="0,4,0,14" TextWrapping="Wrap" />
+                                        <TextBlock Text="{l:T LtFactoriesSold}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                        <TextBox x:Name="LtFactoriesBox" Tag="lifetimeStats.totalFactoriesSold" TextChanged="StatBox_TextChanged" Width="140" HorizontalAlignment="Left" />
+                                    </StackPanel>
+                                </Border>
+                            </UniformGrid>
+
+                            <Border Style="{StaticResource Card}" Margin="0,14,0,0">
+                                <StackPanel>
+                                    <Grid Margin="0,0,0,4">
+                                        <TextBlock Text="{l:T PermanentUpgrades}" Style="{StaticResource H2}" />
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                            <Button Content="{l:T PermAllOn}" Click="PermAllOn_Click" Style="{StaticResource AccentButton}" Margin="0,0,6,0" />
+                                            <Button Content="{l:T PermPointsForRest}" Click="PermPoints_Click" Margin="0,0,6,0" />
+                                            <Button Content="{l:T PermAllOff}" Click="PermAllOff_Click" />
+                                        </StackPanel>
+                                    </Grid>
+                                    <TextBlock x:Name="PermProgressText" FontSize="14" FontWeight="SemiBold" Margin="0,0,0,6" />
+                                    <ProgressBar x:Name="PermProgressBar" Height="10" Maximum="100" Foreground="#FFD36B" Margin="0,0,0,8" />
+                                    <TextBlock Text="{l:T PermHint}" Style="{StaticResource Hint}" Margin="0,0,0,12" />
+                                    <ItemsControl x:Name="PermList" ItemTemplate="{StaticResource PermCard}" Margin="0,0,-10,-10">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <UniformGrid Columns="7" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Style="{StaticResource Card}" Margin="0,14,0,0">
+                                <StackPanel>
+                                    <TextBlock Text="{l:T Lifetime}" Style="{StaticResource H2}" />
+                                    <TextBlock Text="{l:T LifetimeHint}" Style="{StaticResource Hint}" Margin="0,-4,0,12" />
+                                    <UniformGrid Columns="3">
+                                        <StackPanel Margin="0,0,14,12">
+                                            <TextBlock Text="{l:T LtKilled}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                            <TextBox x:Name="LtKilledBox" Tag="lifetimeStats.totalKilled" TextChanged="StatBox_TextChanged" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,0,14,12">
+                                            <TextBlock Text="{l:T LtCans}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                            <TextBox x:Name="LtCansBox" Tag="lifetimeStats.totalCans" TextChanged="StatBox_TextChanged" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,0,14,12">
+                                            <TextBlock Text="{l:T LtMoneyEarned}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                            <TextBox x:Name="LtMoneyBox" Tag="lifetimeStats.totalMoneyEarned" TextChanged="StatBox_TextChanged" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,0,14,12">
+                                            <TextBlock Text="{l:T LtDaysWorked}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                            <TextBox x:Name="LtDaysBox" Tag="lifetimeStats.totalDaysWorked" TextChanged="StatBox_TextChanged" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,0,14,12">
+                                            <TextBlock Text="{l:T LtGambled}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                            <TextBox x:Name="LtGambledBox" Tag="lifetimeStats.totalGambled" TextChanged="StatBox_TextChanged" />
+                                        </StackPanel>
+                                        <StackPanel Margin="0,0,14,12">
+                                            <TextBlock Text="{l:T LtGamblingWinnings}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                            <TextBox x:Name="LtWinBox" Tag="lifetimeStats.totalGamblingWinnings" TextChanged="StatBox_TextChanged" />
+                                        </StackPanel>
+                                    </UniformGrid>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+
+                <!-- ============ Mails (full game) ============ -->
+                <TabItem x:Name="MailsTab" Header="{l:T TabMails}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="380" />
+                            <ColumnDefinition Width="14" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <DockPanel>
+                            <ComboBox x:Name="MailFilter" DockPanel.Dock="Top" SelectionChanged="MailFilter_Changed" Margin="0,0,0,8" />
+                            <TextBlock x:Name="MailsCountText" DockPanel.Dock="Top" Style="{StaticResource Hint}" Margin="2,0,0,8" />
+                            <WrapPanel DockPanel.Dock="Bottom" Margin="0,10,0,0">
+                                <Button Content="{l:T MailReceiveAll}" Click="MailReceiveAll_Click" Margin="0,0,6,6" />
+                                <Button Content="{l:T MailReadAll}" Click="MailReadAll_Click" Margin="0,0,6,6" />
+                                <Button Content="{l:T MailRemoveAll}" Click="MailRemoveAll_Click" Margin="0,0,6,6" />
+                            </WrapPanel>
+                            <ListBox x:Name="MailList" ItemTemplate="{StaticResource MailRow}" SelectionChanged="MailList_SelectionChanged"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled" />
+                        </DockPanel>
+
+                        <Border Grid.Column="2" Style="{StaticResource Card}">
+                            <Grid>
+                                <TextBlock x:Name="MailEmpty" Text="{l:T SelectMail}" Style="{StaticResource Hint}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                <DockPanel x:Name="MailPanel" Visibility="Collapsed">
+                                    <StackPanel DockPanel.Dock="Top">
+                                        <TextBlock x:Name="MailSender" FontSize="12" FontWeight="SemiBold" />
+                                        <TextBlock x:Name="MailTitle" FontSize="22" FontWeight="Bold" TextWrapping="Wrap" Margin="0,2,0,4" />
+                                        <TextBlock x:Name="MailMeta" Style="{StaticResource Hint}" Margin="0,0,0,12" />
+                                        <WrapPanel Margin="0,0,0,6">
+                                            <CheckBox x:Name="MailReceivedSwitch" Style="{StaticResource Switch}" Content="{l:T MailReceivedSwitch}" Click="MailState_Click" Margin="0,0,22,8" />
+                                            <CheckBox x:Name="MailOpenedSwitch" Style="{StaticResource Switch}" Content="{l:T MailOpenedSwitch}" Click="MailState_Click" Margin="0,0,22,8" />
+                                            <CheckBox x:Name="MailAcceptedSwitch" Style="{StaticResource Switch}" Content="{l:T MailAcceptedSwitch}" Click="MailState_Click" Margin="0,0,22,8" />
+                                            <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                                                <TextBlock Text="{l:T MailReceivedDay}" Foreground="{StaticResource Muted}" VerticalAlignment="Center" Margin="0,0,8,0" />
+                                                <TextBox x:Name="MailDayBox" Width="70" TextChanged="MailDay_Changed" />
+                                            </StackPanel>
+                                        </WrapPanel>
+                                        <Border x:Name="MailAcceptBanner" Background="{StaticResource WarnSoft}" CornerRadius="8" Padding="10,6" Margin="0,0,0,12">
+                                            <TextBlock Text="{l:T MailAcceptHint}" Foreground="{StaticResource Warn}" TextWrapping="Wrap" FontSize="11" />
+                                        </Border>
+                                        <TextBlock Text="{l:T MailBodyHint}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                    </StackPanel>
+                                    <Border Background="{StaticResource Bg2}" CornerRadius="10" Padding="16,12">
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                            <TextBlock x:Name="MailBody" TextWrapping="Wrap" FontSize="14" LineHeight="21" />
+                                        </ScrollViewer>
+                                    </Border>
+                                </DockPanel>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </TabItem>
+
+                <!-- ============ Settings ============ -->
+                <TabItem Header="{l:T TabSettings}">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <Border x:Name="NoSettingsBanner" Background="{StaticResource WarnSoft}" BorderBrush="{StaticResource Warn}" BorderThickness="1"
+                                    CornerRadius="10" Padding="14,10" Margin="0,0,0,14" Visibility="Collapsed">
+                                <TextBlock Text="{l:T NoSettingsFile}" Foreground="{StaticResource Warn}" TextWrapping="Wrap" />
+                            </Border>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="14" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <Border Style="{StaticResource Card}" Margin="0,0,0,14">
+                                        <StackPanel>
+                                            <TextBlock Text="{l:T General}" Style="{StaticResource H2}" />
+                                            <TextBlock Text="{l:T GameLanguage}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                            <ComboBox x:Name="GameLangCombo" SelectionChanged="Setting_Changed" Margin="0,0,0,16" />
+                                            <Grid Margin="0,0,0,6">
+                                                <TextBlock Text="{l:T MouseSensitivity}" Style="{StaticResource Label}" />
+                                                <TextBlock x:Name="SensText" HorizontalAlignment="Right" FontWeight="SemiBold" />
+                                            </Grid>
+                                            <Slider x:Name="SensSlider" Minimum="0.1" Maximum="5" SmallChange="0.05" LargeChange="0.25" ValueChanged="Setting_Changed" />
+                                            <StackPanel x:Name="FullSettingsPanel" Margin="0,16,0,0">
+                                                <Grid Margin="0,0,0,6">
+                                                    <TextBlock Text="{l:T FieldOfView}" Style="{StaticResource Label}" />
+                                                    <TextBlock x:Name="FovText" HorizontalAlignment="Right" FontWeight="SemiBold" />
+                                                </Grid>
+                                                <Slider x:Name="FovSlider" Minimum="40" Maximum="90" IsSnapToTickEnabled="True" TickFrequency="1" LargeChange="5" ValueChanged="Setting_Changed" Margin="0,0,0,16" />
+                                                <CheckBox x:Name="InvertYSwitch" Style="{StaticResource Switch}" Content="{l:T InvertY}" Click="Setting_Changed" Margin="0,0,0,12" />
+                                                <CheckBox x:Name="HeadBobSwitch" Style="{StaticResource Switch}" Content="{l:T HeadBob}" Click="Setting_Changed" Margin="0,0,0,16" />
+                                                <UniformGrid Columns="2">
+                                                    <StackPanel Margin="0,0,8,0">
+                                                        <TextBlock Text="{l:T BloodColor}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                                        <ComboBox x:Name="BloodCombo" SelectionChanged="Setting_Changed" />
+                                                    </StackPanel>
+                                                    <StackPanel Margin="8,0,0,0">
+                                                        <TextBlock Text="{l:T WoundColor}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                                        <ComboBox x:Name="WoundsCombo" SelectionChanged="Setting_Changed" />
+                                                    </StackPanel>
+                                                </UniformGrid>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource Card}" Margin="0,0,0,14">
+                                        <StackPanel>
+                                            <TextBlock Text="{l:T Audio}" Style="{StaticResource H2}" />
+                                            <Grid Margin="0,0,0,6">
+                                                <TextBlock Text="{l:T MasterVolume}" Style="{StaticResource Label}" />
+                                                <TextBlock x:Name="MasterText" HorizontalAlignment="Right" FontWeight="SemiBold" />
+                                            </Grid>
+                                            <Slider x:Name="MasterSlider" Minimum="0" Maximum="100" IsSnapToTickEnabled="True" TickFrequency="1" LargeChange="10" ValueChanged="Setting_Changed" Margin="0,0,0,14" />
+                                            <Grid Margin="0,0,0,6">
+                                                <TextBlock Text="{l:T MusicVolume}" Style="{StaticResource Label}" />
+                                                <TextBlock x:Name="MusicText" HorizontalAlignment="Right" FontWeight="SemiBold" />
+                                            </Grid>
+                                            <Slider x:Name="MusicSlider" Minimum="0" Maximum="100" IsSnapToTickEnabled="True" TickFrequency="1" LargeChange="10" ValueChanged="Setting_Changed" Margin="0,0,0,14" />
+                                            <Grid Margin="0,0,0,6">
+                                                <TextBlock Text="{l:T SfxVolume}" Style="{StaticResource Label}" />
+                                                <TextBlock x:Name="SfxText" HorizontalAlignment="Right" FontWeight="SemiBold" />
+                                            </Grid>
+                                            <Slider x:Name="SfxSlider" Minimum="0" Maximum="100" IsSnapToTickEnabled="True" TickFrequency="1" LargeChange="10" ValueChanged="Setting_Changed" />
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Style="{StaticResource Card}">
+                                        <StackPanel>
+                                            <TextBlock Text="{l:T Presets}" Style="{StaticResource H2}" />
+                                            <WrapPanel>
+                                                <Button Content="{l:T PresetUltra}" Click="PresetUltra_Click" Margin="0,0,6,6" />
+                                                <Button Content="{l:T PresetPerformance}" Click="PresetPerformance_Click" Margin="0,0,6,6" />
+                                                <Button Content="{l:T PresetDefaults}" Click="PresetDefaults_Click" Margin="0,0,6,6" />
+                                            </WrapPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+
+                                <Border Grid.Column="2" Style="{StaticResource Card}" VerticalAlignment="Top">
+                                    <StackPanel>
+                                        <TextBlock Text="{l:T Graphics}" Style="{StaticResource H2}" />
+                                        <TextBlock Text="{l:T WindowMode}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                        <ComboBox x:Name="WindowModeCombo" SelectionChanged="Setting_Changed" Margin="0,0,0,14" />
+                                        <TextBlock Text="{l:T Resolution}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                        <TextBox x:Name="ResolutionBox" TextChanged="Setting_Changed" Width="120" HorizontalAlignment="Left" />
+                                        <TextBlock Text="{l:T ResolutionHint}" Style="{StaticResource Hint}" Margin="0,4,0,14" />
+                                        <TextBlock Text="{l:T Antialiasing}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                        <ComboBox x:Name="AACombo" SelectionChanged="Setting_Changed" Margin="0,0,0,14" />
+                                        <TextBlock Text="{l:T Reflections}" Style="{StaticResource Label}" Margin="0,0,0,6" />
+                                        <ComboBox x:Name="ReflCombo" SelectionChanged="Setting_Changed" Margin="0,0,0,18" />
+                                        <CheckBox x:Name="VSyncSwitch" Style="{StaticResource Switch}" Content="{l:T VSync}" Click="Setting_Changed" Margin="0,0,0,12" />
+                                        <CheckBox x:Name="ShadowsSwitch" Style="{StaticResource Switch}" Content="{l:T Shadows}" Click="Setting_Changed" Margin="0,0,0,12" />
+                                        <CheckBox x:Name="AOSwitch" Style="{StaticResource Switch}" Content="{l:T AmbientOcclusion}" Click="Setting_Changed" Margin="0,0,0,12" />
+                                        <CheckBox x:Name="BloomSwitch" Style="{StaticResource Switch}" Content="{l:T Bloom}" Click="Setting_Changed" Margin="0,0,0,12" />
+                                        <CheckBox x:Name="CASwitch" Style="{StaticResource Switch}" Content="{l:T ChromaticAberration}" Click="Setting_Changed" />
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+
+                <!-- ============ Backups ============ -->
+                <TabItem Header="{l:T TabBackups}">
+                    <DockPanel>
+                        <Border DockPanel.Dock="Top" Style="{StaticResource Card}" Padding="16,12" Margin="0,0,0,12">
+                            <Grid>
+                                <TextBlock Text="{l:T BackupsHint}" Style="{StaticResource Hint}" VerticalAlignment="Center" Margin="0,0,420,0" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Content="{l:T CreateBackup}" Click="CreateBackup_Click" Margin="0,0,6,0" />
+                                    <Button Content="{l:T RestoreBackup}" Click="RestoreBackup_Click" Margin="0,0,6,0" />
+                                    <Button Content="{l:T DeleteBackup}" Click="DeleteBackup_Click" Margin="0,0,6,0" />
+                                    <Button Content="{l:T OpenBackupFolder}" Click="OpenBackupFolder_Click" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <Grid>
+                            <TextBlock x:Name="NoBackupsText" Text="{l:T NoBackups}" Style="{StaticResource Hint}" HorizontalAlignment="Center" Margin="0,40,0,0" />
+                            <ListBox x:Name="BackupList">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Image Source="pack://application:,,,/Assets/icons/save.png" Width="30" Margin="0,0,14,0" />
+                                            <StackPanel Grid.Column="1">
+                                                <TextBlock Text="{Binding Title}" FontWeight="SemiBold" FontSize="14" />
+                                                <TextBlock Text="{Binding Line}" Foreground="{StaticResource Muted}" FontSize="12" />
+                                            </StackPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                    </DockPanel>
+                </TabItem>
+
+                <!-- ============ Raw JSON ============ -->
+                <TabItem x:Name="RawTab" Header="{l:T TabRaw}">
+                    <DockPanel>
+                        <TextBlock DockPanel.Dock="Top" Text="{l:T RawHint}" Style="{StaticResource Hint}" Margin="2,0,0,8" />
+                        <Grid DockPanel.Dock="Top" Margin="0,0,0,10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <Button Content="{l:T Apply}" Click="RawApply_Click" Style="{StaticResource AccentButton}" Margin="0,0,6,0" />
+                                <Button Content="{l:T Refresh}" Click="RawRefresh_Click" Margin="0,0,6,0" />
+                                <Button Content="{l:T ExportSave}" Click="Export_Click" Margin="0,0,6,0" />
+                                <Button Content="{l:T ImportSave}" Click="Import_Click" />
+                            </StackPanel>
+                        </Grid>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="14" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <DockPanel>
+                                <TextBlock DockPanel.Dock="Top" Text="save.sav" Style="{StaticResource Label}" Margin="2,0,0,6" />
+                                <TextBox x:Name="RawSave" Style="{StaticResource CodeBox}" />
+                            </DockPanel>
+                            <DockPanel Grid.Column="2">
+                                <TextBlock DockPanel.Dock="Top" Text="settings.sav" Style="{StaticResource Label}" Margin="2,0,0,6" />
+                                <TextBox x:Name="RawSettings" Style="{StaticResource CodeBox}" />
+                            </DockPanel>
+                        </Grid>
+                    </DockPanel>
+                </TabItem>
+            </TabControl>
+
+            <!-- Bottom bar -->
+            <Border Grid.Row="2" Style="{StaticResource Card}" Padding="16,10" Margin="0,14,0,0">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Ellipse x:Name="StatusDot" Width="9" Height="9" Fill="{StaticResource Muted}" Margin="0,0,10,0" />
+                        <TextBlock x:Name="StatusText" Text="{l:T Ready}" Foreground="{StaticResource Muted}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="DiscardButton" Content="{l:T Discard}" Click="Discard_Click" Margin="0,0,8,0" IsEnabled="False" />
+                        <Button x:Name="SaveButton" Content="{l:T SaveChanges}" Click="Save_Click" Style="{StaticResource AccentButton}" Padding="20,8" IsEnabled="False" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

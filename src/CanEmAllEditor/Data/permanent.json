@@ -1,0 +1,233 @@
+[
+{
+"id": 232,
+"key": "StartingCashI",
+"cls": "StartingCashSkill",
+"cost": 2,
+"col": 0,
+"row": 0,
+"cash": 100,
+"name": "Starting Cash I",
+"desc": "Start your next run with $100."
+},
+{
+"id": 235,
+"key": "BruteForceI",
+"cls": "BruteForceSkill",
+"cost": 5,
+"col": 1,
+"row": 0,
+"cash": 0,
+"name": "Brute Force I",
+"desc": "Start with +100% damage."
+},
+{
+"id": 239,
+"key": "ProfitBoostI",
+"cls": "ProfitBoostSkill",
+"cost": 5,
+"col": 2,
+"row": 0,
+"cash": 0,
+"name": "Profit Boost I",
+"desc": "Start with +100% earnings."
+},
+{
+"id": 243,
+"key": "GrinderSpeed",
+"cls": "GrinderSpeedSkill",
+"cost": 10,
+"col": 3,
+"row": 0,
+"cash": 0,
+"name": "Grinder Speed",
+"desc": "Double the grinder's processing speed."
+},
+{
+"id": 236,
+"key": "BruteForceII",
+"cls": "BruteForceSkill",
+"cost": 10,
+"col": 4,
+"row": 0,
+"cash": 0,
+"name": "Brute Force II",
+"desc": "Start with +100% damage."
+},
+{
+"id": 244,
+"key": "NeverSkipLegs",
+"cls": "NeverSkipLegsSkill",
+"cost": 10,
+"col": 5,
+"row": 0,
+"cash": 0,
+"name": "Never Skip Leg Day",
+"desc": "Reduces stamina consumption by 50%."
+},
+{
+"id": 245,
+"key": "StartingShockwave",
+"cls": "StartingShockwaveSkill",
+"cost": 15,
+"col": 6,
+"row": 0,
+"cash": 0,
+"name": "Starting Shockwave",
+"desc": "The first 5 creatures trigger a shockwave when killed."
+},
+{
+"id": 237,
+"key": "BruteForceIII",
+"cls": "BruteForceSkill",
+"cost": 20,
+"col": 0,
+"row": 1,
+"cash": 0,
+"name": "Brute Force III",
+"desc": "Start with +100% damage."
+},
+{
+"id": 240,
+"key": "ProfitBoostII",
+"cls": "ProfitBoostSkill",
+"cost": 20,
+"col": 1,
+"row": 1,
+"cash": 0,
+"name": "Profit Boost II",
+"desc": "Start with +100% earnings."
+},
+{
+"id": 246,
+"key": "LuxuryCans",
+"cls": "LuxuryCansSkill",
+"cost": 20,
+"col": 2,
+"row": 1,
+"cash": 0,
+"name": "Luxury Cans",
+"desc": "Double the value of shiny creatures."
+},
+{
+"id": 247,
+"key": "LuckyHits",
+"cls": "LuckyHitsSkill",
+"cost": 20,
+"col": 3,
+"row": 1,
+"cash": 0,
+"name": "Lucky Hits",
+"desc": "Double your critical hit chance."
+},
+{
+"id": 233,
+"key": "StartingCashII",
+"cls": "StartingCashSkill",
+"cost": 25,
+"col": 4,
+"row": 1,
+"cash": 5000,
+"name": "Starting Cash II",
+"desc": "Start your next run with $5,000."
+},
+{
+"id": 248,
+"key": "ShinyShipment",
+"cls": "ShinyShipmentSkill",
+"cost": 25,
+"col": 5,
+"row": 1,
+"cash": 0,
+"name": "Shiny Shipment",
+"desc": "All creatures in the first truck of each day are Shiny."
+},
+{
+"id": 249,
+"key": "DamagedDelivery",
+"cls": "DamagedDeliverySkill",
+"cost": 25,
+"col": 6,
+"row": 1,
+"cash": 0,
+"name": "Damaged Delivery",
+"desc": "25% of creatures arrive wounded with half their health."
+},
+{
+"id": 250,
+"key": "FirstBlood",
+"cls": "FirstBloodSkill",
+"cost": 30,
+"col": 0,
+"row": 2,
+"cash": 0,
+"name": "First Blood",
+"desc": "The first 10 creatures die in one hit."
+},
+{
+"id": 251,
+"key": "DeathTouch",
+"cls": "DeathTouchSkill",
+"cost": 30,
+"col": 1,
+"row": 2,
+"cash": 0,
+"name": "Death Touch",
+"desc": "Double your instant kill chance."
+},
+{
+"id": 238,
+"key": "BruteForceIV",
+"cls": "BruteForceSkill",
+"cost": 35,
+"col": 2,
+"row": 2,
+"cash": 0,
+"name": "Brute Force IV",
+"desc": "Start with +100% damage."
+},
+{
+"id": 241,
+"key": "ProfitBoostIII",
+"cls": "ProfitBoostSkill",
+"cost": 40,
+"col": 3,
+"row": 2,
+"cash": 0,
+"name": "Profit Boost III",
+"desc": "Start with +100% earnings."
+},
+{
+"id": 234,
+"key": "StartingCashIII",
+"cls": "StartingCashSkill",
+"cost": 50,
+"col": 4,
+"row": 2,
+"cash": 20000,
+"name": "Starting Cash III",
+"desc": "Start your next run with $20,000."
+},
+{
+"id": 242,
+"key": "ProfitBoostIV",
+"cls": "ProfitBoostSkill",
+"cost": 70,
+"col": 5,
+"row": 2,
+"cash": 0,
+"name": "Profit Boost IV",
+"desc": "Start with +100% earnings."
+},
+{
+"id": 252,
+"key": "ColdStorage",
+"cls": "ColdStorageSkill",
+"cost": 100,
+"col": 6,
+"row": 2,
+"cash": 0,
+"name": "Cold Storage",
+"desc": "Creatures and cans are no longer cleared overnight."
+}
+]
