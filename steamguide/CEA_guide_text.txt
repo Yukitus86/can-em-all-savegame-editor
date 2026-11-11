@@ -1,0 +1,245 @@
+############################################################################
+#  STEAM GUIDE – Can 'Em All Save Editor 2.1 (English)
+#  Lines starting with # are notes, do not copy them.
+#  [IMAGE: CEA_xx.png] = insert that picture from this folder at this spot.
+############################################################################
+
+# ===== TITLE =====
+Can 'Em All Save Editor – Money, Full Skill Tree, Prestige Upgrades & Mails
+
+# ===== DESCRIPTION =====
+Free, open-source save editor for Can 'Em All (full game and demo). Edit money and day, unlock any skill right in the game's own skill tree, buy permanent prestige upgrades, manage the story mails and change game settings. Automatic backups, single exe, English and German.
+
+# ===== GUIDE ICON =====
+# CEA_00_guide_icon.png
+
+# ===== CATEGORY =====
+# Modding
+
+
+############################################################################
+# SECTION 1 – title:
+Overview
+############################################################################
+
+[IMAGE: CEA_02_skill-tree.png]
+
+[h1]What is this?[/h1]
+A small Windows tool that edits your [b]Can 'Em All[/b] save – the full game and the demo. It reads the save, lets you change values in a clean dark interface and writes it back exactly the way the game expects it.
+
+[h2]What you can change[/h2]
+[table]
+[tr][th]Tab[/th][th]What you can do[/th][/tr]
+[tr][td][b]Factory[/b][/td][td]Money, day, creatures slaughtered, cans produced, skill progress per category, quick actions[/td][/tr]
+[tr][td][b]Skill tree[/b][/td][td]All 252 skills in the game's own tree with the game's icons – click to unlock[/td][/tr]
+[tr][td][b]Skill list[/b][/td][td]All skills as cards with search and category filters[/td][/tr]
+[tr][td][b]Prestige[/b][/td][td]Upgrade points, the 21 permanent upgrades, lifetime statistics[/td][/tr]
+[tr][td][b]Mails[/b][/td][td]All 46 story mails with their text: receive, read, ACCEPT[/td][/tr]
+[tr][td][b]Game settings[/b][/td][td]Field of view, sensitivity, blood color, volumes, graphics[/td][/tr]
+[tr][td][b]Backups[/b][/td][td]Automatic backup before every save, restore with one click[/td][/tr]
+[tr][td][b]Raw JSON[/b][/td][td]The complete save as text, export and import[/td][/tr]
+[/table]
+
+[list]
+[*]Free and open source (MIT licence)
+[*]Single .exe – no installation, no .NET needed (Windows 10/11, 64-bit)
+[*]English and German interface
+[*]Works with the full game and the demo
+[/list]
+
+[i]Unofficial fan tool, not affiliated with LuisDev.[/i]
+
+
+############################################################################
+# SECTION 2 – title:
+Download & first start
+############################################################################
+
+[h1]Download[/h1]
+Get [b]CanEmAllEditor.exe[/b] from the latest release on GitHub:
+[url=https://github.com/Yukitus86/can-em-all-savegame-editor/releases/latest]github.com/Yukitus86/can-em-all-savegame-editor/releases/latest[/url]
+
+The full source code is in the same repository, so you can check exactly what the tool does or build it yourself.
+
+[h1]Start[/h1]
+[olist]
+[*][b]Close Can 'Em All completely.[/b] The editor blocks saving as long as the game is running.
+[*]Double-click [b]CanEmAllEditor.exe[/b].
+[*]Your save shows up on the left (full game and demo are labelled).
+[*]Change what you want in the tabs.
+[*]Click [b]Save changes[/b] (bottom right).
+[*]Start the game – or use [b]Launch game[/b] in the editor.
+[/olist]
+
+[h2]Where is my save?[/h2]
+The editor finds it automatically:
+[code]Full game: %USERPROFILE%\AppData\LocalLow\LuisDev\Can 'Em All\save.sav
+Demo:      %USERPROFILE%\AppData\LocalLow\LuisDev\Can 'Em All Demo\save.sav[/code]
+
+[h2]Language[/h2]
+Click the [b]flag[/b] in the top left to switch between English and German – your choice is remembered.
+
+[h2]"Windows protected your PC"?[/h2]
+The exe is not code-signed, so Windows SmartScreen may warn you the first time. Click [b]More info → Run anyway[/b].
+
+
+############################################################################
+# SECTION 3 – title:
+Factory – money & quick actions
+############################################################################
+
+[IMAGE: CEA_01_factory.png]
+
+[h1]Money, day & statistics[/h1]
+Type any amount or use the quick buttons ([b]+1K[/b], [b]+100K[/b], [b]+10M[/b], [b]MAX[/b]). Day, creatures slaughtered and cans produced work the same way.
+
+[h2]Skill progress[/h2]
+See how many skills of each category you own and switch a whole category on or off with one click.
+
+[h2]Quick actions[/h2]
+[list]
+[*][b]Unlock all skills[/b]
+[*][b]Everything[/b] – all skills plus all permanent upgrades
+[*][b]Starter pack[/b] – bat, knife, pistol, SMG and the vacuum, nothing beyond
+[*][b]Money for all missing skills[/b] – you buy them yourself in the game
+[*][b]Max money[/b] and [b]Reset all skills[/b]
+[/list]
+
+
+############################################################################
+# SECTION 4 – title:
+Skill tree & skill list
+############################################################################
+
+[IMAGE: CEA_02_skill-tree.png]
+
+[h1]The game's own skill tree[/h1]
+All 252 skills (demo: 231) in the same layout and with the same icons as in the game.
+[list]
+[*][b]Click[/b] a skill for its description, price, what it requires and what it leads to
+[*][b]Double-click[/b] or [b]right-click[/b] to unlock or lock it
+[*][b]Unlock whole branch[/b] unlocks everything that leads up to a skill
+[*][b]Mouse wheel[/b] zooms, [b]drag[/b] moves the tree
+[/list]
+
+[h2]Requirements stay valid[/h2]
+When you unlock a skill, the skills it needs are unlocked too. When you lock one, the skills built on it go as well. The save always keeps a purchase order the game accepts.
+
+[IMAGE: CEA_03_skill-list.png]
+
+[h1]Skill list[/h1]
+Every skill as a card. Search by name, filter by category (combat, weapons, turrets, factory, vacuum, robots, movement, creatures & shifts, special) or by status, and unlock or lock everything that is shown.
+
+
+############################################################################
+# SECTION 5 – title:
+Prestige – permanent upgrades
+############################################################################
+
+[IMAGE: CEA_04_prestige.png]
+
+[h1]Prestige (full game)[/h1]
+When you sell your factory you get upgrade points for permanent upgrades that stay for every new run.
+[list]
+[*][b]Upgrade points[/b] – set any amount
+[*][b]Earned (current run)[/b] – the money your factory has generated, which decides the points when you sell
+[*]All [b]21 permanent upgrades[/b] – click a card to buy or remove it, [b]Buy all[/b], or [b]Points for the rest[/b] to buy them yourself in the game
+[*][b]Lifetime statistics[/b] – creatures, cans, money earned, gambled, slot machine winnings, days worked, factories sold
+[*][b]Ending seen[/b] switch
+[/list]
+
+
+############################################################################
+# SECTION 6 – title:
+Mails
+############################################################################
+
+[IMAGE: CEA_05_mails.png]
+
+[h1]Story mails (full game)[/h1]
+All 46 mails of the game with their original text and sender.
+[list]
+[*]Put a mail in your inbox or take it out, mark it read or unread
+[*][b]ACCEPT[/b] – only does something for the slot machine offer and the factory sale offer
+[*]Change the day a mail arrived
+[*][b]Receive all[/b], [b]Mark all read[/b], [b]Remove all[/b]
+[/list]
+[b]Spoiler warning:[/b] the mail texts tell the whole story.
+
+
+############################################################################
+# SECTION 7 – title:
+Game settings, backups & raw JSON
+############################################################################
+
+[IMAGE: CEA_06_settings.png]
+
+[h1]Game settings[/h1]
+Everything in settings.sav: language, mouse / camera sensitivity, field of view, invert Y, head bob, blood and wound color, volumes, window mode, resolution, VSync, anti-aliasing, shadows, reflections, ambient occlusion, bloom, chromatic aberration and quality presets.
+
+[IMAGE: CEA_07_backups.png]
+
+[h1]Backups[/h1]
+Before every save the editor copies save.sav and settings.sav into [b]EditorBackups[/b] inside the save folder. In the [b]Backups[/b] tab you can restore any backup, make a manual one or delete old ones.
+
+[IMAGE: CEA_08_raw-json.png]
+
+[h1]Raw JSON[/h1]
+For tinkerers: both files as text. Edit them directly, export or import.
+
+
+############################################################################
+# SECTION 8 – title:
+FAQ & troubleshooting
+############################################################################
+
+[h1]FAQ[/h1]
+
+[b]"Save changes" is greyed out.[/b]
+Either nothing was changed yet, or Can 'Em All is still running. Close the game completely.
+
+[b]My changes are gone after starting the game.[/b]
+Steam Cloud may have put an older save back. Start the game once, quit, then edit again – or switch Steam Cloud off for the game while you edit.
+
+[b]My save is broken / I want my old state back.[/b]
+Backups tab → pick the backup from before your change → [b]Restore[/b].
+
+[b]Does it work with the demo?[/b]
+Yes. The demo has its own skill data (231 skills, some of them locked in the demo). Prestige and mails only exist in the full game.
+
+[b]Is it safe?[/b]
+The editor only touches your Can 'Em All save folder, makes a backup before every write and keeps the exact file format of the game. The source code is public on GitHub.
+
+
+############################################################################
+# SECTION 9 – title:
+Changelog & links
+############################################################################
+
+[h1]Version 2.1[/h1]
+[list]
+[*]Tested with a real prestige run (factory sold, permanent upgrades bought)
+[*]Starter pack now stops at the SMG
+[*]Mails added by the editor get the right day after a factory sale
+[/list]
+
+[h1]Version 2.0[/h1]
+[list]
+[*]NEW: full game support next to the demo
+[*]NEW: 252 skills, robots and turrets categories, chainsaw
+[*]NEW: Prestige tab – permanent upgrades, upgrade points, lifetime statistics
+[*]NEW: Mails tab – all 46 story mails
+[*]NEW: settings for field of view, invert Y, head bob, blood and wound color
+[/list]
+
+[h1]Version 1.0[/h1]
+[list]
+[*]First release for the demo
+[/list]
+
+[h2]Links[/h2]
+[url=https://github.com/Yukitus86/can-em-all-savegame-editor]Source code & download (GitHub)[/url]
+[url=https://github.com/Yukitus86/can-em-all-savegame-editor/blob/main/CHANGELOG.md]Full changelog[/url]
+
+Found a bug or a value you'd like to edit? Leave a comment below or open an issue on GitHub.
+If the guide helped you, a 👍 rating is appreciated. Happy canning!
