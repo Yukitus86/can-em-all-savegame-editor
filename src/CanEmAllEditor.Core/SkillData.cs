@@ -1,7 +1,6 @@
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Windows.Media;
 
 namespace CanEmAllEditor.Core;
 
@@ -31,7 +30,6 @@ public sealed class SkillDef
     [JsonIgnore] public List<SkillDef> Unlocks { get; } = [];
 
     public string Description => Loc.Instance.Language == UiLanguage.German ? Loc.DescriptionDe(DescriptionEn) : DescriptionEn;
-    public string IconUri => $"pack://application:,,,/Assets/icons/{Icon}.png";
 }
 
 public static class SkillData
@@ -87,17 +85,17 @@ public static class SkillData
         [SkillCategory.Combat, SkillCategory.Weapons, SkillCategory.Turrets, SkillCategory.Factory, SkillCategory.Vacuum,
          SkillCategory.Robots, SkillCategory.Movement, SkillCategory.Creatures, SkillCategory.Special];
 
-    public static Color ColorOf(SkillCategory c) => c switch
+    public static Rgb ColorOf(SkillCategory c) => c switch
     {
-        SkillCategory.Combat => Color.FromRgb(0xF8, 0x71, 0x71),
-        SkillCategory.Weapons => Color.FromRgb(0xFB, 0x92, 0x3C),
-        SkillCategory.Factory => Color.FromRgb(0x34, 0xD3, 0x99),
-        SkillCategory.Vacuum => Color.FromRgb(0x38, 0xBD, 0xF8),
-        SkillCategory.Movement => Color.FromRgb(0xFA, 0xCC, 0x15),
-        SkillCategory.Creatures => Color.FromRgb(0xC0, 0x84, 0xFC),
-        SkillCategory.Robots => Color.FromRgb(0xCB, 0xD5, 0xE1),
-        SkillCategory.Turrets => Color.FromRgb(0xF4, 0x72, 0xB6),
-        _ => Color.FromRgb(0xFF, 0xD3, 0x6B),
+        SkillCategory.Combat => Rgb.FromRgb(0xF8, 0x71, 0x71),
+        SkillCategory.Weapons => Rgb.FromRgb(0xFB, 0x92, 0x3C),
+        SkillCategory.Factory => Rgb.FromRgb(0x34, 0xD3, 0x99),
+        SkillCategory.Vacuum => Rgb.FromRgb(0x38, 0xBD, 0xF8),
+        SkillCategory.Movement => Rgb.FromRgb(0xFA, 0xCC, 0x15),
+        SkillCategory.Creatures => Rgb.FromRgb(0xC0, 0x84, 0xFC),
+        SkillCategory.Robots => Rgb.FromRgb(0xCB, 0xD5, 0xE1),
+        SkillCategory.Turrets => Rgb.FromRgb(0xF4, 0x72, 0xB6),
+        _ => Rgb.FromRgb(0xFF, 0xD3, 0x6B),
     };
 
     public static string LabelOf(SkillCategory c) => Loc.T("Cat" + c);

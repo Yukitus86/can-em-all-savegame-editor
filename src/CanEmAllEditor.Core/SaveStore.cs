@@ -43,10 +43,14 @@ public static class SaveStore
     public static readonly string[] SettingsFloatKeys = ["mouseSensitivity", "masterVolume", "musicVolume", "sfxVolume"];
     // fieldOfView, bloodIndex, woundsIndex are ints in the full game
 
-    public static string DefaultRoot => System.IO.Path.Combine(
-        Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "AppData", "LocalLow", Company);
+    static string Home => Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
-    /// <summary>Every "Can 'Em All*" folder under LocalLow\LuisDev (full game first). --root uses that folder directly.</summary>
+    /// <summary>Windows: %USERPROFILE%\AppData\LocalLow\LuisDev. Linux: the first LuisDev folder found in a Proton prefix.</summary>
+    public static string DefaultRoot => OperatingSystem.IsWindows()
+        ? System.IO.Path.Combine(Home, "AppData", "LocalLow", Company)
+        : LinuxRoots(Home).FirstOrDefault() ?? ProtonRoot(System.IO.Path.Combine(Home, ".local", "share", "Steam"), Editions.FullAppId);
+
+    /// <summary>Every "Can 'Em All*" folder (full game first). --root uses that folder directly.</summary>
     public static List<GameFolder> Scan(string? rootOverride)
     {
         var result = new List<GameFolder>();
@@ -55,12 +59,79 @@ public static class SaveStore
             result.Add(Describe(rootOverride));
             return result;
         }
-        if (Directory.Exists(DefaultRoot))
-            foreach (var dir in Directory.GetDirectories(DefaultRoot, "Can*"))
-                result.Add(Describe(dir));
+        var seen = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var root in OperatingSystem.IsWindows() ? [DefaultRoot] : LinuxRoots(Home))
+            if (Directory.Exists(root))
+                foreach (var dir in Directory.GetDirectories(root, "Can*"))
+                    if (seen.Add(System.IO.Path.GetFullPath(dir))) result.Add(Describe(dir));
         if (result.Count == 0)
             result.Add(Describe(System.IO.Path.Combine(DefaultRoot, "Can 'Em All")));
         return result.OrderBy(f => f.Edition == GameEdition.Demo).ThenBy(f => f.Title).ToList();
+    }
+
+    // ---- Linux: the game runs through Proton, its saves live inside the Wine prefix of each app id
+
+    /// <summary>Steam installs: native, Flatpak and Snap.</summary>
+    static IEnumerable<string> SteamRoots(string home) =>
+    [
+        System.IO.Path.Combine(home, ".steam", "steam"),
+        System.IO.Path.Combine(home, ".steam", "root"),
+        System.IO.Path.Combine(home, ".local", "share", "Steam"),
+        System.IO.Path.Combine(home, ".var", "app", "com.valvesoftware.Steam", ".local", "share", "Steam"),
+        System.IO.Path.Combine(home, ".var", "app", "com.valvesoftware.Steam", "data", "Steam"),
+        System.IO.Path.Combine(home, "snap", "steam", "common", ".local", "share", "Steam"),
+    ];
+
+    /// <summary>Every Steam library: the Steam folders plus the "path" entries of libraryfolders.vdf (other drives, SD card).</summary>
+    static IEnumerable<string> SteamLibraries(string home)
+    {
+        foreach (var root in SteamRoots(home).Where(Directory.Exists))
+        {
+            yield return root;
+            string vdf = System.IO.Path.Combine(root, "steamapps", "libraryfolders.vdf");
+            if (!File.Exists(vdf)) continue;
+            string[] lines;
+            try { lines = File.ReadAllLines(vdf); } catch (Exception) { continue; }
+            foreach (var line in lines)
+            {
+                var parts = line.Split('"', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                                .Where(p => p.Length > 0).ToArray();
+                if (parts.Length >= 2 && parts[0] == "path") yield return parts[1].Replace(@"\\", @"\");
+            }
+        }
+    }
+
+    /// <summary>Path with every symlink resolved (~/.steam/steam usually links to ~/.local/share/Steam), so a folder is listed once.</summary>
+    static string RealPath(string path)
+    {
+        string cur = "/";
+        foreach (var part in System.IO.Path.GetFullPath(path).Split('/', StringSplitOptions.RemoveEmptyEntries))
+        {
+            cur = System.IO.Path.Combine(cur, part);
+            try { if (new DirectoryInfo(cur).ResolveLinkTarget(true) is { } target) cur = target.FullName; }
+            catch (Exception) { /* keep as is */ }
+        }
+        return cur;
+    }
+
+    static string ProtonRoot(string library, int appId) => System.IO.Path.Combine(library, "steamapps", "compatdata",
+        appId.ToString(CultureInfo.InvariantCulture), "pfx", "drive_c", "users", "steamuser", "AppData", "LocalLow", Company);
+
+    /// <summary>All existing LuisDev folders on Linux: Proton prefixes of the full game and the demo, plus a native Unity build.</summary>
+    public static List<string> LinuxRoots(string home)
+    {
+        var roots = new List<string>();
+        void Add(string dir)
+        {
+            if (!Directory.Exists(dir)) return;
+            string real = RealPath(dir);
+            if (!roots.Contains(real)) roots.Add(real);
+        }
+        foreach (var lib in SteamLibraries(home))
+            foreach (int id in new[] { Editions.FullAppId, Editions.DemoAppId })
+                Add(ProtonRoot(lib, id));
+        Add(System.IO.Path.Combine(Environment.GetEnvironmentVariable("XDG_CONFIG_HOME") is { Length: > 0 } x ? x : System.IO.Path.Combine(home, ".config"), "unity3d", Company));
+        return roots;
     }
 
     static GameFolder Describe(string dir)
@@ -83,6 +154,7 @@ public static class SaveStore
 
     public static bool IsGameRunning()
     {
+        if (!OperatingSystem.IsWindows()) return IsGameRunningLinux();
         foreach (var name in ProcessNames)
         {
             var procs = Process.GetProcessesByName(name);
@@ -90,6 +162,25 @@ public static class SaveStore
             foreach (var p in procs) p.Dispose();
             if (running) return true;
         }
+        return false;
+    }
+
+    /// <summary>Under Proton the game is a Wine process: look for its exe in every command line.</summary>
+    static bool IsGameRunningLinux()
+    {
+        try
+        {
+            foreach (var dir in Directory.EnumerateDirectories("/proc"))
+            {
+                if (!char.IsDigit(System.IO.Path.GetFileName(dir)[0])) continue;
+                string cmd;
+                try { cmd = File.ReadAllText(System.IO.Path.Combine(dir, "cmdline")); } catch (Exception) { continue; }
+                foreach (var name in ProcessNames)
+                    if (cmd.Contains(name + ".exe", StringComparison.OrdinalIgnoreCase) || cmd.Contains(name + ".x86_64", StringComparison.OrdinalIgnoreCase))
+                        return true;
+            }
+        }
+        catch (Exception) { /* no /proc: assume not running */ }
         return false;
     }
 

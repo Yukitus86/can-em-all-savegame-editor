@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.2.0
+
+### New
+
+- **Linux version** (x64, also Steam Deck in Desktop Mode): its own build next to the Windows exe, with the same tabs and features. Built on Avalonia, released as `CanEmAllEditor-linux-x64.tar.gz`
+- Linux save detection: the game's Proton prefix (`steamapps/compatdata/5133900` and `5364590`) in the native, Flatpak and Snap Steam folders and in every library from `libraryfolders.vdf` (second drive, SD card), plus a native Unity folder
+- "Game is running" check on Linux looks for the game's Wine process
+
+### Changed
+
+- Save format, skill data and texts moved into a shared core project (`src/CanEmAllEditor.Core`), used by both editors; the Windows editor works as before
+- `build.cmd` builds both editors; `build-linux.sh` builds the Linux one on Linux
+
 ## 2.1.0
 
 Tested with a real prestige run (factory sold, permanent upgrades bought).

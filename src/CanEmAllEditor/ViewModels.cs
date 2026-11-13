@@ -26,7 +26,7 @@ public sealed class SkillVM(SkillDef def, Func<int, bool> isOwned) : Observable
     public string CostShort => Loc.Short(Def.Cost);
     public string CategoryLabel => SkillData.LabelOf(Def.Category);
     public string Meta => Loc.T("SkillIdN", Def.Id, SkillData.LabelOf(Def.Category));
-    public SolidColorBrush CategoryBrush { get; } = Frozen(SkillData.ColorOf(def.Category));
+    public SolidColorBrush CategoryBrush { get; } = Frozen(SkillData.ColorOf(def.Category).Wpf());
     public SolidColorBrush CategorySoft { get; } = Frozen(Color.FromArgb(0x38, SkillData.ColorOf(def.Category).R, SkillData.ColorOf(def.Category).G, SkillData.ColorOf(def.Category).B));
 
     public bool Owned => isOwned(Def.Id);
@@ -74,7 +74,7 @@ public sealed class MailVM(MailDef def) : Observable
     public int Id => Def.Id;
     public string Title => Def.Title;
     public string SenderName => Def.SenderName;
-    public SolidColorBrush SenderBrush { get; } = Frozen(def.SenderColor);
+    public SolidColorBrush SenderBrush { get; } = Frozen(def.SenderColor.Wpf());
 
     // state, filled from the save
     public bool Received { get; set; }

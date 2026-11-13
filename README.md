@@ -5,19 +5,20 @@
 <h1 align="center">Can 'Em All – Savegame Editor</h1>
 
 <p align="center">
-  Save editor for <b>Can 'Em All</b> (full game and demo, Steam, by LuisDev).<br>
-  One exe, dark UI, English / German, automatic backups – the whole skill tree, prestige upgrades and story mails.
+  Save editor for <b>Can 'Em All</b> (full game and demo, Steam, by LuisDev) – for <b>Windows</b> and <b>Linux / Steam Deck</b>.<br>
+  One file, dark UI, English / German, automatic backups – the whole skill tree, prestige upgrades and story mails.
 </p>
 
 <p align="center">
   <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/Yukitus86/can-em-all-savegame-editor" alt="Latest release"></a>
   <a href="../../releases"><img src="https://img.shields.io/github/downloads/Yukitus86/can-em-all-savegame-editor/total" alt="Downloads"></a>
   <img src="https://img.shields.io/badge/Windows-x64-0078D6" alt="Windows x64">
+  <img src="https://img.shields.io/badge/Linux-x64-FCC624?logo=linux&logoColor=black" alt="Linux x64">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="License: MIT"></a>
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><b>⬇ Download CanEmAllEditor.exe</b></a> · <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838055041">Steam guide</a> · <a href="https://www.nexusmods.com/canemall/mods/4">Nexus Mods</a>
+  <a href="../../releases/latest"><b>⬇ Windows: CanEmAllEditor.exe</b></a> · <a href="../../releases/latest"><b>⬇ Linux: CanEmAllEditor-linux-x64.tar.gz</b></a> · <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838055041">Steam guide</a> · <a href="https://www.nexusmods.com/canemall/mods/4">Nexus Mods</a>
 </p>
 
 <p align="center">
@@ -53,22 +54,46 @@ Also:
 - Requirements are pulled in when you unlock a skill, and skills built on it are removed when you lock it, so the tree stays valid and `unlockedSkills` keeps a valid purchase order (can be switched off)
 - Files are written in the exact Unity JsonUtility format: an unchanged save is written back byte for byte, floats stay `100.0`
 - Saving is blocked while the game runs; a warning appears when the game wrote the file after the editor loaded it
-- Single self-contained exe, no installation, no .NET runtime needed
+- Single self-contained file, no installation, no .NET runtime needed
+- Windows and Linux are two separate builds with the same features: WPF on Windows, Avalonia on Linux, one shared core for the save format
 
-## Usage
+## Usage – Windows
 
 1. Download `CanEmAllEditor.exe` from the [latest release](../../releases/latest) (Windows 10/11 x64).
 2. Close the game.
 3. Start the editor, change what you want, click **Save changes**.
-
-The editor looks for saves here:
 
 ```
 Full game   %USERPROFILE%\AppData\LocalLow\LuisDev\Can 'Em All\save.sav, settings.sav
 Demo        %USERPROFILE%\AppData\LocalLow\LuisDev\Can 'Em All Demo\save.sav, settings.sav
 ```
 
-Backups go to `EditorBackups\` inside that folder.
+## Usage – Linux / Steam Deck
+
+Can 'Em All runs on Linux through Proton, so its saves sit inside the game's Proton prefix. The Linux editor finds them by itself.
+
+1. Download `CanEmAllEditor-linux-x64.tar.gz` from the [latest release](../../releases/latest) and unpack it.
+2. Close the game.
+3. Start `CanEmAllEditor` (double-click, or `./CanEmAllEditor` in a terminal). If it does not start, make it executable: `chmod +x CanEmAllEditor`.
+4. Change what you want, click **Save changes**.
+
+```
+Full game   ~/.local/share/Steam/steamapps/compatdata/5133900/pfx/drive_c/users/steamuser/AppData/LocalLow/LuisDev/Can 'Em All/
+Demo        ~/.local/share/Steam/steamapps/compatdata/5364590/pfx/drive_c/users/steamuser/AppData/LocalLow/LuisDev/Can 'Em All Demo/
+```
+
+Also searched: `~/.steam/steam`, Flatpak Steam (`~/.var/app/com.valvesoftware.Steam/…`), Snap Steam, every extra library in `libraryfolders.vdf` (second drive, SD card on the Steam Deck) and a native Unity folder (`~/.config/unity3d/LuisDev`).
+
+- Steam Deck: switch to **Desktop Mode**, then start the editor from the file manager.
+- Needs a 64-bit (x86-64) Linux desktop with X11 or XWayland. Uses the system's ICU library for number and date formats; it is installed on almost every distribution (package `libicu` / `icu`).
+
+<p align="center">
+  <img src="docs/linux.png" width="760" alt="Linux editor, skill tree tab">
+</p>
+
+## Backups and Steam Cloud
+
+Backups go to `EditorBackups` inside the save folder.
 
 Steam Cloud: if Steam puts an older save back after editing, start the game once, quit, then edit again – or switch Steam Cloud off for the game while you edit.
 
@@ -94,30 +119,31 @@ Selling the factory resets money, day, run money and skills; permanent upgrades,
 Needs the .NET 10 SDK.
 
 ```
-build.cmd
+build.cmd          Windows: builds publish\CanEmAllEditor.exe and publish\linux\CanEmAllEditor
+./build-linux.sh   Linux: builds publish/linux/CanEmAllEditor
 ```
 
-It publishes the single-file exe to `publish\`. Developer aids (use copies of your saves!):
+The Linux project can also be run on Windows for testing: `dotnet run --project src/CanEmAllEditor.Linux -r win-x64`. Developer aids, the same in both editors (use copies of your saves!):
 
 - `--root <folder>` use another save folder
 - `--lang de|en` start in that language
 - `--snapshot <folder>` render every tab maximized to PNG and exit (`--mask-user` hides the user name in paths)
-- `--selftest <log>` edit, save and verify the loaded save (full game: 25 checks, demo: 19)
+- `--selftest <log>` edit, save and verify the loaded save (Windows: 25 checks for the full game, Linux: 28; demo: 19)
 
 ## Game data
 
-Skill ids, prices, requirements, tree positions and icons were extracted from the game's scene (`level0`, `SkillNode` + `Skill` components) and its `Translate` text asset: `Data/skills_full.json`, `Data/skills_demo.json`, `Assets/icons`. Permanent upgrades (`PermanentUpgrade` + skill components) are in `Data/permanent.json`; mail ids follow the game's `MailId` enum (from `global-metadata.dat`) and are in `Data/mails.json`.
+Skill ids, prices, requirements, tree positions and icons were extracted from the game's scene (`level0`, `SkillNode` + `Skill` components) and its `Translate` text asset: `src/CanEmAllEditor.Core/Data/skills_full.json`, `skills_demo.json`, `src/CanEmAllEditor/Assets/icons`. Permanent upgrades (`PermanentUpgrade` + skill components) are in `Data/permanent.json`; mail ids follow the game's `MailId` enum (from `global-metadata.dat`) and are in `Data/mails.json`.
 
 ## Layout
 
 | Path | Purpose |
 |------|---------|
-| `src/CanEmAllEditor/Core/UnityJson.cs` | Reads and writes JsonUtility's format, keeps key order and unknown keys |
-| `src/CanEmAllEditor/Core/SaveStore.cs` | Save folder detection, editions, backups |
-| `src/CanEmAllEditor/Core/SkillData.cs`, `GameData.cs` | Skills, permanent upgrades, mails (embedded JSON) |
-| `src/CanEmAllEditor/Core/Loc.cs` | English / German texts |
-| `src/CanEmAllEditor/SkillTreeControl.cs` | Skill tree view |
-| `src/CanEmAllEditor/MainWindow.xaml(.cs)`, `ViewModels.cs` | Window, tabs, saving |
+| `src/CanEmAllEditor.Core/UnityJson.cs` | Reads and writes JsonUtility's format, keeps key order and unknown keys |
+| `src/CanEmAllEditor.Core/SaveStore.cs` | Save folder detection (Windows, Linux / Proton), editions, backups |
+| `src/CanEmAllEditor.Core/SkillData.cs`, `GameData.cs` | Skills, permanent upgrades, mails (embedded JSON) |
+| `src/CanEmAllEditor.Core/Loc.cs` | English / German texts |
+| `src/CanEmAllEditor/` | Windows editor (WPF): `MainWindow.xaml(.cs)`, `SkillTreeControl.cs`, `ViewModels.cs` |
+| `src/CanEmAllEditor.Linux/` | Linux editor (Avalonia): `MainWindow.axaml(.cs)`, `SkillTreeControl.cs`, `ViewModels.cs` |
 
 See [CHANGELOG.md](CHANGELOG.md) for the version history.
 

@@ -1,11 +1,10 @@
 using System.Globalization;
 using System.IO;
 using System.Text.Json;
-using CanEmAllEditor.Core;
 
-namespace CanEmAllEditor;
+namespace CanEmAllEditor.Core;
 
-/// <summary>Small per-user settings file in %APPDATA%\CanEmAllEditor\settings.json.</summary>
+/// <summary>Small per-user settings file: %APPDATA%\CanEmAllEditor\settings.json (Linux: ~/.config/CanEmAllEditor).</summary>
 public sealed class AppSettings
 {
     static string FilePath => Path.Combine(

@@ -1,0 +1,305 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style Selector="Window">
+        <Setter Property="Background" Value="{StaticResource Bg}" />
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+        <Setter Property="FontSize" Value="13" />
+    </Style>
+
+    <!-- Text styles -->
+    <Style Selector="TextBlock.h1">
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="TextBlock.h2">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Margin" Value="0,0,0,10" />
+    </Style>
+    <Style Selector="TextBlock.hint">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+    <Style Selector="TextBlock.label">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+
+    <!-- Card container -->
+    <Style Selector="Border.card">
+        <Setter Property="Background" Value="{StaticResource Panel}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Line}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="12" />
+        <Setter Property="Padding" Value="18" />
+    </Style>
+
+    <!-- Buttons -->
+    <Style Selector="Button">
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+        <Setter Property="Background" Value="{StaticResource Panel2}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Line}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="14,7" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="b" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="8" Padding="{TemplateBinding Padding}">
+                    <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="Button:pointerover /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource Hover}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
+    </Style>
+    <Style Selector="Button:pressed /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource AccentSoft}" />
+    </Style>
+    <Style Selector="Button:disabled">
+        <Setter Property="Opacity" Value="0.4" />
+    </Style>
+
+    <Style Selector="Button.accent">
+        <Setter Property="Background" Value="{StaticResource Accent}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+    <Style Selector="Button.accent:pointerover /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource AccentHover}" />
+        <Setter Property="BorderBrush" Value="{StaticResource AccentHover}" />
+    </Style>
+    <Style Selector="Button.accent:pressed /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource AccentHover}" />
+    </Style>
+    <Style Selector="Button.accent:disabled">
+        <Setter Property="Opacity" Value="0.35" />
+    </Style>
+
+    <Style Selector="Button.small">
+        <Setter Property="Padding" Value="10,4" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <!-- Language flags: the active one gets the "active" class from code -->
+    <Style Selector="Button.flag">
+        <Setter Property="Margin" Value="0,0,6,0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="b" Padding="3" CornerRadius="6" BorderThickness="1.5" BorderBrush="Transparent" Background="Transparent" Opacity="0.45">
+                    <ContentPresenter Content="{TemplateBinding Content}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="Button.flag:pointerover /template/ Border#b">
+        <Setter Property="Opacity" Value="0.85" />
+        <Setter Property="Background" Value="{StaticResource Hover}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Button.flag:pressed /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource Hover}" />
+    </Style>
+    <Style Selector="Button.flag.active /template/ Border#b">
+        <Setter Property="Opacity" Value="1" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
+    </Style>
+
+    <!-- Text boxes -->
+    <Style Selector="TextBox">
+        <Setter Property="Padding" Value="8,6" />
+        <Setter Property="MinHeight" Value="32" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="SelectionBrush" Value="{StaticResource Accent}" />
+        <Setter Property="CaretBrush" Value="{StaticResource Text}" />
+    </Style>
+    <Style Selector="TextBox.big">
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Padding" Value="10,4" />
+    </Style>
+    <Style Selector="TextBox.big /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="{StaticResource Bg2}" />
+    </Style>
+    <Style Selector="TextBox.gold">
+        <Setter Property="Foreground" Value="{StaticResource Gold}" />
+    </Style>
+    <Style Selector="TextBox.code">
+        <Setter Property="FontFamily" Value="Cascadia Mono, DejaVu Sans Mono, Liberation Mono, Noto Sans Mono, monospace" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="AcceptsReturn" Value="True" />
+        <Setter Property="AcceptsTab" Value="True" />
+        <Setter Property="TextWrapping" Value="NoWrap" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+    </Style>
+    <!-- invalid number: red border (declared last so it beats hover/focus) -->
+    <Style Selector="TextBox.bad /template/ Border#PART_BorderElement">
+        <Setter Property="BorderBrush" Value="{StaticResource Bad}" />
+    </Style>
+
+    <!-- Toggle switch (CheckBox with class "switch") -->
+    <Style Selector="CheckBox.switch">
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid ColumnDefinitions="*,Auto" Background="Transparent">
+                    <ContentPresenter Content="{TemplateBinding Content}" VerticalAlignment="Center" Margin="0,0,12,0" />
+                    <Border Name="track" Grid.Column="1" Width="42" Height="24" CornerRadius="12"
+                            Background="{StaticResource Panel2}" BorderBrush="{StaticResource Line}" BorderThickness="1">
+                        <Ellipse Name="knob" Width="16" Height="16" Fill="{StaticResource Muted}" HorizontalAlignment="Left" Margin="3,0,0,0" />
+                    </Border>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="CheckBox.switch:pointerover /template/ Border#track">
+        <Setter Property="BorderBrush" Value="{StaticResource AccentHover}" />
+    </Style>
+    <Style Selector="CheckBox.switch:checked /template/ Border#track">
+        <Setter Property="Background" Value="{StaticResource Accent}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
+    </Style>
+    <Style Selector="CheckBox.switch:checked /template/ Ellipse#knob">
+        <Setter Property="Fill" Value="White" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Margin" Value="0,0,3,0" />
+    </Style>
+    <Style Selector="CheckBox.switch:disabled">
+        <Setter Property="Opacity" Value="0.5" />
+    </Style>
+
+    <!-- Filter chips (RadioButton with class "chip") -->
+    <Style Selector="RadioButton.chip">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="0,0,6,6" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="b" CornerRadius="14" Padding="12,5" Background="{StaticResource Panel2}"
+                        BorderBrush="{StaticResource Line}" BorderThickness="1">
+                    <ContentPresenter Content="{TemplateBinding Content}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="RadioButton.chip:pointerover">
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+    </Style>
+    <Style Selector="RadioButton.chip:pointerover /template/ Border#b">
+        <Setter Property="BorderBrush" Value="{StaticResource AccentHover}" />
+    </Style>
+    <Style Selector="RadioButton.chip:checked">
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="RadioButton.chip:checked /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource AccentSoft}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
+    </Style>
+
+    <!-- Progress bar -->
+    <Style Selector="ProgressBar">
+        <Setter Property="Height" Value="8" />
+        <Setter Property="MinHeight" Value="0" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Background" Value="{StaticResource Panel2}" />
+        <Setter Property="Foreground" Value="{StaticResource Accent}" />
+    </Style>
+
+    <!-- Lists -->
+    <Style Selector="ListBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+    </Style>
+    <Style Selector="ListBoxItem">
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+        <Setter Property="Margin" Value="0,0,0,8" />
+        <Setter Property="Padding" Value="12,10" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="b" Background="{StaticResource Panel}" BorderBrush="{StaticResource Line}" BorderThickness="1"
+                        CornerRadius="10" Padding="{TemplateBinding Padding}">
+                    <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"
+                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="ListBoxItem:pointerover /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource Hover}" />
+    </Style>
+    <Style Selector="ListBoxItem:selected /template/ Border#b">
+        <Setter Property="BorderBrush" Value="{StaticResource Accent}" />
+        <Setter Property="Background" Value="{StaticResource AccentSoft}" />
+    </Style>
+
+    <!-- Tabs: pill bar like the Windows editor -->
+    <Style Selector="TabControl">
+        <Setter Property="Padding" Value="0,14,0,0" />
+        <Setter Property="ItemsPanel">
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <DockPanel>
+                    <Border DockPanel.Dock="Top" Background="{StaticResource Panel}" BorderBrush="{StaticResource Line}"
+                            BorderThickness="1" CornerRadius="10" Padding="4" HorizontalAlignment="Left">
+                        <ItemsPresenter Name="PART_ItemsPresenter" ItemsPanel="{TemplateBinding ItemsPanel}" />
+                    </Border>
+                    <ContentPresenter Name="PART_SelectedContentHost" Margin="{TemplateBinding Padding}"
+                                      Content="{TemplateBinding SelectedContent}" ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
+                </DockPanel>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="TabItem">
+        <Setter Property="Foreground" Value="{StaticResource Muted}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="MinHeight" Value="0" />
+        <Setter Property="Padding" Value="14,7" />
+        <Setter Property="Margin" Value="1,0" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="b" Background="Transparent" CornerRadius="7" Padding="{TemplateBinding Padding}">
+                    <ContentPresenter Name="hdr" Content="{TemplateBinding Header}" ContentTemplate="{TemplateBinding HeaderTemplate}" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="TabItem:pointerover">
+        <Setter Property="Foreground" Value="{StaticResource Text}" />
+    </Style>
+    <Style Selector="TabItem:selected">
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style Selector="TabItem:selected /template/ Border#b">
+        <Setter Property="Background" Value="{StaticResource Accent}" />
+    </Style>
+
+    <!-- Hover on clickable cards -->
+    <Style Selector="Border.clickcard:pointerover">
+        <Setter Property="Background" Value="{StaticResource Hover}" />
+    </Style>
+</Styles>

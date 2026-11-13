@@ -77,6 +77,9 @@ public sealed class Loc : INotifyPropertyChanged
         ["TabRaw"] = ("🧪  Roh-JSON", "🧪  Raw JSON"),
 
         // Bottom bar / status
+        ["Yes"] = ("Ja", "Yes"),
+        ["No"] = ("Nein", "No"),
+        ["Cancel"] = ("Abbrechen", "Cancel"),
         ["Discard"] = ("Verwerfen", "Discard"),
         ["SaveChanges"] = ("💾  Änderungen speichern", "💾  Save changes"),
         ["Ready"] = ("Bereit.", "Ready."),

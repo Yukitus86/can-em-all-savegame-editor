@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Linux front end (Avalonia). The Windows editor (WPF) is ..\CanEmAllEditor; both share ..\CanEmAllEditor.Core. -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>CanEmAllEditor</AssemblyName>
+    <RootNamespace>CanEmAllEditor</RootNamespace>
+    <Product>Can 'Em All Savegame Editor</Product>
+    <Version>2.2.0</Version>
+    <Authors>Yukitus86</Authors>
+    <Copyright>Copyright © 2026 Yukitus86</Copyright>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+    <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
+
+    <!-- Single self-contained executable (pass -r win-x64 to try it on Windows) -->
+    <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == ''">linux-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugType>none</DebugType>
+    <SatelliteResourceLanguages>de;en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.22" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.22" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.22" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Game icons and app icon are shared with the Windows project -->
+    <AvaloniaResource Include="..\CanEmAllEditor\Assets\icons\*.png" Link="Assets\icons\%(Filename)%(Extension)" />
+    <AvaloniaResource Include="..\CanEmAllEditor\Assets\icon.png" Link="Assets\icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CanEmAllEditor.Core\CanEmAllEditor.Core.csproj" />
+  </ItemGroup>
+
+</Project>

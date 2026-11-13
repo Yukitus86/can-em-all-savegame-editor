@@ -137,7 +137,7 @@ public partial class MainWindow : Window
         categoryVms = SkillData.Categories.Select(c => new CategoryVM
         {
             Category = c,
-            Brush = new SolidColorBrush(SkillData.ColorOf(c)),
+            Brush = new SolidColorBrush(SkillData.ColorOf(c).Wpf()),
             Total = SkillData.All.Count(s => s.Category == c),
         }).ToList();
         CategoryList.ItemsSource = categoryVms;
@@ -431,7 +431,7 @@ public partial class MainWindow : Window
     {
         var content = new StackPanel { Orientation = Orientation.Horizontal };
         if (cat is SkillCategory c)
-            content.Children.Add(new System.Windows.Shapes.Ellipse { Width = 8, Height = 8, Fill = new SolidColorBrush(SkillData.ColorOf(c)), Margin = new Thickness(0, 0, 6, 0), VerticalAlignment = VerticalAlignment.Center });
+            content.Children.Add(new System.Windows.Shapes.Ellipse { Width = 8, Height = 8, Fill = new SolidColorBrush(SkillData.ColorOf(c).Wpf()), Margin = new Thickness(0, 0, 6, 0), VerticalAlignment = VerticalAlignment.Center });
         content.Children.Add(new TextBlock { Text = text });
         var rb = new RadioButton { Content = content, Style = (Style)FindResource("Chip"), GroupName = "cat", IsChecked = chipFilter == cat };
         rb.Checked += (_, _) => { chipFilter = cat; RefreshList(); };
@@ -609,7 +609,7 @@ public partial class MainWindow : Window
         var vm = skillVms.First(v => v.Id == id);
         DetailEmpty.Visibility = Visibility.Collapsed;
         DetailPanel.Visibility = Visibility.Visible;
-        var color = SkillData.ColorOf(d.Category);
+        var color = SkillData.ColorOf(d.Category).Wpf();
         bool own = ownedSet.Contains(id);
         DetailDisc.Stroke = new SolidColorBrush(own ? Color.FromRgb(0xF5, 0xE6, 0xCC) : color);
         DetailDisc.Fill = own ? new SolidColorBrush(color) : (Brush)FindResource("Panel2");

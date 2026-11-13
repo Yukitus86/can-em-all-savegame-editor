@@ -1,6 +1,5 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Windows.Media;
 
 namespace CanEmAllEditor.Core;
 
@@ -55,12 +54,12 @@ public sealed class MailDef
         _ => Loc.T("SenderUnknown"),
     };
 
-    public Color SenderColor => Sender switch
+    public Rgb SenderColor => Sender switch
     {
-        "Corporation" => Color.FromRgb(0xF8, 0x71, 0x71),
-        "News" => Color.FromRgb(0x60, 0xA5, 0xFA),
-        "Activist" => Color.FromRgb(0x4A, 0xDE, 0x80),
-        _ => Color.FromRgb(0xFA, 0xCC, 0x15),
+        "Corporation" => Rgb.FromRgb(0xF8, 0x71, 0x71),
+        "News" => Rgb.FromRgb(0x60, 0xA5, 0xFA),
+        "Activist" => Rgb.FromRgb(0x4A, 0xDE, 0x80),
+        _ => Rgb.FromRgb(0xFA, 0xCC, 0x15),
     };
 }
 

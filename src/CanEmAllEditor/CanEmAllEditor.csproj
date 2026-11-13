@@ -9,7 +9,7 @@
     <AssemblyName>CanEmAllEditor</AssemblyName>
     <RootNamespace>CanEmAllEditor</RootNamespace>
     <Product>Can 'Em All Savegame Editor</Product>
-    <Version>2.1.0</Version>
+    <Version>2.2.0</Version>
     <Authors>Yukitus86</Authors>
     <Copyright>Copyright © 2026 Yukitus86</Copyright>
     <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
@@ -29,10 +29,10 @@
     <Resource Include="Assets\app.ico" />
     <Resource Include="Assets\icon.png" />
     <Resource Include="Assets\icons\*.png" />
-    <EmbeddedResource Include="Data\skills_demo.json" LogicalName="skills_demo.json" />
-    <EmbeddedResource Include="Data\skills_full.json" LogicalName="skills_full.json" />
-    <EmbeddedResource Include="Data\permanent.json" LogicalName="permanent.json" />
-    <EmbeddedResource Include="Data\mails.json" LogicalName="mails.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CanEmAllEditor.Core\CanEmAllEditor.Core.csproj" />
   </ItemGroup>
 
 </Project>

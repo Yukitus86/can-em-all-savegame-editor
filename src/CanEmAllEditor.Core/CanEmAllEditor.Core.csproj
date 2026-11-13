@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Save format, skill data, texts: shared by the Windows (WPF) and the Linux (Avalonia) editor -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>CanEmAllEditor.Core</RootNamespace>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\skills_demo.json" LogicalName="skills_demo.json" />
+    <EmbeddedResource Include="Data\skills_full.json" LogicalName="skills_full.json" />
+    <EmbeddedResource Include="Data\permanent.json" LogicalName="permanent.json" />
+    <EmbeddedResource Include="Data\mails.json" LogicalName="mails.json" />
+  </ItemGroup>
+
+</Project>

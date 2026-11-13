@@ -207,7 +207,7 @@ public sealed class SkillTreeControl : Border
             tb.Inlines.Clear();
             tb.Inlines.Add(new System.Windows.Documents.Run(s.Name) { FontWeight = FontWeights.Bold, FontSize = 14 });
             tb.Inlines.Add(new System.Windows.Documents.LineBreak());
-            tb.Inlines.Add(new System.Windows.Documents.Run(SkillData.LabelOf(s.Category)) { Foreground = new SolidColorBrush(SkillData.ColorOf(s.Category)), FontSize = 11 });
+            tb.Inlines.Add(new System.Windows.Documents.Run(SkillData.LabelOf(s.Category)) { Foreground = new SolidColorBrush(SkillData.ColorOf(s.Category).Wpf()), FontSize = 11 });
             tb.Inlines.Add(new System.Windows.Documents.LineBreak());
             tb.Inlines.Add(new System.Windows.Documents.Run(s.Description));
             tb.Inlines.Add(new System.Windows.Documents.LineBreak());
@@ -230,13 +230,13 @@ public sealed class SkillTreeControl : Border
             bool a = IsOwned(from.Id), b = IsOwned(to.Id);
             if (a && b)
             {
-                l.Stroke = new SolidColorBrush(SkillData.ColorOf(to.Category));
+                l.Stroke = new SolidColorBrush(SkillData.ColorOf(to.Category).Wpf());
                 l.Opacity = 0.95;
                 l.StrokeDashArray = null;
             }
             else if (a)
             {
-                l.Stroke = new SolidColorBrush(SkillData.ColorOf(to.Category));
+                l.Stroke = new SolidColorBrush(SkillData.ColorOf(to.Category).Wpf());
                 l.Opacity = 0.45;
                 l.StrokeDashArray = [1.5, 1.5];
             }
@@ -250,7 +250,7 @@ public sealed class SkillTreeControl : Border
 
         foreach (var n in nodes.Values)
         {
-            var c = SkillData.ColorOf(n.Def.Category);
+            var c = SkillData.ColorOf(n.Def.Category).Wpf();
             bool owned = IsOwned(n.Def.Id);
             bool available = !owned && n.Def.Requirements.All(IsOwned);
             if (owned)

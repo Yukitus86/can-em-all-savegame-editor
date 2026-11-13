@@ -1,0 +1,67 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Same palette as the Windows editor -->
+    <SolidColorBrush x:Key="Bg" Color="#0E1016" />
+    <SolidColorBrush x:Key="Bg2" Color="#12141C" />
+    <SolidColorBrush x:Key="Panel" Color="#161922" />
+    <SolidColorBrush x:Key="Panel2" Color="#1D2130" />
+    <SolidColorBrush x:Key="Line" Color="#2A3042" />
+    <SolidColorBrush x:Key="Text" Color="#E7E9F0" />
+    <SolidColorBrush x:Key="Muted" Color="#9099AE" />
+    <SolidColorBrush x:Key="Accent" Color="#8B5CF6" />
+    <SolidColorBrush x:Key="AccentHover" Color="#A07BFA" />
+    <SolidColorBrush x:Key="AccentSoft" Color="#2A2145" />
+    <SolidColorBrush x:Key="Hover" Color="#252A3A" />
+    <SolidColorBrush x:Key="Good" Color="#34D399" />
+    <SolidColorBrush x:Key="Warn" Color="#FBBF24" />
+    <SolidColorBrush x:Key="WarnSoft" Color="#3A2E12" />
+    <SolidColorBrush x:Key="Bad" Color="#F87171" />
+    <SolidColorBrush x:Key="Gold" Color="#FFD36B" />
+
+    <!-- Fluent theme overrides -->
+    <Color x:Key="SystemAccentColor">#8B5CF6</Color>
+    <Color x:Key="SystemAccentColorLight1">#A07BFA</Color>
+    <Color x:Key="SystemAccentColorLight2">#B597FB</Color>
+    <Color x:Key="SystemAccentColorLight3">#CBB4FC</Color>
+    <Color x:Key="SystemAccentColorDark1">#7A4AEB</Color>
+    <Color x:Key="SystemAccentColorDark2">#6838DA</Color>
+    <Color x:Key="SystemAccentColorDark3">#5728C2</Color>
+    <CornerRadius x:Key="ControlCornerRadius">8</CornerRadius>
+    <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
+
+    <SolidColorBrush x:Key="TextControlBackground" Color="#0E1016" />
+    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="#0E1016" />
+    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="#0E1016" />
+    <SolidColorBrush x:Key="TextControlBackgroundDisabled" Color="#0E1016" />
+    <SolidColorBrush x:Key="TextControlBorderBrush" Color="#2A3042" />
+    <SolidColorBrush x:Key="TextControlBorderBrushPointerOver" Color="#3A4258" />
+    <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#8B5CF6" />
+    <SolidColorBrush x:Key="TextControlForeground" Color="#E7E9F0" />
+    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="#E7E9F0" />
+    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="#E7E9F0" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="#9099AE" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForegroundPointerOver" Color="#9099AE" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForegroundFocused" Color="#9099AE" />
+    <SolidColorBrush x:Key="TextControlSelectionHighlightColor" Color="#8B5CF6" />
+    <Thickness x:Key="TextControlBorderThemeThicknessFocused">1</Thickness>
+
+    <SolidColorBrush x:Key="ComboBoxBackground" Color="#1D2130" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="#252A3A" />
+    <SolidColorBrush x:Key="ComboBoxBackgroundPressed" Color="#2A2145" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="#2A3042" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrushPointerOver" Color="#8B5CF6" />
+    <SolidColorBrush x:Key="ComboBoxBorderBrushPressed" Color="#8B5CF6" />
+    <SolidColorBrush x:Key="ComboBoxForeground" Color="#E7E9F0" />
+    <SolidColorBrush x:Key="ComboBoxDropDownBackground" Color="#1D2130" />
+    <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="#2A3042" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundPointerOver" Color="#252A3A" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundSelected" Color="#2A2145" />
+    <SolidColorBrush x:Key="ComboBoxItemBackgroundSelectedPointerOver" Color="#342A55" />
+
+    <SolidColorBrush x:Key="ToolTipBackground" Color="#1D2130" />
+    <SolidColorBrush x:Key="ToolTipForeground" Color="#E7E9F0" />
+    <SolidColorBrush x:Key="ToolTipBorderBrush" Color="#2A3042" />
+
+    <SolidColorBrush x:Key="SliderTrackFill" Color="#1D2130" />
+    <SolidColorBrush x:Key="SliderTrackFillPointerOver" Color="#252A3A" />
+</ResourceDictionary>
