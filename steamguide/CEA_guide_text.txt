@@ -1,5 +1,5 @@
 ############################################################################
-#  STEAM GUIDE – Can 'Em All Save Editor 2.1 (English)
+#  STEAM GUIDE – Can 'Em All Save Editor 2.2 (English)
 #  Lines starting with # are notes, do not copy them.
 #  [IMAGE: CEA_xx.png] = insert that picture from this folder at this spot.
 ############################################################################
@@ -8,7 +8,7 @@
 Can 'Em All Save Editor – Money, Full Skill Tree, Prestige Upgrades & Mails
 
 # ===== DESCRIPTION =====
-Free, open-source save editor for Can 'Em All (full game and demo). Edit money and day, unlock any skill right in the game's own skill tree, buy permanent prestige upgrades, manage the story mails and change game settings. Automatic backups, single exe, English and German.
+Free, open-source save editor for Can 'Em All (full game and demo) – for Windows and Linux / Steam Deck. Edit money and day, unlock any skill right in the game's own skill tree, buy permanent prestige upgrades, manage the story mails and change game settings. Automatic backups, single file, English and German.
 
 # ===== GUIDE ICON =====
 # CEA_00_guide_icon.png
@@ -25,7 +25,7 @@ Overview
 [IMAGE: CEA_02_skill-tree.png]
 
 [h1]What is this?[/h1]
-A small Windows tool that edits your [b]Can 'Em All[/b] save – the full game and the demo. It reads the save, lets you change values in a clean dark interface and writes it back exactly the way the game expects it.
+A small tool for [b]Windows and Linux / Steam Deck[/b] that edits your [b]Can 'Em All[/b] save – the full game and the demo. It reads the save, lets you change values in a clean dark interface and writes it back exactly the way the game expects it.
 
 [h2]What you can change[/h2]
 [table]
@@ -42,7 +42,7 @@ A small Windows tool that edits your [b]Can 'Em All[/b] save – the full game a
 
 [list]
 [*]Free and open source (MIT licence)
-[*]Single .exe – no installation, no .NET needed (Windows 10/11, 64-bit)
+[*]Single file – no installation, no .NET needed: Windows 10/11 and Linux / Steam Deck (64-bit)
 [*]English and German interface
 [*]Works with the full game and the demo
 [/list]
@@ -56,7 +56,11 @@ Download & first start
 ############################################################################
 
 [h1]Download[/h1]
-Get [b]CanEmAllEditor.exe[/b] from the latest release on GitHub:
+Get the file for your system from the latest release on GitHub:
+[list]
+[*][b]Windows:[/b] CanEmAllEditor.exe
+[*][b]Linux / Steam Deck:[/b] CanEmAllEditor-linux-x64.tar.gz
+[/list]
 [url=https://github.com/Yukitus86/can-em-all-savegame-editor/releases/latest]github.com/Yukitus86/can-em-all-savegame-editor/releases/latest[/url]
 
 The full source code is in the same repository, so you can check exactly what the tool does or build it yourself.
@@ -81,6 +85,18 @@ Click the [b]flag[/b] in the top left to switch between English and German – y
 
 [h2]"Windows protected your PC"?[/h2]
 The exe is not code-signed, so Windows SmartScreen may warn you the first time. Click [b]More info → Run anyway[/b].
+
+[h1]Linux & Steam Deck[/h1]
+[IMAGE: CEA_09_linux.png]
+A real Linux program – no Wine needed. Same tabs and features as the Windows version.
+[olist]
+[*]Steam Deck: switch to [b]Desktop Mode[/b].
+[*]Download [b]CanEmAllEditor-linux-x64.tar.gz[/b] and unpack it.
+[*]Close the game, then start [b]CanEmAllEditor[/b] (double-click or [i]./CanEmAllEditor[/i] in a terminal).
+[*]If it does not start, make it executable: [i]chmod +x CanEmAllEditor[/i]
+[/olist]
+The game runs through Proton, so the save sits in the game's Proton folder. The editor finds it by itself – also with Flatpak Steam and in other Steam libraries (second drive, SD card):
+[code]~/.local/share/Steam/steamapps/compatdata/5133900/pfx/drive_c/users/steamuser/AppData/LocalLow/LuisDev/Can 'Em All/[/code]
 
 
 ############################################################################
@@ -216,6 +232,12 @@ The editor only touches your Can 'Em All save folder, makes a backup before ever
 Changelog & links
 ############################################################################
 
+[h1]Version 2.2[/h1]
+[list]
+[*]NEW: Linux version (also Steam Deck) – a native program, no Wine needed
+[*]Finds the Proton saves by itself, including Flatpak Steam and extra Steam libraries
+[/list]
+
 [h1]Version 2.1[/h1]
 [list]
 [*]Tested with a real prestige run (factory sold, permanent upgrades bought)
@@ -240,6 +262,8 @@ Changelog & links
 [h2]Links[/h2]
 [url=https://github.com/Yukitus86/can-em-all-savegame-editor]Source code & download (GitHub)[/url]
 [url=https://github.com/Yukitus86/can-em-all-savegame-editor/blob/main/CHANGELOG.md]Full changelog[/url]
+[url=https://www.nexusmods.com/canemall/mods/4]Download on Nexus Mods[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3838187911]CanAfford – see every skill you can buy right now (my skill tree mod)[/url]
 
 Found a bug or a value you'd like to edit? Leave a comment below or open an issue on GitHub.
 If the guide helped you, a 👍 rating is appreciated. Happy canning!
