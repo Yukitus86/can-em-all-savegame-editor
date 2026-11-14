@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="../../releases/latest"><b>⬇ Windows: CanEmAllEditor.exe</b></a> · <a href="../../releases/latest"><b>⬇ Linux: CanEmAllEditor-linux-x64.tar.gz</b></a> · <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838055041">Steam guide</a> · <a href="https://www.nexusmods.com/canemall/mods/4">Nexus Mods</a>
+  <a href="../../releases/latest"><b>⬇ Windows: CanEmAllEditor.exe</b></a> · <a href="../../releases/latest"><b>⬇ Linux: CanEmAllEditor-linux-x64.tar.gz</b></a> · <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3838055041">Steam guide</a> · <a href="https://www.nexusmods.com/canemall/mods/5">Nexus Mods</a>
 </p>
 
 <p align="center">

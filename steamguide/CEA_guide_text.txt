@@ -262,7 +262,7 @@ Changelog & links
 [h2]Links[/h2]
 [url=https://github.com/Yukitus86/can-em-all-savegame-editor]Source code & download (GitHub)[/url]
 [url=https://github.com/Yukitus86/can-em-all-savegame-editor/blob/main/CHANGELOG.md]Full changelog[/url]
-[url=https://www.nexusmods.com/canemall/mods/4]Download on Nexus Mods[/url]
+[url=https://www.nexusmods.com/canemall/mods/5]Download on Nexus Mods[/url]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3838187911]CanAfford – see every skill you can buy right now (my skill tree mod)[/url]
 
 Found a bug or a value you'd like to edit? Leave a comment below or open an issue on GitHub.
